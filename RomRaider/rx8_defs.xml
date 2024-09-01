@@ -6,6 +6,60 @@
             <internalidaddress>2000</internalidaddress>
             <make>Mazda</make>
         </romid>
+		<table name="Table 3D - UNKNOWN_687b0" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="26" sizey="19">
+            <scaling expression="(x * 0.0030517578) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <table name="Value" type="X Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" />
+            </table>
+            <table name="Value" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" />
+            </table>
+        </table>
+		<table name="Table 3D - UNKNOWN_68d30" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="8" sizey="19">
+            <scaling expression="(x * 0.0078125) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <table name="Value" type="X Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" />
+            </table>
+            <table name="Value" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" />
+            </table>
+        </table>
+		<table name="Table 3D - UNKNOWN_68c4c" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="13" sizey="3">
+            <scaling expression="(x * 0.000030517578) + 0" to_byte="(x - 0) / 1" format="0.0000" />
+            <table name="Value" type="X Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x"  format="0.00"/>
+            </table>
+            <table name="Value" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0.00"/>
+            </table>
+        </table>
+		<table name="Table 3D - UNKNOWN_68c68" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="13" sizey="3">
+            <scaling expression="(x * 0.000030517578) + 0" to_byte="(x - 0) / 1" format="0.0000" />
+            <table name="Value" type="X Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0.00"/>
+            </table>
+            <table name="Value" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0.00"/>
+            </table>
+        </table>
+		<table name="Table 3D - UNKNOWN_68c84" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="12" sizey="3">
+            <scaling expression="(x * 0.000030517578) + 0" to_byte="(x - 0) / 1" format="0.0000" />
+            <table name="Value" type="X Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0.00" />
+            </table>
+            <table name="Value" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0.00"/>
+            </table>
+        </table>
+		<table name="Table FLOAT 3D - UNKNOWN_68c38" category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="3" sizey="12">
+            <scaling expression="(x * 1) + 0" to_byte="(x - 0) / 1" format="0" />
+            <table name="Value" type="X Axis" storagetype="float" endian="big"  >
+                <scaling expression="x" to_byte="x" format="0.00" />
+            </table>
+            <table name="Value" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0.00" />
+            </table>
+        </table>
         <table name="Barometric Pressure Sensor Max ADC Count" category="Sensors" type="1D" storagetype="uint16" endian="big" expression="x" to_byte="x" size="2" />
         <table name="Barometric Pressure Sensor Min ADC Count" category="Sensors" type="1D" storagetype="uint16" endian="big" expression="x" to_byte="x" size="2" />
         <table name="Barometric Pressure Sensor Min Voltage" category="Sensors" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
@@ -15,13 +69,16 @@
         <table name="Cold Rev Limit" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
         <table name="Cold Rev Limit Threshold" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
         <table name="Primary Injector Size" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
+		<table name="Engine Max Torque" category="Torque Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Secondary Injector Size" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Secondary Injector Size #2" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Rev Limit" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
         <table name="Maximum Throttle Angle" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Auxillary Valve Close" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
         <table name="VDI Open" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
-        <table name="Closed Loop Fuelling Threshold (Engine Speed)" category="Fuel Target (Closed Loop)" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
+		<table name="Igntion Leading Timing - DSC Mode A - Map1" category="Ignition Leading" type="1D" storagetype="uint8" endian="big" format="0.00" expression="(x - 50) / 2" to_byte="x" size="1"/>
+		<table name="Igntion Leading Timing - DSC Mode A - Map3" category="Ignition Leading" type="1D" storagetype="uint8" endian="big" format="0.00" expression="(x - 50) / 2" to_byte="x" size="1"/>
+		<table name="Closed Loop Fuelling Threshold (Engine Speed)" category="Fuel Target (Closed Loop)" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Closed Loop Fuelling Threshold (Temperature A)" category="Fuel Target (Closed Loop)" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Closed Loop Fuelling Threshold (Temperature B)" category="Fuel Target (Closed Loop)" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Closed Loop Fuelling Threshold (Unknown B)" category="Fuel Target (Closed Loop)" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
@@ -37,6 +94,18 @@
         <table name="Knock Control - Retard Decrement #3" category="Knock Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Table 2D - 0 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="16">
             <scaling expression="(x * 2 ) + 0" to_byte="(x - 0) / 2" format="0.00" />
+            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        </table>
+		<table name="Table 2D - Unknown_68cb4 -Desired Torque Calculation 3a" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="9">
+            <scaling expression="(x * 0.0078125 ) + 0" to_byte="(x - 0) / 2" format="0.0000" />
+            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        </table>
+		<table name="Table 2D - Unknown_68ca0 -Desired Torque Calculation 3b" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="9">
+            <scaling expression="(x * 0.0078125) + 0" to_byte="(x - 0) / 2" format="0.0000" />
+            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        </table>
+		<table name="Table 2D - Unknown_68db8" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="39">
+            <scaling expression="(x * 0.099999994) - 200" to_byte="x" format="0.000" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 1 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="16">
@@ -507,7 +576,7 @@
             <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 118 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="19">
+        <table name="Table 2D - 118 " category="Torque Control" type="2D" storagetype="uint8" endian="big" sizey="19">
             <scaling expression="(x * 0.1 ) + 0" to_byte="(x - 0) / 0.1" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
@@ -819,13 +888,15 @@
             <scaling expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 196 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="9">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" category="Torque Control" type="2D" storagetype="uint16" endian="big" sizey="9">
             <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <table name="Intake Temp (degC)" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 197 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="9">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Engine Torque Max - Barometric Pressure Compensation" category="Torque Control" type="2D" storagetype="uint16" endian="big" sizey="9">
+            <scaling units="kPa" expression="x * 0.001" to_byte="(x - 0) / 0.001" format="0.000" />
+            <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+				<table type="Y Axis" name="Barometric Pressure" sizey="2"/>
+					<scaling units="multiplier" xpression="x" to_byte="x" format="0.00" />
         </table>
         <table name="Table 2D - 198 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="3">
             <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
@@ -1804,7 +1875,7 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Table 3D - 15" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 4" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
             <scaling expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
@@ -1813,7 +1884,7 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Table 3D - 16" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 2" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
             <scaling expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
@@ -2038,7 +2109,7 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Torque To Accel Position" category="Torque Control" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="26" sizey="19">
+        <table name="Trans Requested Torque To Throttle Plate Position Position" category="Torque Control" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="26" sizey="19">
             <scaling expression="(x * 0.003052 ) + 0" to_byte="(x - 0) / 0.003052" format="0.00" />
             <table name="Desired Torque" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
@@ -2200,7 +2271,7 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Table 3D - 59" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="18" sizey="19">
+        <table name="Ignition Timing Leading - DSC Mode A - Base" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="18" sizey="19">
             <scaling expression="(x * 0.488281 ) + -50" to_byte="(x - -50) / 0.488281" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
@@ -2820,7 +2891,7 @@
             <table name="Value" type="Y Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
             </table>
-        </table>
+        </table>	
         <table name="Ignition Dwell Time " category="Ignition" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="9" sizey="9">
             <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
@@ -3722,10 +3793,10 @@
         <table name="Table 2D - 195 " storageaddress="0x078C74">
             <table type="Y Axis" storageaddress="0x078C70" />
         </table>
-        <table name="Table 2D - 196 " storageaddress="0x078DC0">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078D9C" />
         </table>
-        <table name="Table 2D - 197 " storageaddress="0x078DF8">
+        <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x078DF8">
             <table type="Y Axis" storageaddress="0x078DD4" />
         </table>
         <table name="Table 2D - 198 " storageaddress="0x078F90">
@@ -4406,11 +4477,11 @@
             <table type="X Axis" storageaddress="0x06EDA4" />
             <table type="Y Axis" storageaddress="0x06EDD4" />
         </table>
-        <table name="Table 3D - 15" storageaddress="0x06EEEC">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 4" storageaddress="0x06EEEC">
             <table type="X Axis" storageaddress="0x06EE54" />
             <table type="Y Axis" storageaddress="0x06EEA4" />
         </table>
-        <table name="Table 3D - 16" storageaddress="0x06F0EC">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 2" storageaddress="0x06F0EC">
             <table type="X Axis" storageaddress="0x06F054" />
             <table type="Y Axis" storageaddress="0x06F0A4" />
         </table>
@@ -4510,7 +4581,7 @@
             <table type="X Axis" storageaddress="0x0728C4" />
             <table type="Y Axis" storageaddress="0x072918" />
         </table>
-        <table name="Torque To Accel Position" storageaddress="0x073090">
+        <table name="Trans Requested Torque To Throttle Plate Position Position" storageaddress="0x073090">
             <table type="X Axis" storageaddress="0x072FDC" />
             <table type="Y Axis" storageaddress="0x073044" />
         </table>
@@ -4582,7 +4653,7 @@
             <table type="X Axis" storageaddress="0x075F30" />
             <table type="Y Axis" storageaddress="0x075F74" />
         </table>
-        <table name="Table 3D - 59" storageaddress="0x076144">
+        <table name="Ignition Timing Leading - DSC Mode A - Base" storageaddress="0x076144">
             <table type="X Axis" storageaddress="0x0760B0" />
             <table type="Y Axis" storageaddress="0x0760F8" />
         </table>
@@ -5176,7 +5247,9 @@
         <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06DB08">
             <table type="Y Axis" storageaddress="0x06DAE4" />
         </table>
-        <table name="Table 2D - 10 " storageaddress="0x06E17C">
+        <table name="Igntion Leading Timing - DSC Mode A - Map1" storageaddress="0x06e8dc" />
+		<table name="Igntion Leading Timing - DSC Mode A - Map3" storageaddress="0x06e8dd" />
+		<table name="Table 2D - 10 " storageaddress="0x06E17C">
             <table type="Y Axis" storageaddress="0x06E164" />
         </table>
         <table name="Table 2D - 11 " storageaddress="0x06E1A0">
@@ -5281,7 +5354,19 @@
         <table name="Ignition 13" storageaddress="0x06F354">
             <table type="Y Axis" storageaddress="0x06F350" />
         </table>
-        <table name="Table 2D - 58 " storageaddress="0x06F5F4">
+        <table name="Table 2D - 57 " storageaddress="0x06E8E8">
+            <table type="Y Axis" storageaddress="0x06E8B8" />
+        </table>
+		<table name="Table 2D - Unknown_68cb4 -Desired Torque Calculation 3a" storageaddress="0x0757B4">
+            <table type="Y Axis" storageaddress="0x075790" />
+        </table>
+		<table name="Table 2D - Unknown_68ca0 -Desired Torque Calculation 3b" storageaddress="0x07576c">
+            <table type="Y Axis" storageaddress="0x075724" />
+        </table>
+		<table name="Table 2D - Unknown_68db8" storageaddress="0x07644c">
+            <table type="Y Axis" storageaddress="0x0763b0" />
+        </table>		
+		<table name="Table 2D - 58 " storageaddress="0x06F5F4">
             <table type="Y Axis" storageaddress="0x06F5E0" />
         </table>
         <table name="Table 2D - 60 " storageaddress="0x06FB8C">
@@ -5605,10 +5690,10 @@
         <table name="Table 2D - 195 " storageaddress="0x077980">
             <table type="Y Axis" storageaddress="0x07797C" />
         </table>
-        <table name="Table 2D - 196 " storageaddress="0x077ACC">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x077ACC">
             <table type="Y Axis" storageaddress="0x077AA8" />
         </table>
-        <table name="Table 2D - 197 " storageaddress="0x077B04">
+        <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x077B04">
             <table type="Y Axis" storageaddress="0x077AE0" />
         </table>
         <table name="Table 2D - 198 " storageaddress="0x077C9C">
@@ -6165,11 +6250,11 @@
             <table type="X Axis" storageaddress="0x06E8E8" />
             <table type="Y Axis" storageaddress="0x06E918" />
         </table>
-        <table name="Table 3D - 15" storageaddress="0x06EA30">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 4" storageaddress="0x06EA30">
             <table type="X Axis" storageaddress="0x06E998" />
             <table type="Y Axis" storageaddress="0x06E9E8" />
         </table>
-        <table name="Table 3D - 16" storageaddress="0x06EC30">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 2" storageaddress="0x06EC30">
             <table type="X Axis" storageaddress="0x06EB98" />
             <table type="Y Axis" storageaddress="0x06EBE8" />
         </table>
@@ -6253,7 +6338,7 @@
             <table type="X Axis" storageaddress="0x072338" />
             <table type="Y Axis" storageaddress="0x07238C" />
         </table>
-        <table name="Torque To Accel Position" storageaddress="0x072ADC">
+        <table name="Trans Requested Torque To Throttle Plate Position Position" storageaddress="0x072ADC">
             <table type="X Axis" storageaddress="0x072A28" />
             <table type="Y Axis" storageaddress="0x072A90" />
         </table>
@@ -6309,7 +6394,7 @@
             <table type="X Axis" storageaddress="0x074FD8" />
             <table type="Y Axis" storageaddress="0x075000" />
         </table>
-        <table name="Table 3D - 59" storageaddress="0x07587C">
+        <table name="Ignition Timing Leading - DSC Mode A - Base" storageaddress="0x07587C">
             <table type="X Axis" storageaddress="0x0757E8" />
             <table type="Y Axis" storageaddress="0x075830" />
         </table>
@@ -6321,6 +6406,11 @@
             <table type="X Axis" storageaddress="0x075D14" />
             <table type="Y Axis" storageaddress="0x075D5C" />
         </table>
+		<table name="Table FLOAT 3D - UNKNOWN_68c38" storageaddress="0x075570">
+            <table type="X Axis" storageaddress="0x075534" />
+            <table type="Y Axis" storageaddress="0x075540" />
+        </table>
+		<table name="Engine Max Torque" storageaddress="0x077a94" />
         <table name="Table 3D - 62 " storageaddress="0x0760C0">
             <table type="X Axis" storageaddress="0x076054" />
             <table type="Y Axis" storageaddress="0x076074" />
@@ -6533,6 +6623,26 @@
             <table type="X Axis" storageaddress="0x07AC14" />
             <table type="Y Axis" storageaddress="0x07AC3C" />
         </table>
+		<table name="Table 3D - UNKNOWN_687b0" storageaddress="0x72adc">
+			<table type="X Axis" storageaddress="0x072A28" />
+            <table type="Y Axis" storageaddress="0x072a90" />
+		</table>
+		<table name="Table 3D - UNKNOWN_68d30" storageaddress="0x760c0">
+			<table type="X Axis" storageaddress="0x076054" />
+            <table type="Y Axis" storageaddress="0x076074" />
+		</table>
+		<table name="Table 3D - UNKNOWN_68c4c" storageaddress="0x755d0">
+			<table type="X Axis" storageaddress="0x075594" />
+            <table type="Y Axis" storageaddress="0x0755c4" />
+		</table>
+		<table name="Table 3D - UNKNOWN_68c68" storageaddress="0x75654">
+			<table type="X Axis" storageaddress="0x075618" />
+            <table type="Y Axis" storageaddress="0x075648" />
+		</table>
+		<table name="Table 3D - UNKNOWN_68c84" storageaddress="0x756d8">
+			<table type="X Axis" storageaddress="0x07569c" />
+            <table type="Y Axis" storageaddress="0x0756cc" />
+		</table>
         <table name="Ignition Dwell Time " storageaddress="0x07B6FC">
             <table type="X Axis" storageaddress="0x07B6B4" />
             <table type="Y Axis" storageaddress="0x07B6D8" />
@@ -7382,10 +7492,10 @@
         <table name="Table 2D - 195 " storageaddress="0x078B80">
             <table type="Y Axis" storageaddress="0x078B7C" />
         </table>
-        <table name="Table 2D - 196 " storageaddress="0x078CCC">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x078CCC">
             <table type="Y Axis" storageaddress="0x078CA8" />
         </table>
-        <table name="Table 2D - 197 " storageaddress="0x078D04">
+        <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x078D04">
             <table type="Y Axis" storageaddress="0x078CE0" />
         </table>
         <table name="Table 2D - 198 " storageaddress="0x078DB8">
@@ -7998,11 +8108,11 @@
             <table type="X Axis" storageaddress="0x06E230" />
             <table type="Y Axis" storageaddress="0x06E260" />
         </table>
-        <table name="Table 3D - 15" storageaddress="0x06E378">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 4" storageaddress="0x06E378">
             <table type="X Axis" storageaddress="0x06E2E0" />
             <table type="Y Axis" storageaddress="0x06E330" />
         </table>
-        <table name="Table 3D - 16" storageaddress="0x06E584">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 2" storageaddress="0x06E584">
             <table type="X Axis" storageaddress="0x06E4E0" />
             <table type="Y Axis" storageaddress="0x06E53C" />
         </table>
@@ -8102,7 +8212,7 @@
             <table type="X Axis" storageaddress="0x071F7C" />
             <table type="Y Axis" storageaddress="0x071FD0" />
         </table>
-        <table name="Torque To Accel Position" storageaddress="0x072850">
+        <table name="Trans Requested Torque To Throttle Plate Position Position" storageaddress="0x072850">
             <table type="X Axis" storageaddress="0x07279C" />
             <table type="Y Axis" storageaddress="0x072804" />
         </table>
@@ -8166,7 +8276,7 @@
             <table type="X Axis" storageaddress="0x075B54" />
             <table type="Y Axis" storageaddress="0x075B98" />
         </table>
-        <table name="Table 3D - 59" storageaddress="0x075D68">
+        <table name="Ignition Timing Leading - DSC Mode A - Base" storageaddress="0x075D68">
             <table type="X Axis" storageaddress="0x075CD4" />
             <table type="Y Axis" storageaddress="0x075D1C" />
         </table>
@@ -9294,10 +9404,10 @@
         <table name="Table 2D - 195 " storageaddress="0x078C74">
             <table type="Y Axis" storageaddress="0x078C70" />
         </table>
-        <table name="Table 2D - 196 " storageaddress="0x078DC0">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078D9C" />
         </table>
-        <table name="Table 2D - 197 " storageaddress="0x078DF8">
+        <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x078DF8">
             <table type="Y Axis" storageaddress="0x078DD4" />
         </table>
         <table name="Table 2D - 198 " storageaddress="0x078F90">
@@ -9978,11 +10088,11 @@
             <table type="X Axis" storageaddress="0x06EDA4" />
             <table type="Y Axis" storageaddress="0x06EDD4" />
         </table>
-        <table name="Table 3D - 15" storageaddress="0x06EEEC">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 4" storageaddress="0x06EEEC">
             <table type="X Axis" storageaddress="0x06EE54" />
             <table type="Y Axis" storageaddress="0x06EEA4" />
         </table>
-        <table name="Table 3D - 16" storageaddress="0x06F0EC">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 2" storageaddress="0x06F0EC">
             <table type="X Axis" storageaddress="0x06F054" />
             <table type="Y Axis" storageaddress="0x06F0A4" />
         </table>
@@ -10082,7 +10192,7 @@
             <table type="X Axis" storageaddress="0x0728C4" />
             <table type="Y Axis" storageaddress="0x072918" />
         </table>
-        <table name="Torque To Accel Position" storageaddress="0x073090">
+        <table name="Trans Requested Torque To Throttle Plate Position Position" storageaddress="0x073090">
             <table type="X Axis" storageaddress="0x072FDC" />
             <table type="Y Axis" storageaddress="0x073044" />
         </table>
@@ -10154,7 +10264,7 @@
             <table type="X Axis" storageaddress="0x075F30" />
             <table type="Y Axis" storageaddress="0x075F74" />
         </table>
-        <table name="Table 3D - 59" storageaddress="0x076144">
+        <table name="Ignition Timing Leading - DSC Mode A - Base" storageaddress="0x076144">
             <table type="X Axis" storageaddress="0x0760B0" />
             <table type="Y Axis" storageaddress="0x0760F8" />
         </table>
@@ -10897,9 +11007,6 @@
         <table name="Ignition 13" storageaddress="0x06E880">
             <table type="Y Axis" storageaddress="0x06E87C" />
         </table>
-        <table name="Table 2D - 57 " storageaddress="0x06E8E8">
-            <table type="Y Axis" storageaddress="0x06E8B8" />
-        </table>
         <table name="Table 2D - 58 " storageaddress="0x06EB20">
             <table type="Y Axis" storageaddress="0x06EB0C" />
         </table>
@@ -11287,10 +11394,10 @@
         <table name="Table 2D - 195 " storageaddress="0x07759C">
             <table type="Y Axis" storageaddress="0x077598" />
         </table>
-        <table name="Table 2D - 196 " storageaddress="0x0776E8">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x0776E8">
             <table type="Y Axis" storageaddress="0x0776C4" />
         </table>
-        <table name="Table 2D - 197 " storageaddress="0x077720">
+        <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x077720">
             <table type="Y Axis" storageaddress="0x0776FC" />
         </table>
         <table name="Table 2D - 198 " storageaddress="0x0778B8">
@@ -11876,11 +11983,11 @@
             <table type="X Axis" storageaddress="0x06DE14" />
             <table type="Y Axis" storageaddress="0x06DE44" />
         </table>
-        <table name="Table 3D - 15" storageaddress="0x06DF5C">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 4" storageaddress="0x06DF5C">
             <table type="X Axis" storageaddress="0x06DEC4" />
             <table type="Y Axis" storageaddress="0x06DF14" />
         </table>
-        <table name="Table 3D - 16" storageaddress="0x06E15C">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 2" storageaddress="0x06E15C">
             <table type="X Axis" storageaddress="0x06E0C4" />
             <table type="Y Axis" storageaddress="0x06E114" />
         </table>
@@ -11968,7 +12075,7 @@
             <table type="X Axis" storageaddress="0x071934" />
             <table type="Y Axis" storageaddress="0x071988" />
         </table>
-        <table name="Torque To Accel Position" storageaddress="0x072100">
+        <table name="Trans Requested Torque To Throttle Plate Position Position" storageaddress="0x072100">
             <table type="X Axis" storageaddress="0x07204C" />
             <table type="Y Axis" storageaddress="0x0720B4" />
         </table>
@@ -12036,7 +12143,7 @@
             <table type="X Axis" storageaddress="0x074FA0" />
             <table type="Y Axis" storageaddress="0x074FE4" />
         </table>
-        <table name="Table 3D - 59" storageaddress="0x0751FC">
+        <table name="Ignition Timing Leading - DSC Mode A - Base" storageaddress="0x0751FC">
             <table type="X Axis" storageaddress="0x07515C" />
             <table type="Y Axis" storageaddress="0x0751B0" />
         </table>
@@ -13088,10 +13195,10 @@
         <table name="Table 2D - 195 " storageaddress="0x078A38">
             <table type="Y Axis" storageaddress="0x078A34" />
         </table>
-        <table name="Table 2D - 196 " storageaddress="0x078B84">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x078B84">
             <table type="Y Axis" storageaddress="0x078B60" />
         </table>
-        <table name="Table 2D - 197 " storageaddress="0x078BBC">
+        <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x078BBC">
             <table type="Y Axis" storageaddress="0x078B98" />
         </table>
         <table name="Table 2D - 199 " storageaddress="0x078F50">
@@ -13663,7 +13770,7 @@
             <table type="X Axis" storageaddress="0x07229C" />
             <table type="Y Axis" storageaddress="0x0722F0" />
         </table>
-        <table name="Torque To Accel Position" storageaddress="0x072E50">
+        <table name="Trans Requested Torque To Throttle Plate Position Position" storageaddress="0x072E50">
             <table type="X Axis" storageaddress="0x072D9C" />
             <table type="Y Axis" storageaddress="0x072E04" />
         </table>
@@ -14666,10 +14773,10 @@
         <table name="Table 2D - 195 " storageaddress="0x077980">
             <table type="Y Axis" storageaddress="0x07797C" />
         </table>
-        <table name="Table 2D - 196 " storageaddress="0x077ACC">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x077ACC">
             <table type="Y Axis" storageaddress="0x077AA8" />
         </table>
-        <table name="Table 2D - 197 " storageaddress="0x077B04">
+        <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x077B04">
             <table type="Y Axis" storageaddress="0x077AE0" />
         </table>
         <table name="Table 2D - 198 " storageaddress="0x077C9C">
@@ -15222,11 +15329,11 @@
             <table type="X Axis" storageaddress="0x06E8E8" />
             <table type="Y Axis" storageaddress="0x06E918" />
         </table>
-        <table name="Table 3D - 15" storageaddress="0x06EA30">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 4" storageaddress="0x06EA30">
             <table type="X Axis" storageaddress="0x06E998" />
             <table type="Y Axis" storageaddress="0x06E9E8" />
         </table>
-        <table name="Table 3D - 16" storageaddress="0x06EC30">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 2" storageaddress="0x06EC30">
             <table type="X Axis" storageaddress="0x06EB98" />
             <table type="Y Axis" storageaddress="0x06EBE8" />
         </table>
@@ -15310,7 +15417,7 @@
             <table type="X Axis" storageaddress="0x072338" />
             <table type="Y Axis" storageaddress="0x07238C" />
         </table>
-        <table name="Torque To Accel Position" storageaddress="0x072ADC">
+        <table name="Trans Requested Torque To Throttle Plate Position Position" storageaddress="0x072ADC">
             <table type="X Axis" storageaddress="0x072A28" />
             <table type="Y Axis" storageaddress="0x072A90" />
         </table>
@@ -15366,7 +15473,7 @@
             <table type="X Axis" storageaddress="0x074FD8" />
             <table type="Y Axis" storageaddress="0x075000" />
         </table>
-        <table name="Table 3D - 59" storageaddress="0x07587C">
+        <table name="Ignition Timing Leading - DSC Mode A - Base" storageaddress="0x07587C">
             <table type="X Axis" storageaddress="0x0757E8" />
             <table type="Y Axis" storageaddress="0x075830" />
         </table>
@@ -16346,10 +16453,10 @@
         <table name="Table 2D - 195 " storageaddress="0x077980">
             <table type="Y Axis" storageaddress="0x07797C" />
         </table>
-        <table name="Table 2D - 196 " storageaddress="0x077ACC">
+        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x077ACC">
             <table type="Y Axis" storageaddress="0x077AA8" />
         </table>
-        <table name="Table 2D - 197 " storageaddress="0x077B04">
+        <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x077B04">
             <table type="Y Axis" storageaddress="0x077AE0" />
         </table>
         <table name="Table 2D - 198 " storageaddress="0x077C9C">
@@ -16902,11 +17009,11 @@
             <table type="X Axis" storageaddress="0x06E8E8" />
             <table type="Y Axis" storageaddress="0x06E918" />
         </table>
-        <table name="Table 3D - 15" storageaddress="0x06EA30">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 4" storageaddress="0x06EA30">
             <table type="X Axis" storageaddress="0x06E998" />
             <table type="Y Axis" storageaddress="0x06E9E8" />
         </table>
-        <table name="Table 3D - 16" storageaddress="0x06EC30">
+        <table name="Igntion Leading Timing - DSC Mode A - Map 2" storageaddress="0x06EC30">
             <table type="X Axis" storageaddress="0x06EB98" />
             <table type="Y Axis" storageaddress="0x06EBE8" />
         </table>
@@ -16990,7 +17097,7 @@
             <table type="X Axis" storageaddress="0x072338" />
             <table type="Y Axis" storageaddress="0x07238C" />
         </table>
-        <table name="Torque To Accel Position" storageaddress="0x072ADC">
+        <table name="Trans Requested Torque To Throttle Plate Position" storageaddress="0x072ADC">
             <table type="X Axis" storageaddress="0x072A28" />
             <table type="Y Axis" storageaddress="0x072A90" />
         </table>
@@ -17046,7 +17153,7 @@
             <table type="X Axis" storageaddress="0x074FD8" />
             <table type="Y Axis" storageaddress="0x075000" />
         </table>
-        <table name="Table 3D - 59" storageaddress="0x07587C">
+        <table name="Ignition Timing Leading - DSC Mode A - Base" storageaddress="0x07587C">
             <table type="X Axis" storageaddress="0x0757E8" />
             <table type="Y Axis" storageaddress="0x075830" />
         </table>
@@ -17516,5 +17623,31 @@
         <table name="DTC c121 Enable/Disable#2" storageaddress="0x07CAFE" />
         <table name="DTC c155 Enable/Disable#2" storageaddress="0x07CAFF" />
         <table name="DTC c167 Enable/Disable#2" storageaddress="0x07CB00" />
+    </rom>
+	<rom base="Rx8Base">
+        <romid>
+            <xmlid>60E09L0N</xmlid>
+            <internalidaddress>2000</internalidaddress>
+            <internalidstring>60E09L0N</internalidstring>
+            <make>Mazda</make>
+            <model>RX8</model>
+            <memmodel>SH7055</memmodel>
+            <filesize>512kb</filesize>
+        </romid>
+        <romid>
+            <xmlid>N3H6EA</xmlid>
+            <internalidaddress>6BB00</internalidaddress>
+            <internalidstring>N3H6EA</internalidstring>
+            <make>Mazda</make>
+            <model>RX8</model>
+            <submodel>6 Port</submodel>
+            <market>US</market>
+            <year>2004</year>
+            <transmission>MT</transmission>
+        </romid>
+        <table name="Accel Pedal to Throttle Position #4" storageaddress="0x074078">
+            <table type="Y Axis" storageaddress="0x074030" />
+            <table type="X Axis" storageaddress="0x073FDC" />
+        </table>
     </rom>
 </roms>
