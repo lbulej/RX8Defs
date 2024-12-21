@@ -59,6 +59,42 @@
             <table name="Value" type="Y Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" format="0.00" />
             </table>
+        </table>	
+		<table name="Table Fueling - UNKNOWN_681bc" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="12" sizey="16">
+            <scaling expression="(x*0.000099999997)-1" to_byte="x" format="0.000" />
+            <table name="Engine Speed" units="RPM" type="X Axis" storagetype="float" endian="big"  >
+                <scaling expression="x" to_byte="x" format="0.00" />
+            </table>
+            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0.00" />
+            </table>
+        </table>	
+		<table name="Table Unknown - GearInput" category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="16" sizey="6">
+            <scaling expression="x*10" to_byte="x" format="0.000" />
+            <table name="Coolant Temperature" units="degC" type="X Axis" storagetype="float" endian="big"  >
+                <scaling expression="x" to_byte="x" format="0.00" />
+            </table>
+            <table name="Calculated Gear" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0" />
+            </table>
+        </table>	
+		<table name="Table Unknown2 - GearInput" category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="16" sizey="6">
+            <scaling expression="x*10" to_byte="x" format="0.000" />
+            <table name="Coolant Temperature" units="degC" type="X Axis" storagetype="float" endian="big"  >
+                <scaling expression="x" to_byte="x" format="0.00" />
+            </table>
+            <table name="Calculated Gear" type="Y Axis" storagetype="float" endian="big">
+                <scaling expression="x" to_byte="x" format="0" />
+            </table>
+        </table>
+		<table name="Table 3D - UNKNOWN_CL" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="16" sizey="12">
+            <scaling expression="(x*0.000099999997) - 1" to_byte="x" format="0.000" />
+            <table name="Engine Load"  type="X Axis" storagetype="float" endian="big"  >
+                <scaling units="g/rev" expression="x" to_byte="x" format="0.00" />
+            </table>
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" format="0" />
+            </table>
         </table>
         <table name="Barometric Pressure Sensor Max ADC Count" category="Sensors" type="1D" storagetype="uint16" endian="big" expression="x" to_byte="x" size="2" />
 		<table name="Cruise Control Max Speed - High Value" units="kph" category="Cruise Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
@@ -119,6 +155,10 @@
             <scaling expression="(x * 2 ) + 0" to_byte="(x - 0) / 2" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
+			<table name="Table 2D - Unknown_67824" category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="5">
+			<scaling expression="(x*0.0049999)" to_byte="x" format="0.00" />
+        <table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+		</table>
 		
 		<table name="Table 2D - LoadA" category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="18">
             <scaling expression="x*.00390625" to_byte="x" format="0.00" />
@@ -134,7 +174,7 @@
         </table>
 		<table name="Table 2D - LoadD" category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="12">
             <scaling expression="x*0.0078125" to_byte="x" format="0.00" />
-            <table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />	
         </table>
 		<table name="Table 2D - Uknown_693f4" category="Knock Control" type="2D" storagetype="uint8" endian="big" sizey="12">
             <scaling expression="(x*0.5)-64" to_byte="x" format="0.00" />
@@ -152,7 +192,11 @@
             <scaling expression="(x*0.5)-64" to_byte="x" format="0.00" />
             <table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-
+		<table name="Table 2D - Unknown_693e0" category="Knock Control" type="2D" storagetype="uint8" endian="big" sizey="5">
+			<scaling expression="(x*0.5)-64" to_byte="x" format="0.00" />
+			<table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+		</table>
+    
         <table name="Table 2D - 2 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="16">
             <scaling expression="(x * 2 ) + 0" to_byte="(x - 0) / 2" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
@@ -473,9 +517,11 @@
             <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 80 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="9">
+        <table name="Table 2D - 80 " category="Fuel Target (Open Loop)" type="2D" storagetype="uint16" endian="big" sizey="9">
             <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="kPa" expression="(x) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
+			</table>
         </table>
         <table name="Table 2D - 81 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="8">
             <scaling expression="(x * 0.0001 ) + 0" to_byte="(x - 0) / 0.0001" format="0.00" />
@@ -2109,12 +2155,12 @@
             </table>
         </table>
         <table name="Open Loop Fuelling Base (Engine Load) - Safe Mode" category="Fuel Target (Open Loop)" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="21" sizey="19">
-            <scaling expression="(1 / ( (x * 0.003906) + 1 )) * 14.7" to_byte="(14.7-x) / (0.003906*x)" format="0.000" />
+            <scaling expression="(1 / ( (x * 0.003906) + 1 ))" to_byte="(x) / (0.003906*x)" format="0.000" />
             <table name="Engine Load" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+                <scaling units="g/rev" expression="x" to_byte="x" />
             </table>
-            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Open Loop Fuelling Base (Throttle)" category="Fuel Target (Open Loop)" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="1" sizey="1">
@@ -2432,13 +2478,13 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Engine Load Compensation" category="Engine Load" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="18" sizey="20">
-            <scaling expression="(x * 1.5E-05 ) + 0.75" to_byte="(x - 0.75) / 1.5E-05" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+        <table name="Volumetric Efficiency" category="Engine Load" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="18" sizey="20">
+            <scaling expression="(x * 0.000015258789 ) + 0.75" to_byte="(x - 0.75) / 0.000015258789" format="0.0000" />
+            <table name="Engine Speed"  type="X Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="g/rev"  expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Table 3D - 71 " category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="16" sizey="3">
@@ -2731,10 +2777,10 @@
         </table>
         <table name="Table 3D - 103 " category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="6" sizey="6">
             <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
+            <table name="Engine Speed" units="RPM" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
+            <table name="Gear" type="Y Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
@@ -4759,7 +4805,7 @@
             <table type="X Axis" storageaddress="0x07808C" />
             <table type="Y Axis" storageaddress="0x0780D0" />
         </table>
-        <table name="Engine Load Compensation" storageaddress="0x0786E8">
+        <table name="Volumetric Efficiency" storageaddress="0x0786E8">
             <table type="X Axis" storageaddress="0x078650" />
             <table type="Y Axis" storageaddress="0x078698" />
         </table>
@@ -6359,6 +6405,10 @@
             <table type="X Axis" storageaddress="0x070558" />
             <table type="Y Axis" storageaddress="0x07058C" />
         </table>
+		<table name="Table 3D - UNKNOWN_CL" storageaddress="0x070b3c">
+            <table type="X Axis" storageaddress="0x70AFC" />
+            <table type="Y Axis" storageaddress="0x70ACC" />
+        </table>
         <table name="Table 3D - 26 " storageaddress="0x0706BE">
             <table type="X Axis" storageaddress="0x070660" />
             <table type="Y Axis" storageaddress="0x070680" />
@@ -6504,15 +6554,15 @@
             <table type="X Axis" storageaddress="0x076978" />
             <table type="Y Axis" storageaddress="0x0769BC" />
         </table>
-        <table name="Injector Latency Secondary" storageaddress="0x076D1C">
+        <table name="Injector Latency Primary" storageaddress="0x076D1C">
             <table type="X Axis" storageaddress="0x076CB4" />
             <table type="Y Axis" storageaddress="0x076CF8" />
         </table>
-        <table name="Injector Latency Primary" storageaddress="0x076EB8">
+        <table name="Injector Latency Secondary" storageaddress="0x076EB8">
             <table type="X Axis" storageaddress="0x076E50" />
             <table type="Y Axis" storageaddress="0x076E94" />
         </table>
-        <table name="Engine Load Compensation" storageaddress="0x0774AC">
+        <table name="Volumetric Efficiency" storageaddress="0x0774AC">
             <table type="X Axis" storageaddress="0x077414" />
             <table type="Y Axis" storageaddress="0x07745C" />
         </table>
@@ -8389,7 +8439,7 @@
             <table type="X Axis" storageaddress="0x077D80" />
             <table type="Y Axis" storageaddress="0x077DC4" />
         </table>
-        <table name="Engine Load Compensation" storageaddress="0x0785F4">
+        <table name="Volumetric Efficiency" storageaddress="0x0785F4">
             <table type="X Axis" storageaddress="0x07855C" />
             <table type="Y Axis" storageaddress="0x0785A4" />
         </table>
@@ -10377,7 +10427,7 @@
             <table type="X Axis" storageaddress="0x07808C" />
             <table type="Y Axis" storageaddress="0x0780D0" />
         </table>
-        <table name="Engine Load Compensation" storageaddress="0x0786E8">
+        <table name="Volumetric Efficiency" storageaddress="0x0786E8">
             <table type="X Axis" storageaddress="0x078650" />
             <table type="Y Axis" storageaddress="0x078698" />
         </table>
@@ -15586,7 +15636,7 @@
             <table type="X Axis" storageaddress="0x076E50" />
             <table type="Y Axis" storageaddress="0x076E94" />
         </table>
-        <table name="Engine Load Compensation" storageaddress="0x0774AC">
+        <table name="Volumetric Efficiency" storageaddress="0x0774AC">
             <table type="X Axis" storageaddress="0x077414" />
             <table type="Y Axis" storageaddress="0x07745C" />
         </table>
@@ -16101,7 +16151,13 @@
 		<table name="Table 2D - Uknown_693b8" storageaddress="0x0785c4">
             <table type="Y Axis" storageaddress="0x0785b0" />
         </table>
+		<table name="Table 2D - Unknown_693e0" storageaddress="0x000785f4">
+			<table type="Y Axis" storageaddress="0x000785e0" />
+		</table>
 		
+		<table name="Table 2D - Unknown_67824" storageaddress="0x6d614">
+			<table type="Y Axis" storageaddress="0x6d5ec" />
+		</table>
         <table name="Table 2D - 1 " storageaddress="0x06D534">
             <table type="Y Axis" storageaddress="0x06D4F4" />
         </table>
@@ -17099,6 +17155,11 @@
             <table type="X Axis" storageaddress="0x06D97C" />
             <table type="Y Axis" storageaddress="0x06D9BC" />
         </table>
+		<table name="Table Fueling - UNKNOWN_681bc" storageaddress="0x070b3c">
+            <table type="X Axis" storageaddress="0x070acc" />
+            <table type="Y Axis" storageaddress="0x070afc" />
+        </table>
+		
         <table name="Ignition Timing Leading Idle Load Compensation" storageaddress="0x06DB50">
             <table type="X Axis" storageaddress="0x06DB14" />
             <table type="Y Axis" storageaddress="0x06DB34" />
@@ -17135,6 +17196,17 @@
             <table type="X Axis" storageaddress="0x06e118" />
             <table type="Y Axis" storageaddress="0x06e124" />
         </table>
+		
+		<table name="Table Unknown - GearInput" storageaddress="0x06d9d4">
+            <table type="X Axis" storageaddress="0x06d97c" />
+            <table type="Y Axis" storageaddress="0x06d9bc" />
+        </table>
+		
+		<table name="Table Unknown2 - GearInput" storageaddress="0x06d91c">
+            <table type="X Axis" storageaddress="0x06d8c4" />
+            <table type="Y Axis" storageaddress="0x06d904" />
+        </table>
+		
         <table name="Ignition Minimum Leading/Trailing split" storageaddress="0x06EE30">
             <table type="X Axis" storageaddress="0x06ED98" />
             <table type="Y Axis" storageaddress="0x06EDE8" />
@@ -17315,7 +17387,7 @@
             <table type="X Axis" storageaddress="0x076E50" />
             <table type="Y Axis" storageaddress="0x076E94" />
         </table>
-        <table name="Engine Load Compensation" storageaddress="0x0774AC">
+        <table name="Volumetric Efficiency" storageaddress="0x0774AC">
             <table type="X Axis" storageaddress="0x077414" />
             <table type="Y Axis" storageaddress="0x07745C" />
         </table>
