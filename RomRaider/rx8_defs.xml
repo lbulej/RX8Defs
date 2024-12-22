@@ -96,6 +96,15 @@
                 <scaling units="RPM" expression="x" to_byte="x" format="0" />
             </table>
         </table>
+		<table name="Table 3D - UNKNOWN_68c84" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="12" sizey="3">
+            <scaling expression="(x*0.000030517578) - 1" to_byte="x" format="0.0000" />
+            <table name="Engine Speed"  type="X Axis" storagetype="float" endian="big"  >
+                <scaling units="RPM" expression="x" to_byte="x" format="0.00" />
+            </table>
+            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="g/rev" expression="x" to_byte="x" format="0.000" />
+            </table>
+        </table>
         <table name="Barometric Pressure Sensor Max ADC Count" category="Sensors" type="1D" storagetype="uint16" endian="big" expression="x" to_byte="x" size="2" />
 		<table name="Cruise Control Max Speed - High Value" units="kph" category="Cruise Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
 		<table name="Cruise Control Max Speed - Low Value" units="kph" category="Cruise Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
@@ -200,6 +209,25 @@
         <table name="Table 2D - 2 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="16">
             <scaling expression="(x * 2 ) + 0" to_byte="(x - 0) / 2" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        </table>
+		
+		<table name="Table 2D - Fuel Equation Something " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="8">
+            <scaling expression="(x * 0.00390625)" to_byte="(x - 0) " format="0.000" />
+            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units=""/>
+			</table>
+        </table>
+		<table name="Table 2D - Fuel Equation Something - Driver Off Throttle" category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="8">
+            <scaling expression="(x * 0.00390625)" to_byte="(x - 0) " format="0.000" />
+            <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="degC"/>
+			</table>
+        </table>
+		<table name="Table 2D - Fuel Equation Something 2 - Driver Off Throttle" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="8">
+            <scaling expression="(x * 0.00390625)" to_byte="(x - 0) " format="0.000" />
+            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="??"/>
+			</table>
         </table>
         <table name="Table 2D - 3 " category="E910" type="2D" storagetype="uint8" endian="big" sizey="10">
             <scaling expression="(x * 0.005 ) + 0" to_byte="(x - 0) / 0.005" format="0.00" />
@@ -2766,6 +2794,16 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
+		<table name="Table 3D - Fuel Equation Something - Driver On Throttle" category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="9" sizey="6">
+            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0) / 0.003906" format="0.00" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
+            </table>
+            <table name="Coolant Temp" type="X Axis" storagetype="float" endian="big">
+                <scaling units="degC" expression="x" to_byte="x" />
+            </table>
+        </table>
+		
         <table name="Table 3D - 102 " category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="24" sizey="10">
             <scaling expression="(x * 0.390625 ) + 0" to_byte="(x - 0) / 0.390625" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
@@ -5355,10 +5393,19 @@
         <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06DB08">
             <table type="Y Axis" storageaddress="0x06DAE4" />
         </table>
+		<table name="Table 2D - Fuel Equation Something - Driver Off Throttle" storageaddress="0x07b2ec">
+            <table type="Y Axis" storageaddress="0x07b2c8" />
+        </table>
+		<table name="Table 2D - Fuel Equation Something 2 - Driver Off Throttle" storageaddress="0x07b348">
+            <table type="Y Axis" storageaddress="0x07b328" />
+        </table>
         <table name="Igntion Leading Timing - DSC Mode A - Map1" storageaddress="0x06e8dc" />
 		<table name="Igntion Leading Timing - DSC Mode A - Map3" storageaddress="0x06e8dd" />
 		<table name="Table 2D - 10 " storageaddress="0x06E17C">
             <table type="Y Axis" storageaddress="0x06E164" />
+        </table>
+		<table name="Table 2D - Fuel Equation Something " storageaddress="0x07b318">
+            <table type="Y Axis" storageaddress="0x07b2f8" />
         </table>
         <table name="Table 2D - 11 " storageaddress="0x06E1A0">
             <table type="Y Axis" storageaddress="0x06E188" />
@@ -6677,6 +6724,10 @@
         <table name="Table 3D - 101 " storageaddress="0x07B420">
             <table type="X Axis" storageaddress="0x07B3E4" />
             <table type="Y Axis" storageaddress="0x07B408" />
+        </table>
+		<table name="Table 3D - Fuel Equation Something - Driver On Throttle" storageaddress="0x07B3ac">
+            <table type="Y Axis" storageaddress="0x07B394" />
+            <table type="X Axis" storageaddress="0x07B370" />
         </table>
         <table name="Table 3D - 102 " storageaddress="0x07B590">
             <table type="X Axis" storageaddress="0x07B508" />
