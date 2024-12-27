@@ -105,7 +105,19 @@
                 <scaling units="g/rev" expression="x" to_byte="x" format="0.000" />
             </table>
         </table>
+		<table name="Table 3D - UNKNOWN_6882c" category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="9" sizey="9">
+            <scaling expression="(x*0.0049999999)" to_byte="x" format="0.0000" />
+            <table name="Abs Manifold Pressure"  type="X Axis" storagetype="float" endian="big"  >
+                <scaling units="kPa" expression="x" to_byte="x" format="0.00" />
+            </table>
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" format="0.0" />
+            </table>
+        </table>
         <table name="Barometric Pressure Sensor Max ADC Count" category="Sensors" type="1D" storagetype="uint16" endian="big" expression="x" to_byte="x" size="2" />
+		<table name="Fuel Air Ratio" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" >
+			<scaling units="1/AFR" format="0.00000" />
+		</table>
 		<table name="Cruise Control Max Speed - High Value" units="kph" category="Cruise Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
 		<table name="Cruise Control Max Speed - Low Value" units="kph" category="Cruise Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Barometric Pressure Sensor Min ADC Count" category="Sensors" type="1D" storagetype="uint16" endian="big" expression="x" to_byte="x" size="2" />
@@ -204,6 +216,12 @@
 		<table name="Table 2D - Unknown_693e0" category="Knock Control" type="2D" storagetype="uint8" endian="big" sizey="5">
 			<scaling expression="(x*0.5)-64" to_byte="x" format="0.00" />
 			<table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+		</table>
+		<table name="Table 2D - Unknown_6916c" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="1">
+			<scaling expression="(x*0.0099999998)" to_byte="x" format="0.00" />
+			<table name="Coolant Temp" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" >
+				<scaling units ="degC"/>
+			</table>
 		</table>
     
         <table name="Table 2D - 2 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="16">
@@ -639,8 +657,8 @@
             <scaling expression="(x * 0.005 ) + 0" to_byte="(x - 0) / 0.005" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Fuelling 8" category="Fuel Target (Open Loop)" type="2D" storagetype="uint8" endian="big" sizey="7">
-            <scaling expression="(1 / ( (x * 0.003906) + 1 )) * 14.7" to_byte="(14.7-x) / (0.003906*x)" format="0.000" />
+        <table name="Open Loop Changeover Enrichment" category="Fuel Target (Open Loop)" type="2D" storagetype="uint8" endian="big" sizey="7">
+            <scaling expression="x * 0.00390625" to_byte="(x) / (0.003906*x)" format="0.000" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 104 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="9">
@@ -1008,8 +1026,10 @@
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 194 " category="Secondary Air Pump" type="2D" storagetype="uint8" endian="big" sizey="7">
-            <scaling expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <scaling name="Engine Load" units="g/rev" expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
+            <table name="Coolant Temp" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" >
+				<scaling units="degC"/>
+			</table>
         </table>
         <table name="Table 2D - 195 " category="Secondary Air Pump" type="2D" storagetype="uint8" endian="big" sizey="1">
             <scaling expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
@@ -2083,7 +2103,7 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Table 3D - 23 " category="Rear O2 Correction" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="12" sizey="3">
+        <table name="Closed Loop WOT Enrichment??" category="Fuel Target (Closed Loop)" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="12" sizey="3">
             <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
@@ -2452,7 +2472,16 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Table 3D - 64 " category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="11" sizey="11">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" category="Fuel Injection" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="11" sizey="11">
+            <scaling expression="(x * 0.003906 ) + 0.75" to_byte="(x - 0.75) / 0.003906" format="0.00" />
+            <table name="Weighted Engine Temperature" type="X Axis" storagetype="float" endian="big">
+                <scaling units="degC" expression="x" to_byte="x" />
+            </table>
+            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="g/rev" expression="x" to_byte="x" />
+            </table>
+        </table>
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" category="Fuel Injection" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="1" sizey="1">
             <scaling expression="(x * 0.003906 ) + 0.75" to_byte="(x - 0.75) / 0.003906" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
@@ -2461,16 +2490,7 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Table 3D - 65 " category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="1" sizey="1">
-            <scaling expression="(x * 0.003906 ) + 0.75" to_byte="(x - 0.75) / 0.003906" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
-            </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
-            </table>
-        </table>
-        <table name="Table 3D - 66 " category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="1" sizey="1">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" category="Fuel Injection" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="1" sizey="1">
             <scaling expression="(x * 0.003906 ) + 0.75" to_byte="(x - 0.75) / 0.003906" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" />
@@ -3660,7 +3680,7 @@
         <table name="Table 2D - 102 " storageaddress="0x072064">
             <table type="Y Axis" storageaddress="0x072060" />
         </table>
-        <table name="Fuelling 8" storageaddress="0x072084">
+        <table name="Open Loop Changeover Enrichment" storageaddress="0x072084">
             <table type="Y Axis" storageaddress="0x072068" />
         </table>
         <table name="Table 2D - 104 " storageaddress="0x072C20">
@@ -4655,7 +4675,7 @@
             <table type="X Axis" storageaddress="0x070868" />
             <table type="Y Axis" storageaddress="0x070888" />
         </table>
-        <table name="Table 3D - 23 " storageaddress="0x070924">
+        <table name="Closed Loop WOT Enrichment??" storageaddress="0x070924">
             <table type="X Axis" storageaddress="0x0708E8" />
             <table type="Y Axis" storageaddress="0x070918" />
         </table>
@@ -4819,15 +4839,15 @@
             <table type="X Axis" storageaddress="0x076AB8" />
             <table type="Y Axis" storageaddress="0x076ACC" />
         </table>
-        <table name="Table 3D - 64 " storageaddress="0x077A9C">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" storageaddress="0x077A9C">
             <table type="X Axis" storageaddress="0x077A44" />
             <table type="Y Axis" storageaddress="0x077A70" />
         </table>
-        <table name="Table 3D - 65 " storageaddress="0x077B20">
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" storageaddress="0x077B20">
             <table type="X Axis" storageaddress="0x077B18" />
             <table type="Y Axis" storageaddress="0x077B1C" />
         </table>
-        <table name="Table 3D - 66 " storageaddress="0x077B2C">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" storageaddress="0x077B2C">
             <table type="X Axis" storageaddress="0x077B24" />
             <table type="Y Axis" storageaddress="0x077B28" />
         </table>
@@ -5344,6 +5364,7 @@
             <transmission>MT</transmission>
         </romid>
         <table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06D46C" />
+		<table name="Fuel Air Ratio" storageaddress="0x77150"/>
         <table name="Barometric Pressure Sensor Min ADC Count" storageaddress="0x06D46E" />
         <table name="Barometric Pressure Sensor Min Voltage" storageaddress="0x0796FC" />
         <table name="Barometric Pressure Sensor Max Voltage" storageaddress="0x079700" />
@@ -5626,7 +5647,7 @@
         <table name="Table 2D - 102 " storageaddress="0x071AD8">
             <table type="Y Axis" storageaddress="0x071AD4" />
         </table>
-        <table name="Fuelling 8" storageaddress="0x071AF8">
+        <table name="Open Loop Changeover Enrichment" storageaddress="0x071AF8">
             <table type="Y Axis" storageaddress="0x071ADC" />
         </table>
         <table name="Table 2D - 104 " storageaddress="0x072694">
@@ -5811,6 +5832,9 @@
         </table>
         <table name="Table 2D - 176 " storageaddress="0x077128">
             <table type="Y Axis" storageaddress="0x0770F4" />
+        </table>
+		<table name="Table 2D - Unknown_6916c" storageaddress="0x77908">
+            <table type="Y Axis" storageaddress="0x77904" />
         </table>
         <table name="Table 2D - 177 Might be Primary/Secondary Ratio" storageaddress="0x077220">
             <table type="Y Axis" storageaddress="0x0771DC" />
@@ -6440,7 +6464,7 @@
             <table type="X Axis" storageaddress="0x070370" />
             <table type="Y Axis" storageaddress="0x070390" />
         </table>
-        <table name="Table 3D - 23 " storageaddress="0x07042C">
+        <table name="Closed Loop WOT Enrichment??" storageaddress="0x07042C">
             <table type="X Axis" storageaddress="0x0703F0" />
             <table type="Y Axis" storageaddress="0x070420" />
         </table>
@@ -6576,6 +6600,10 @@
             <table type="X Axis" storageaddress="0x075534" />
             <table type="Y Axis" storageaddress="0x075540" />
         </table>
+		<table name="Table 3D - UNKNOWN_6882c" storageaddress="0x732b8">
+            <table type="X Axis" storageaddress="0x73270" />
+            <table type="Y Axis" storageaddress="0x73294" />
+        </table>
 		<table name="Engine Max Torque" storageaddress="0x077a94" />
         <table name="Table 3D - 62 " storageaddress="0x0760C0">
             <table type="X Axis" storageaddress="0x076054" />
@@ -6585,15 +6613,15 @@
             <table type="X Axis" storageaddress="0x0761F0" />
             <table type="Y Axis" storageaddress="0x076204" />
         </table>
-        <table name="Table 3D - 64 " storageaddress="0x076860">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" storageaddress="0x076860">
             <table type="X Axis" storageaddress="0x076808" />
             <table type="Y Axis" storageaddress="0x076834" />
         </table>
-        <table name="Table 3D - 65 " storageaddress="0x0768E4">
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" storageaddress="0x0768E4">
             <table type="X Axis" storageaddress="0x0768DC" />
             <table type="Y Axis" storageaddress="0x0768E0" />
         </table>
-        <table name="Table 3D - 66 " storageaddress="0x0768F0">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" storageaddress="0x0768F0">
             <table type="X Axis" storageaddress="0x0768E8" />
             <table type="Y Axis" storageaddress="0x0768EC" />
         </table>
@@ -7392,7 +7420,7 @@
         <table name="Table 2D - 102 " storageaddress="0x07171C">
             <table type="Y Axis" storageaddress="0x071718" />
         </table>
-        <table name="Fuelling 8" storageaddress="0x07173C">
+        <table name="Open Loop Changeover Enrichment" storageaddress="0x07173C">
             <table type="Y Axis" storageaddress="0x071720" />
         </table>
         <table name="Table 2D - 105 " storageaddress="0x072408">
@@ -8310,7 +8338,7 @@
             <table type="X Axis" storageaddress="0x06FD10" />
             <table type="Y Axis" storageaddress="0x06FD30" />
         </table>
-        <table name="Table 3D - 23 " storageaddress="0x06FDCC">
+        <table name="Closed Loop WOT Enrichment??" storageaddress="0x06FDCC">
             <table type="X Axis" storageaddress="0x06FD90" />
             <table type="Y Axis" storageaddress="0x06FDC0" />
         </table>
@@ -8466,15 +8494,15 @@
             <table type="X Axis" storageaddress="0x0766DC" />
             <table type="Y Axis" storageaddress="0x0766F0" />
         </table>
-        <table name="Table 3D - 64 " storageaddress="0x0776C0">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" storageaddress="0x0776C0">
             <table type="X Axis" storageaddress="0x077668" />
             <table type="Y Axis" storageaddress="0x077694" />
         </table>
-        <table name="Table 3D - 65 " storageaddress="0x077744">
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" storageaddress="0x077744">
             <table type="X Axis" storageaddress="0x07773C" />
             <table type="Y Axis" storageaddress="0x077740" />
         </table>
-        <table name="Table 3D - 66 " storageaddress="0x077750">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" storageaddress="0x077750">
             <table type="X Axis" storageaddress="0x077748" />
             <table type="Y Axis" storageaddress="0x07774C" />
         </table>
@@ -9295,7 +9323,7 @@
         <table name="Table 2D - 102 " storageaddress="0x072064">
             <table type="Y Axis" storageaddress="0x072060" />
         </table>
-        <table name="Fuelling 8" storageaddress="0x072084">
+        <table name="Open Loop Changeover Enrichment" storageaddress="0x072084">
             <table type="Y Axis" storageaddress="0x072068" />
         </table>
         <table name="Table 2D - 104 " storageaddress="0x072C20">
@@ -10290,7 +10318,7 @@
             <table type="X Axis" storageaddress="0x070868" />
             <table type="Y Axis" storageaddress="0x070888" />
         </table>
-        <table name="Table 3D - 23 " storageaddress="0x070924">
+        <table name="Closed Loop WOT Enrichment??" storageaddress="0x070924">
             <table type="X Axis" storageaddress="0x0708E8" />
             <table type="Y Axis" storageaddress="0x070918" />
         </table>
@@ -10454,15 +10482,15 @@
             <table type="X Axis" storageaddress="0x076AB8" />
             <table type="Y Axis" storageaddress="0x076ACC" />
         </table>
-        <table name="Table 3D - 64 " storageaddress="0x077A9C">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" storageaddress="0x077A9C">
             <table type="X Axis" storageaddress="0x077A44" />
             <table type="Y Axis" storageaddress="0x077A70" />
         </table>
-        <table name="Table 3D - 65 " storageaddress="0x077B20">
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" storageaddress="0x077B20">
             <table type="X Axis" storageaddress="0x077B18" />
             <table type="Y Axis" storageaddress="0x077B1C" />
         </table>
-        <table name="Table 3D - 66 " storageaddress="0x077B2C">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" storageaddress="0x077B2C">
             <table type="X Axis" storageaddress="0x077B24" />
             <table type="Y Axis" storageaddress="0x077B28" />
         </table>
@@ -11300,7 +11328,7 @@
         <table name="Table 2D - 102 " storageaddress="0x0710D4">
             <table type="Y Axis" storageaddress="0x0710D0" />
         </table>
-        <table name="Fuelling 8" storageaddress="0x0710F4">
+        <table name="Open Loop Changeover Enrichment" storageaddress="0x0710F4">
             <table type="Y Axis" storageaddress="0x0710D8" />
         </table>
         <table name="Table 2D - 104 " storageaddress="0x071C90">
@@ -12185,7 +12213,7 @@
             <table type="X Axis" storageaddress="0x06F8D8" />
             <table type="Y Axis" storageaddress="0x06F8F8" />
         </table>
-        <table name="Table 3D - 23 " storageaddress="0x06F994">
+        <table name="Closed Loop WOT Enrichment??" storageaddress="0x06F994">
             <table type="X Axis" storageaddress="0x06F958" />
             <table type="Y Axis" storageaddress="0x06F988" />
         </table>
@@ -12333,15 +12361,15 @@
             <table type="X Axis" storageaddress="0x075D54" />
             <table type="Y Axis" storageaddress="0x075D68" />
         </table>
-        <table name="Table 3D - 64 " storageaddress="0x0763C4">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" storageaddress="0x0763C4">
             <table type="X Axis" storageaddress="0x07636C" />
             <table type="Y Axis" storageaddress="0x076398" />
         </table>
-        <table name="Table 3D - 65 " storageaddress="0x076448">
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" storageaddress="0x076448">
             <table type="X Axis" storageaddress="0x076440" />
             <table type="Y Axis" storageaddress="0x076444" />
         </table>
-        <table name="Table 3D - 66 " storageaddress="0x076454">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" storageaddress="0x076454">
             <table type="X Axis" storageaddress="0x07644C" />
             <table type="Y Axis" storageaddress="0x076450" />
         </table>
@@ -13122,7 +13150,7 @@
         <table name="Table 2D - 102 " storageaddress="0x071D1C">
             <table type="Y Axis" storageaddress="0x071D18" />
         </table>
-        <table name="Fuelling 8" storageaddress="0x071D3C">
+        <table name="Open Loop Changeover Enrichment" storageaddress="0x071D3C">
             <table type="Y Axis" storageaddress="0x071D20" />
         </table>
         <table name="Table 2D - 105 " storageaddress="0x072A08">
@@ -13888,7 +13916,7 @@
             <table type="X Axis" storageaddress="0x070310" />
             <table type="Y Axis" storageaddress="0x070330" />
         </table>
-        <table name="Table 3D - 23 " storageaddress="0x0703CC">
+        <table name="Closed Loop WOT Enrichment??" storageaddress="0x0703CC">
             <table type="X Axis" storageaddress="0x070390" />
             <table type="Y Axis" storageaddress="0x0703C0" />
         </table>
@@ -14004,15 +14032,15 @@
             <table type="X Axis" storageaddress="0x076F08" />
             <table type="Y Axis" storageaddress="0x076F1C" />
         </table>
-        <table name="Table 3D - 64 " storageaddress="0x077578">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" storageaddress="0x077578">
             <table type="X Axis" storageaddress="0x077520" />
             <table type="Y Axis" storageaddress="0x07754C" />
         </table>
-        <table name="Table 3D - 65 " storageaddress="0x0775FC">
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" storageaddress="0x0775FC">
             <table type="X Axis" storageaddress="0x0775F4" />
             <table type="Y Axis" storageaddress="0x0775F8" />
         </table>
-        <table name="Table 3D - 66 " storageaddress="0x077608">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" storageaddress="0x077608">
             <table type="X Axis" storageaddress="0x077600" />
             <table type="Y Axis" storageaddress="0x077604" />
         </table>
@@ -14721,7 +14749,7 @@
         <table name="Table 2D - 102 " storageaddress="0x071AD8">
             <table type="Y Axis" storageaddress="0x071AD4" />
         </table>
-        <table name="Fuelling 8" storageaddress="0x071AF8">
+        <table name="Open Loop Changeover Enrichment" storageaddress="0x071AF8">
             <table type="Y Axis" storageaddress="0x071ADC" />
         </table>
         <table name="Table 2D - 104 " storageaddress="0x072694">
@@ -15531,7 +15559,7 @@
             <table type="X Axis" storageaddress="0x070370" />
             <table type="Y Axis" storageaddress="0x070390" />
         </table>
-        <table name="Table 3D - 23 " storageaddress="0x07042C">
+        <table name="Closed Loop WOT Enrichment??" storageaddress="0x07042C">
             <table type="X Axis" storageaddress="0x0703F0" />
             <table type="Y Axis" storageaddress="0x070420" />
         </table>
@@ -15663,15 +15691,15 @@
             <table type="X Axis" storageaddress="0x0761F0" />
             <table type="Y Axis" storageaddress="0x076204" />
         </table>
-        <table name="Table 3D - 64 " storageaddress="0x076860">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" storageaddress="0x076860">
             <table type="X Axis" storageaddress="0x076808" />
             <table type="Y Axis" storageaddress="0x076834" />
         </table>
-        <table name="Table 3D - 65 " storageaddress="0x0768E4">
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" storageaddress="0x0768E4">
             <table type="X Axis" storageaddress="0x0768DC" />
             <table type="Y Axis" storageaddress="0x0768E0" />
         </table>
-        <table name="Table 3D - 66 " storageaddress="0x0768F0">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" storageaddress="0x0768F0">
             <table type="X Axis" storageaddress="0x0768E8" />
             <table type="Y Axis" storageaddress="0x0768EC" />
         </table>
@@ -16452,7 +16480,7 @@
         <table name="Table 2D - 102 " storageaddress="0x071AD8">
             <table type="Y Axis" storageaddress="0x071AD4" />
         </table>
-        <table name="Fuelling 8" storageaddress="0x071AF8">
+        <table name="Open Loop Changeover Enrichment" storageaddress="0x071AF8">
             <table type="Y Axis" storageaddress="0x071ADC" />
         </table>
         <table name="Table 2D - 104 " storageaddress="0x072694">
@@ -17282,7 +17310,7 @@
             <table type="X Axis" storageaddress="0x070370" />
             <table type="Y Axis" storageaddress="0x070390" />
         </table>
-        <table name="Table 3D - 23 " storageaddress="0x07042C">
+        <table name="Closed Loop WOT Enrichment??" storageaddress="0x07042C">
             <table type="X Axis" storageaddress="0x0703F0" />
             <table type="Y Axis" storageaddress="0x070420" />
         </table>
@@ -17414,15 +17442,15 @@
             <table type="X Axis" storageaddress="0x0761F0" />
             <table type="Y Axis" storageaddress="0x076204" />
         </table>
-        <table name="Table 3D - 64 " storageaddress="0x076860">
+        <table name="Primary Injector Weighted Engine Temp Multiplier" storageaddress="0x076860">
             <table type="X Axis" storageaddress="0x076808" />
             <table type="Y Axis" storageaddress="0x076834" />
         </table>
-        <table name="Table 3D - 65 " storageaddress="0x0768E4">
+        <table name="Secondary 1 Injector Weighted Engine Temp Multiplier" storageaddress="0x0768E4">
             <table type="X Axis" storageaddress="0x0768DC" />
             <table type="Y Axis" storageaddress="0x0768E0" />
         </table>
-        <table name="Table 3D - 66 " storageaddress="0x0768F0">
+        <table name="Secondary 2 Injector Weighted Engine Temp Multiplier" storageaddress="0x0768F0">
             <table type="X Axis" storageaddress="0x0768E8" />
             <table type="Y Axis" storageaddress="0x0768EC" />
         </table>
