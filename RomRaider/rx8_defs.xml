@@ -125,8 +125,22 @@
         <table name="Barometric Pressure Sensor Max Voltage" category="Sensors" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
         <table name="Barometric Pressure Sensor Slope" category="Sensors" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Barometric Pressure Sensor Offset" category="Sensors" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
-        <table name="Cold Rev Limit" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
-        <table name="Cold Rev Limit Threshold" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2" />
+        <table name="Cold Rev Limit" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="RPM"/>
+		</table>
+		<table name="Cold Rev Limit Hysteresis" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="RPM"/>
+		</table>
+		<table name="Normal Rev Limit" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="RPM"/>
+		</table>
+		<table name="Normal Rev Limit Hysteresis" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="RPM"/>
+		</table>
+        <table name="Cold Rev Temperature Limit" category="Limiters" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="2">
+			<scaling name="Coolant Temperature" units="degC"/>
+		</table>
+			
         <table name="Primary Injector Size" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
 		<table name="Engine Max Torque" category="Torque Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Secondary Injector Size" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
@@ -1035,9 +1049,11 @@
             <scaling expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" category="Torque Control" type="2D" storagetype="uint16" endian="big" sizey="9">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
-            <table name="Intake Temp (degC)" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Max Load - Intake Temperature Compensation" category="Engine Load" type="2D" storagetype="uint16" endian="big" sizey="8">
+            <scaling units="mult" expression="x*0.000030517578" to_byte="(x - 0) / 0.001" format="0.00" />
+            <table name="Intake Temp" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="degC"/>
+			</table>
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" category="Torque Control" type="2D" storagetype="uint16" endian="big" sizey="9">
             <scaling units="kPa" expression="x * 0.001" to_byte="(x - 0) / 0.001" format="0.000" />
@@ -1143,17 +1159,21 @@
             <scaling expression="(x * 1E-05 ) + 0" to_byte="(x - 0) / 1E-05" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 222 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="18">
-            <scaling expression="(x * 3.1E-05 ) + 0" to_byte="(x - 0) / 3.1E-05" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="RPM Based Max Engine Load" category="Engine Load" type="2D" storagetype="uint16" endian="big" sizey="18">
+            <scaling units="g/rev" expression="(x * 3.1E-05 ) + 0" to_byte="(x - 0) / 3.1E-05" format="0.00" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units ="RPM"/>
+			</table>
         </table>
         <table name="Table 2D - 223 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="8">
             <scaling expression="(x * 3.1E-05 ) + 0" to_byte="(x - 0) / 3.1E-05" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 224 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="8">
-            <scaling expression="(x * 3.1E-05 ) + 0" to_byte="(x - 0) / 3.1E-05" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Max Load - Barometric Pressure Compensation" category="Engine Load" type="2D" storagetype="uint16" endian="big" sizey="8">
+            <scaling units="mult" expression="x*0.000030517578" to_byte="(x - 0) / 3.1E-05" format="0.00" />
+            <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="kPa"/>
+			</table>
         </table>
         <table name="Table 2D - 225 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="9">
             <scaling expression="(x * 2E-06 ) + -0.05" to_byte="(x - -0.05) / 2E-06" format="0.00" />
@@ -3359,7 +3379,7 @@
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x07A9C0" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x07A9BC" />
         <table name="Cold Rev Limit" storageaddress="0x06D544" />
-        <table name="Cold Rev Limit Threshold" storageaddress="0x06D53C" />
+        <table name="Cold Rev Temperature Limit" storageaddress="0x06D53C" />
         <table name="Primary Injector Size" storageaddress="0x0783A0" />
         <table name="Secondary Injector Size" storageaddress="0x0783A8" />
         <table name="Secondary Injector Size #2" storageaddress="0x0783B0" />
@@ -3969,7 +3989,7 @@
         <table name="Table 2D - 195 " storageaddress="0x078C74">
             <table type="Y Axis" storageaddress="0x078C70" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x078DC0">
+        <table name="Max Load - Intake Temperature Compensation" storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078D9C" />
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x078DF8">
@@ -4047,13 +4067,13 @@
         <table name="Table 2D - 221 " storageaddress="0x079D5C">
             <table type="Y Axis" storageaddress="0x079D24" />
         </table>
-        <table name="Table 2D - 222 " storageaddress="0x07A070">
+        <table name="RPM Based Max Engine Load" storageaddress="0x07A070">
             <table type="Y Axis" storageaddress="0x07A028" />
         </table>
         <table name="Table 2D - 223 " storageaddress="0x07A0B4">
             <table type="Y Axis" storageaddress="0x07A094" />
         </table>
-        <table name="Table 2D - 224 " storageaddress="0x07A0E4">
+        <table name="Max Load - Barometric Pressure Compensation" storageaddress="0x07A0E4">
             <table type="Y Axis" storageaddress="0x07A0C4" />
         </table>
         <table name="Table 2D - 225 " storageaddress="0x07A118">
@@ -5373,7 +5393,7 @@
             <year>2004</year>
             <transmission>MT</transmission>
         </romid>
-        <table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06D46C" />
+		<table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06D46C" />
 		<table name="Fuel Air Ratio" storageaddress="0x77150"/>
         <table name="Barometric Pressure Sensor Min ADC Count" storageaddress="0x06D46E" />
         <table name="Barometric Pressure Sensor Min Voltage" storageaddress="0x0796FC" />
@@ -5381,7 +5401,10 @@
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x079790" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x07978C" />
         <table name="Cold Rev Limit" storageaddress="0x06DA44" />
-        <table name="Cold Rev Limit Threshold" storageaddress="0x06DA3C" />
+		<table name="Cold Rev Limit Hysteresis" storageaddress="0x6da48" />
+        <table name="Cold Rev Temperature Limit" storageaddress="0x06DA3C" />
+		<table name="Normal Rev Limit" storageaddress="0x6da4c" />
+		<table name="Normal Rev Limit Hysteresis" storageaddress="0x6da50" />
         <table name="Primary Injector Size" storageaddress="0x077164" />
         <table name="Secondary Injector Size" storageaddress="0x07716C" />
         <table name="Secondary Injector Size #2" storageaddress="0x077174" />
@@ -5394,6 +5417,9 @@
         <table name="Closed Loop Fuelling Threshold (Temperature B)" storageaddress="0x0716E8" />
         <table name="Closed Loop Fuelling Threshold (Unknown B)" storageaddress="0x071764" />
         <table name="Closed Loop Fuelling Threshold (Temperature C)" storageaddress="0x0717A4" />
+		<table name="Max Load - Intake Temperature Compensation" storageaddress="0x078DC0">
+            <table type="Y Axis" storageaddress="0x078D9C" />
+        </table>
         <table name="Table 2D - 0 " storageaddress="0x06D4E4">
             <table type="Y Axis" storageaddress="0x06D4A4" />
         </table>
@@ -5882,7 +5908,7 @@
         <table name="Table 2D - 195 " storageaddress="0x077980">
             <table type="Y Axis" storageaddress="0x07797C" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x077ACC">
+        <table name="Max Load - Intake Temperature Compensation" storageaddress="0x077ACC">
             <table type="Y Axis" storageaddress="0x077AA8" />
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x077B04">
@@ -5960,13 +5986,13 @@
         <table name="Table 2D - 221 " storageaddress="0x078A68">
             <table type="Y Axis" storageaddress="0x078A30" />
         </table>
-        <table name="Table 2D - 222 " storageaddress="0x078D7C">
+        <table name="RPM Based Max Engine Load" storageaddress="0x078D7C">
             <table type="Y Axis" storageaddress="0x078D34" />
         </table>
         <table name="Table 2D - 223 " storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078DA0" />
         </table>
-        <table name="Table 2D - 224 " storageaddress="0x078DF0">
+        <table name="Max Load - Barometric Pressure Compensation" storageaddress="0x078DF0">
             <table type="Y Axis" storageaddress="0x078DD0" />
         </table>
         <table name="Table 2D - 225 " storageaddress="0x078E24">
@@ -7126,7 +7152,7 @@
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x07ABF8" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x07ABF4" />
         <table name="Cold Rev Limit" storageaddress="0x06C744" />
-        <table name="Cold Rev Limit Threshold" storageaddress="0x06C73C" />
+        <table name="Cold Rev Temperature Limit" storageaddress="0x06C73C" />
         <table name="Primary Injector Size" storageaddress="0x078184" />
         <table name="Secondary Injector Size" storageaddress="0x07818C" />
         <table name="Secondary Injector Size #2" storageaddress="0x078194" />
@@ -7700,7 +7726,7 @@
         <table name="Table 2D - 195 " storageaddress="0x078B80">
             <table type="Y Axis" storageaddress="0x078B7C" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x078CCC">
+        <table name="Max Load - Intake Temperature Compensation" storageaddress="0x078CCC">
             <table type="Y Axis" storageaddress="0x078CA8" />
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x078D04">
@@ -7757,13 +7783,13 @@
         <table name="Table 2D - 221 " storageaddress="0x079E04">
             <table type="Y Axis" storageaddress="0x079DCC" />
         </table>
-        <table name="Table 2D - 222 " storageaddress="0x07A118">
+        <table name="RPM Based Max Engine Load" storageaddress="0x07A118">
             <table type="Y Axis" storageaddress="0x07A0D0" />
         </table>
         <table name="Table 2D - 223 " storageaddress="0x07A15C">
             <table type="Y Axis" storageaddress="0x07A13C" />
         </table>
-        <table name="Table 2D - 224 " storageaddress="0x07A18C">
+        <table name="Max Load - Barometric Pressure Compensation" storageaddress="0x07A18C">
             <table type="Y Axis" storageaddress="0x07A16C" />
         </table>
         <table name="Table 2D - 225 " storageaddress="0x07A1C0">
@@ -9011,7 +9037,7 @@
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x07A9C0" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x07A9BC" />
         <table name="Cold Rev Limit" storageaddress="0x06D544" />
-        <table name="Cold Rev Limit Threshold" storageaddress="0x06D53C" />
+        <table name="Cold Rev Temperature Limit" storageaddress="0x06D53C" />
         <table name="Primary Injector Size" storageaddress="0x0783A0" />
         <table name="Secondary Injector Size" storageaddress="0x0783A8" />
         <table name="Secondary Injector Size #2" storageaddress="0x0783B0" />
@@ -9612,7 +9638,7 @@
         <table name="Table 2D - 195 " storageaddress="0x078C74">
             <table type="Y Axis" storageaddress="0x078C70" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x078DC0">
+        <table name="Max Load - Intake Temperature Compensation" storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078D9C" />
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x078DF8">
@@ -9690,13 +9716,13 @@
         <table name="Table 2D - 221 " storageaddress="0x079D5C">
             <table type="Y Axis" storageaddress="0x079D24" />
         </table>
-        <table name="Table 2D - 222 " storageaddress="0x07A070">
+        <table name="RPM Based Max Engine Load" storageaddress="0x07A070">
             <table type="Y Axis" storageaddress="0x07A028" />
         </table>
         <table name="Table 2D - 223 " storageaddress="0x07A0B4">
             <table type="Y Axis" storageaddress="0x07A094" />
         </table>
-        <table name="Table 2D - 224 " storageaddress="0x07A0E4">
+        <table name="Max Load - Barometric Pressure Compensation" storageaddress="0x07A0E4">
             <table type="Y Axis" storageaddress="0x07A0C4" />
         </table>
         <table name="Table 2D - 225 " storageaddress="0x07A118">
@@ -11034,7 +11060,7 @@
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x0792E8" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x0792E4" />
         <table name="Cold Rev Limit" storageaddress="0x06CD44" />
-        <table name="Cold Rev Limit Threshold" storageaddress="0x06CD3C" />
+        <table name="Cold Rev Temperature Limit" storageaddress="0x06CD3C" />
         <table name="Primary Injector Size" storageaddress="0x076CC8" />
         <table name="Secondary Injector Size" storageaddress="0x076CD0" />
         <table name="Secondary Injector Size #2" storageaddress="0x076CD8" />
@@ -11602,7 +11628,7 @@
         <table name="Table 2D - 195 " storageaddress="0x07759C">
             <table type="Y Axis" storageaddress="0x077598" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x0776E8">
+        <table name="Max Load - Intake Temperature Compensation" storageaddress="0x0776E8">
             <table type="Y Axis" storageaddress="0x0776C4" />
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x077720">
@@ -11680,13 +11706,13 @@
         <table name="Table 2D - 221 " storageaddress="0x078684">
             <table type="Y Axis" storageaddress="0x07864C" />
         </table>
-        <table name="Table 2D - 222 " storageaddress="0x078998">
+        <table name="RPM Based Max Engine Load" storageaddress="0x078998">
             <table type="Y Axis" storageaddress="0x078950" />
         </table>
         <table name="Table 2D - 223 " storageaddress="0x0789DC">
             <table type="Y Axis" storageaddress="0x0789BC" />
         </table>
-        <table name="Table 2D - 224 " storageaddress="0x078A0C">
+        <table name="Max Load - Barometric Pressure Compensation" storageaddress="0x078A0C">
             <table type="Y Axis" storageaddress="0x0789EC" />
         </table>
         <table name="Table 2D - 225 " storageaddress="0x078A40">
@@ -12862,7 +12888,7 @@
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x07B20C" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x07B208" />
         <table name="Cold Rev Limit" storageaddress="0x06CD44" />
-        <table name="Cold Rev Limit Threshold" storageaddress="0x06CD3C" />
+        <table name="Cold Rev Temperature Limit" storageaddress="0x06CD3C" />
         <table name="Primary Injector Size" storageaddress="0x07803C" />
         <table name="Secondary Injector Size" storageaddress="0x078044" />
         <table name="Secondary Injector Size #2" storageaddress="0x07804C" />
@@ -13403,7 +13429,7 @@
         <table name="Table 2D - 195 " storageaddress="0x078A38">
             <table type="Y Axis" storageaddress="0x078A34" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x078B84">
+        <table name="Max Load - Intake Temperature Compensation" storageaddress="0x078B84">
             <table type="Y Axis" storageaddress="0x078B60" />
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x078BBC">
@@ -13457,13 +13483,13 @@
         <table name="Table 2D - 221 " storageaddress="0x079CBC">
             <table type="Y Axis" storageaddress="0x079C84" />
         </table>
-        <table name="Table 2D - 222 " storageaddress="0x079FD0">
+        <table name="RPM Based Max Engine Load" storageaddress="0x079FD0">
             <table type="Y Axis" storageaddress="0x079F88" />
         </table>
         <table name="Table 2D - 223 " storageaddress="0x07A014">
             <table type="Y Axis" storageaddress="0x079FF4" />
         </table>
-        <table name="Table 2D - 224 " storageaddress="0x07A044">
+        <table name="Max Load - Barometric Pressure Compensation" storageaddress="0x07A044">
             <table type="Y Axis" storageaddress="0x07A024" />
         </table>
         <table name="Table 2D - 225 " storageaddress="0x07A078">
@@ -14509,7 +14535,7 @@
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x079790" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x07978C" />
         <table name="Cold Rev Limit" storageaddress="0x06DA44" />
-        <table name="Cold Rev Limit Threshold" storageaddress="0x06DA3C" />
+        <table name="Cold Rev Temperature Limit" storageaddress="0x06DA3C" />
         <table name="Primary Injector Size" storageaddress="0x077164" />
         <table name="Secondary Injector Size" storageaddress="0x07716C" />
         <table name="Secondary Injector Size #2" storageaddress="0x077174" />
@@ -14981,7 +15007,7 @@
         <table name="Table 2D - 195 " storageaddress="0x077980">
             <table type="Y Axis" storageaddress="0x07797C" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x077ACC">
+        <table name="Max Load - Intake Temperature Compensation" storageaddress="0x077ACC">
             <table type="Y Axis" storageaddress="0x077AA8" />
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x077B04">
@@ -15059,13 +15085,13 @@
         <table name="Table 2D - 221 " storageaddress="0x078A68">
             <table type="Y Axis" storageaddress="0x078A30" />
         </table>
-        <table name="Table 2D - 222 " storageaddress="0x078D7C">
+        <table name="RPM Based Max Engine Load" storageaddress="0x078D7C">
             <table type="Y Axis" storageaddress="0x078D34" />
         </table>
         <table name="Table 2D - 223 " storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078DA0" />
         </table>
-        <table name="Table 2D - 224 " storageaddress="0x078DF0">
+        <table name="Max Load - Barometric Pressure Compensation" storageaddress="0x078DF0">
             <table type="Y Axis" storageaddress="0x078DD0" />
         </table>
         <table name="Table 2D - 225 " storageaddress="0x078E24">
@@ -16180,7 +16206,7 @@
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x079790" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x07978C" />
         <table name="Cold Rev Limit" storageaddress="0x06DA44" />
-        <table name="Cold Rev Limit Threshold" storageaddress="0x06DA3C" />
+        <table name="Cold Rev Temperature Limit" storageaddress="0x06DA3C" />
         <table name="Primary Injector Size" storageaddress="0x077164" />
         <table name="Secondary Injector Size" storageaddress="0x07716C" />
         <table name="Secondary Injector Size #2" storageaddress="0x077174" />
@@ -16712,7 +16738,7 @@
         <table name="Table 2D - 195 " storageaddress="0x077980">
             <table type="Y Axis" storageaddress="0x07797C" />
         </table>
-        <table name="Engine Torque Max - Intake Air Temp Compensation" storageaddress="0x077ACC">
+        <table name="Max Load - Intake Temperature Compensation" storageaddress="0x077ACC">
             <table type="Y Axis" storageaddress="0x077AA8" />
         </table>
         <table name="Engine Torque Max - Barometric Pressure Compensation" storageaddress="0x077B04">
@@ -16790,13 +16816,13 @@
         <table name="Table 2D - 221 " storageaddress="0x078A68">
             <table type="Y Axis" storageaddress="0x078A30" />
         </table>
-        <table name="Table 2D - 222 " storageaddress="0x078D7C">
+        <table name="RPM Based Max Engine Load" storageaddress="0x078D7C">
             <table type="Y Axis" storageaddress="0x078D34" />
         </table>
         <table name="Table 2D - 223 " storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078DA0" />
         </table>
-        <table name="Table 2D - 224 " storageaddress="0x078DF0">
+        <table name="Max Load - Barometric Pressure Compensation" storageaddress="0x078DF0">
             <table type="Y Axis" storageaddress="0x078DD0" />
         </table>
         <table name="Table 2D - 225 " storageaddress="0x078E24">
