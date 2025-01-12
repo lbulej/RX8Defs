@@ -6,6 +6,7 @@
             <internalidaddress>2000</internalidaddress>
             <make>Mazda</make>
         </romid>
+
 		<table name="Table 3D - UNKNOWN_687b0" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="26" sizey="19">
             <scaling expression="(x * 0.0030517578) + 0" to_byte="(x - 0) / 1" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
@@ -166,6 +167,40 @@
         <table name="Knock Control - Retard Decrement #1" category="Knock Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Knock Control - Retard Decrement #2" category="Knock Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Knock Control - Retard Decrement #3" category="Knock Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
+		<table name="Ignition Leading - Ignition Base Max" category="Ignition Leading" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Leading - Ignition Base Max Safe Mode" category="Ignition Leading" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Leading - Idle Erorr Correction Min" category="Ignition Leading" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Leading - Idle Error Correction Max" category="Ignition Leading" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Trailing - Idle Erorr Correction Min" category="Ignition Trailing" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Trailing - Idle Error Correction Max" category="Ignition Trailing" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Leading - Ignition Base Max Safe Mode" category="Ignition Leading" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Trailing - Ignition Base Max" category="Ignition Trailing" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Trailing - Ignition Base Max Safe Mode" category="Ignition Trailing" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+		<table name="Ignition Leading/Trailing - Off Throttle Load Compensation" category="Ignition Timing" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="deg"/>
+		</table>
+	<table name="Alternator Pulley Ratio" category="Alternator Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
+	<table name="Alternator Voltage Controller - Proportional Gain" category="Alternator Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
+	<table name="Alternator Voltage Controller - Integral Gain" category="Alternator Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
+	<table name="Alternator Voltage Controller - Derivative Gain" category="Alternator Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Table 2D - 0 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="16">
             <scaling expression="(x * 2 ) + 0" to_byte="(x - 0) / 2" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
@@ -273,29 +308,39 @@
             <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Ignition Timing Leading Idle Base" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="6">
-            <scaling expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Ignition Leading - Idle Base Timing" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="6">
+            <scaling units="deg" expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="RPM"/>
+			</table>
         </table>
 		<table name="Ignition Timing Leading Intake Air Temperature Compensation - On Throttle" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="9">
             <scaling units="degress" expression="((x*0.5)-40)" to_byte="x" format="0.00" />
             <table name="Intake Air Temperature" units="degC" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-		<table name="Ignition Timing Leading Intake Air Temperature Compensation - Off Throttle" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="degress" expression="((x*0.5)-40)" to_byte="x" format="0.00" />
-            <table name="Intake Air Temperature" units="degC" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+		<table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - Off Throttle" category="Ignition Timing" type="2D" storagetype="uint8" endian="big" sizey="1">
+            <scaling units="deg" expression="((x*0.5)-40)" to_byte="x" format="0.00" />
+            <table name="Intake Air Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="degC"/>
+			</table>
         </table>
-        <table name="Ignition Timing Leading Idle Temperature Correction Multiplier" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Ignition Leading - Idle Timing Load Compensation Multiplier" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="9">
+            <scaling units="mult" expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
+            <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="degC"/>
+			</table>
         </table>
-        <table name="Ignition Timing Trailing Idle Base" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="6">
-            <scaling expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Ignition Trailing- Idle Base Timing" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="6">
+            <scaling units="deg" expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="RPM"/>
+			</table>
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
+            <scaling units="mult" expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
+            <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="degC"/>
+			</table>
         </table>
         <table name="Table 2D - 10 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="6">
             <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
@@ -683,21 +728,29 @@
             <scaling expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 106 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="9">
+            <scaling units="deg" expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
+            <table name="Idle Speed Error" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="RPM"/>
+			</table>
         </table>
-        <table name="Table 2D - 107 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="9">
+            <scaling units="deg" expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
+            <table name="Idle Speed Error" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="RPM"/>
+			</table>
         </table>
-        <table name="Table 2D - 108 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="9">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
             <scaling expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <table name="Idle Speed Error" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="RPM"/>
+			</table>
         </table>
-        <table name="Table 2D - 109 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="9">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
             <scaling expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <table name="Idle Speed Error" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaliung units="RPM"/>
+			</table>
         </table>
         <table name="Table 2D - 110 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="22">
             <scaling expression="(x * 0.5 ) + -50" to_byte="(x - -50) / 0.5" format="0.00" />
@@ -707,9 +760,11 @@
             <scaling expression="(x * 0.5 ) + -50" to_byte="(x - -50) / 0.5" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 112 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(x * 0.5 ) + -40" to_byte="(x - -40) / 0.5" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" category="Ignition Timing" type="2D" storagetype="uint8" endian="big" sizey="9">
+            <scaling units="deg" expression="(x * 0.5 ) + -40" to_byte="(x - -40) / 0.5" format="0.00" />
+            <table name="Intake Air Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="degC"/>
+			</table>
         </table>
         <table name="Table 2D - 113 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="9">
             <scaling expression="(x * 0.5 ) + -40" to_byte="(x - -40) / 0.5" format="0.00" />
@@ -1944,22 +1999,22 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Ignition Timing Leading Idle Load Compensation (Small)" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="8" sizey="7">
-            <scaling expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
-            <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+        <table name="Ignition Leading - Idle Load Compensation" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="8" sizey="7">
+            <scaling units="deg" expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
+            <table name="Engine Load" type="X Axis" storagetype="float" endian="big">
+                <scaling units="g/rev" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big">
+                <scaling  units="RPM" expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Ignition Timing Leading Base" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
-            <scaling expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
+        <table name="Ignition Leading - Base Timing" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
+            <scaling units="deg" expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
             <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="g/rev" expression="x" to_byte="x" />
             </table>
         </table>
 		<table name="Ignition Timing Leading - Low Engine Load Adder" category="Ignition Leading" type="3D" storagetype="float" endian="big" expression="x" to_byte="x" sizex="3" sizey="4">
@@ -1998,13 +2053,13 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Compensation (Small)" category="Ignition Trailing" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="8" sizey="7">
-            <scaling expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
-            <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+        <table name="Ignition Trailing- Idle Load Compensation" category="Ignition Trailing" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="8" sizey="7">
+            <scaling units="deg" expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
+            <table name="Engine Load" type="X Axis" storagetype="float" endian="big">
+                <scaling units="g/rev" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Ignition Timing Trailing Base" category="Ignition Trailing" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
@@ -2403,13 +2458,13 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Table 3D - 53 " category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="11" sizey="12">
+        <table name="Alternator Voltage Delta" category="Alternator Control" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="11" sizey="12">
             <scaling expression="(x * 0.05 ) + 0" to_byte="(x - 0) / 0.05" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Alternator Speed" type="X Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Alternator Duty Cycle" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="%" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Table 3D - 54 " category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="10" sizey="17">
@@ -2872,13 +2927,13 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Ignition Leading Minimum" category="Ignition Leading" type="3D" storagetype="float" endian="big" expression="x" to_byte="x" sizex="4" sizey="3">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+        <table name="Ignition Leading - Minimum Advance" category="Ignition Leading" type="3D" storagetype="float" endian="big" expression="x" to_byte="x" sizex="4" sizey="3">
+            <scaling units="deg" expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="degC" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Ignition Trailing Minimum" category="Ignition Trailing" type="3D" storagetype="float" endian="big" expression="x" to_byte="x" sizex="4" sizey="3">
@@ -2890,13 +2945,13 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Table 3D - 106 " category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="3" sizey="4">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" category="Ignition Timing" type="3D" storagetype="float" endian="big" expression="x" to_byte="x" sizex="3" sizey="4">
+            <scaling units="deg" expression="x" to_byte="x" format="0.00" />
+            <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="degC" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Ignition 3" category="Ignition" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="19" sizey="11">
@@ -3419,16 +3474,16 @@
         <table name="Table 2D - 5" storageaddress="0x06D1E0">
             <table type="Y Axis" storageaddress="0x06D1A0" />
         </table>
-        <table name="Ignition Timing Leading Idle Base" storageaddress="0x06D59C">
+        <table name="Ignition Leading - Idle Base Timing" storageaddress="0x06D59C">
             <table type="Y Axis" storageaddress="0x06D584" />
         </table>
-        <table name="Ignition Timing Leading Idle Temperature Correction Multiplier" storageaddress="0x06D5C8">
+        <table name="Ignition Leading - Idle Timing Load Compensation Multiplier" storageaddress="0x06D5C8">
             <table type="Y Axis" storageaddress="0x06D5A4" />
         </table>
-        <table name="Ignition Timing Trailing Idle Base" storageaddress="0x06D5EC">
+        <table name="Ignition Trailing- Idle Base Timing" storageaddress="0x06D5EC">
             <table type="Y Axis" storageaddress="0x06D5D4" />
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06D618">
+        <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" storageaddress="0x06D618">
             <table type="Y Axis" storageaddress="0x06D5F4" />
         </table>
         <table name="Table 2D - 10 " storageaddress="0x06E4BC">
@@ -3719,16 +3774,16 @@
         <table name="Table 2D - 105 " storageaddress="0x072C50">
             <table type="Y Axis" storageaddress="0x072C2C" />
         </table>
-        <table name="Table 2D - 106 " storageaddress="0x072CAC">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072CAC">
             <table type="Y Axis" storageaddress="0x072C88" />
         </table>
-        <table name="Table 2D - 107 " storageaddress="0x072CDC">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072CDC">
             <table type="Y Axis" storageaddress="0x072CB8" />
         </table>
-        <table name="Table 2D - 108 " storageaddress="0x072D0C">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072D0C">
             <table type="Y Axis" storageaddress="0x072CE8" />
         </table>
-        <table name="Table 2D - 109 " storageaddress="0x072D3C">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072D3C">
             <table type="Y Axis" storageaddress="0x072D18" />
         </table>
         <table name="Table 2D - 110 " storageaddress="0x072DD0">
@@ -3737,7 +3792,7 @@
         <table name="Table 2D - 111 " storageaddress="0x072E40">
             <table type="Y Axis" storageaddress="0x072DE8" />
         </table>
-        <table name="Table 2D - 112 " storageaddress="0x072E84">
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" storageaddress="0x072E84">
             <table type="Y Axis" storageaddress="0x072E60" />
         </table>
         <table name="Table 2D - 113 " storageaddress="0x072EB4">
@@ -3851,10 +3906,10 @@
         <table name="Desired Charge Voltage" storageaddress="0x07530C">
             <table type="Y Axis" storageaddress="0x0752E8" />
         </table>
-        <table name="Table 2D - 150 " storageaddress="0x07534C">
+        <table name="Alternator Duty Cycle Max" storageaddress="0x07534C">
             <table type="Y Axis" storageaddress="0x075320" />
         </table>
-        <table name="Table 2D - 151 " storageaddress="0x075398">
+        <table name="Alternator Diagnostic Voltage Delta to DC" storageaddress="0x075398">
             <table type="Y Axis" storageaddress="0x075364" />
         </table>
         <table name="Table 2D - 152 " storageaddress="0x0753D8">
@@ -4633,7 +4688,7 @@
             <table type="X Axis" storageaddress="0x06D624" />
             <table type="Y Axis" storageaddress="0x06D64C" />
         </table>
-        <table name="Ignition Timing Leading Base" storageaddress="0x06D748">
+        <table name="Ignition Leading - Base Timing" storageaddress="0x06D748">
             <table type="X Axis" storageaddress="0x06D6B0" />
             <table type="Y Axis" storageaddress="0x06D700" />
         </table>
@@ -4825,7 +4880,7 @@
             <table type="X Axis" storageaddress="0x074C64" />
             <table type="Y Axis" storageaddress="0x074CB8" />
         </table>
-        <table name="Table 3D - 53 " storageaddress="0x0754F0">
+        <table name="Alternator Voltage Delta" storageaddress="0x0754F0">
             <table type="X Axis" storageaddress="0x075494" />
             <table type="Y Axis" storageaddress="0x0754C0" />
         </table>
@@ -5029,7 +5084,7 @@
             <table type="X Axis" storageaddress="0x06D200" />
             <table type="Y Axis" storageaddress="0x06D218" />
         </table>
-        <table name="Ignition Leading Minimum" storageaddress="0x06E358">
+        <table name="Ignition Leading - Minimum Advance" storageaddress="0x06E358">
             <table type="X Axis" storageaddress="0x06E33C" />
             <table type="Y Axis" storageaddress="0x06E34C" />
         </table>
@@ -5037,7 +5092,7 @@
             <table type="X Axis" storageaddress="0x06E388" />
             <table type="Y Axis" storageaddress="0x06E398" />
         </table>
-        <table name="Table 3D - 106 " storageaddress="0x06E474">
+        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E474">
             <table type="X Axis" storageaddress="0x06E458" />
             <table type="Y Axis" storageaddress="0x06E464" />
         </table>
@@ -5393,8 +5448,9 @@
             <year>2004</year>
             <transmission>MT</transmission>
         </romid>
-		<table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06D46C" />
-		<table name="Fuel Air Ratio" storageaddress="0x77150"/>
+
+	<table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06D46C" />
+	<table name="Fuel Air Ratio" storageaddress="0x77150"/>
         <table name="Barometric Pressure Sensor Min ADC Count" storageaddress="0x06D46E" />
         <table name="Barometric Pressure Sensor Min Voltage" storageaddress="0x0796FC" />
         <table name="Barometric Pressure Sensor Max Voltage" storageaddress="0x079700" />
@@ -5417,7 +5473,22 @@
         <table name="Closed Loop Fuelling Threshold (Temperature B)" storageaddress="0x0716E8" />
         <table name="Closed Loop Fuelling Threshold (Unknown B)" storageaddress="0x071764" />
         <table name="Closed Loop Fuelling Threshold (Temperature C)" storageaddress="0x0717A4" />
-		<table name="Max Load - Intake Temperature Compensation" storageaddress="0x078DC0">
+	<table name="Ignition Leading - Ignition Base Max" storageaddress="0x6da58" />
+	<table name="Ignition Leading - Ignition Base Max Safe Mode" storageaddress="0x6da5c" />
+	<table name="Ignition Leading - Ignition Base Max" storageaddress="0x6da58" />
+	<table name="Ignition Leading - Ignition Base Max Safe Mode" storageaddress="0x6da5c" />
+	<table name="Ignition Trailing - Ignition Base Max" storageaddress="0x6da68" />
+	<table name="Ignition Trailing - Ignition Base Max Safe Mode" storageaddress="0x6da6c" />
+	<table name="Ignition Leading - Idle Erorr Correction Min" storageaddress="0x726e0" />
+	<table name="Ignition Leading - Idle Error Correction Max" storageaddress="0x726e4" />
+	<table name="Ignition Trailing - Idle Erorr Correction Min" storageaddress="0x726f4" />
+	<table name="Ignition Trailing - Idle Error Correction Max" storageaddress="0x726f8" />
+	<table name="Ignition Leading/Trailing - Off Throttle Load Compensation" storageaddress="0x6e110" />
+	<table name="Alternator Pulley Ratio" storageaddress="0x74a1c" />
+	<table name="Alternator Voltage Controller - Proportional Gain" storageaddress="0x74a90" />
+	<table name="Alternator Voltage Controller - Integral Gain" storageaddress="0x74a94" />
+	<table name="Alternator Voltage Controller - Derivative Gain" storageaddress="0x74a8c" />	
+	<table name="Max Load - Intake Temperature Compensation" storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078D9C" />
         </table>
         <table name="Table 2D - 0 " storageaddress="0x06D4E4">
@@ -5438,16 +5509,19 @@
         <table name="Table 2D - 5" storageaddress="0x06D6E0">
             <table type="Y Axis" storageaddress="0x06D6A0" />
         </table>
-        <table name="Ignition Timing Leading Idle Base" storageaddress="0x06DA8C">
+        <table name="Ignition Leading - Idle Base Timing" storageaddress="0x06DA8C">
             <table type="Y Axis" storageaddress="0x06DA74" />
         </table>
-        <table name="Ignition Timing Leading Idle Temperature Correction Multiplier" storageaddress="0x06DAB8">
+        <table name="Ignition Leading - Idle Timing Load Compensation Multiplier" storageaddress="0x06DAB8">
             <table type="Y Axis" storageaddress="0x06DA94" />
         </table>
-        <table name="Ignition Timing Trailing Idle Base" storageaddress="0x06DADC">
+        <table name="Ignition Trailing- Idle Base Timing" storageaddress="0x06DADC">
             <table type="Y Axis" storageaddress="0x06DAC4" />
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06DB08">
+		<table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - Off Throttle" storageaddress="0x072908">
+            <table type="Y Axis" storageaddress="0x072904" />
+        </table>
+        <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" storageaddress="0x06DB08">
             <table type="Y Axis" storageaddress="0x06DAE4" />
         </table>
 		<table name="Table 2D - Fuel Equation Something - Driver Off Throttle" storageaddress="0x07b2ec">
@@ -5692,16 +5766,16 @@
         <table name="Table 2D - 105 " storageaddress="0x0726C4">
             <table type="Y Axis" storageaddress="0x0726A0" />
         </table>
-        <table name="Table 2D - 106 " storageaddress="0x072720">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072720">
             <table type="Y Axis" storageaddress="0x0726FC" />
         </table>
-        <table name="Table 2D - 107 " storageaddress="0x072750">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072750">
             <table type="Y Axis" storageaddress="0x07272C" />
         </table>
-        <table name="Table 2D - 108 " storageaddress="0x072780">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072780">
             <table type="Y Axis" storageaddress="0x07275C" />
         </table>
-        <table name="Table 2D - 109 " storageaddress="0x0727B0">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x0727B0">
             <table type="Y Axis" storageaddress="0x07278C" />
         </table>
         <table name="Table 2D - 110 " storageaddress="0x072844">
@@ -5710,8 +5784,8 @@
         <table name="Table 2D - 111 " storageaddress="0x0728B4">
             <table type="Y Axis" storageaddress="0x07285C" />
         </table>
-        <table name="Table 2D - 112 " storageaddress="0x0728F8">
-            <table type="Y Axis" storageaddress="0x0728D8" />
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" storageaddress="0x0728F8">
+            <table type="Y Axis" storageaddress="0x0728D4" />
         </table>
         <table name="Table 2D - 114 " storageaddress="0x072928">
             <table type="Y Axis" storageaddress="0x07290C" />
@@ -5788,10 +5862,10 @@
         <table name="Desired Charge Voltage" storageaddress="0x074B60">
             <table type="Y Axis" storageaddress="0x074B3C" />
         </table>
-        <table name="Table 2D - 150 " storageaddress="0x074BA0">
+        <table name="Alternator Duty Cycle Max" storageaddress="0x074BA0">
             <table type="Y Axis" storageaddress="0x074B74" />
         </table>
-        <table name="Table 2D - 151 " storageaddress="0x074BEC">
+        <table name="Alternator Diagnostic Voltage Delta to DC" storageaddress="0x074BEC">
             <table type="Y Axis" storageaddress="0x074BB8" />
         </table>
         <table name="Table 2D - 152 " storageaddress="0x074C2C">
@@ -6440,15 +6514,15 @@
             <table type="X Axis" storageaddress="0x06D97C" />
             <table type="Y Axis" storageaddress="0x06D9BC" />
         </table>
-        <table name="Ignition Timing Leading Idle Load Compensation (Small)" storageaddress="0x06DB50">
+        <table name="Ignition Leading - Idle Load Compensation" storageaddress="0x06DB50">
             <table type="X Axis" storageaddress="0x06DB14" />
             <table type="Y Axis" storageaddress="0x06DB34" />
         </table>
-        <table name="Ignition Timing Leading Base" storageaddress="0x06DC20">
+        <table name="Ignition Leading - Base Timing" storageaddress="0x06DC20">
             <table type="X Axis" storageaddress="0x06DB88" />
             <table type="Y Axis" storageaddress="0x06DBD8" />
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Compensation (Small)" storageaddress="0x06DDC4">
+        <table name="Ignition Trailing- Idle Load Compensation" storageaddress="0x06DDC4">
             <table type="X Axis" storageaddress="0x06DD88" />
             <table type="Y Axis" storageaddress="0x06DDA8" />
         </table>
@@ -6608,7 +6682,7 @@
             <table type="X Axis" storageaddress="0x0744B0" />
             <table type="Y Axis" storageaddress="0x074504" />
         </table>
-        <table name="Table 3D - 53 " storageaddress="0x074D44">
+        <table name="Alternator Voltage Delta" storageaddress="0x074D44">
             <table type="X Axis" storageaddress="0x074CE8" />
             <table type="Y Axis" storageaddress="0x074D14" />
         </table>
@@ -6801,7 +6875,7 @@
             <table type="X Axis" storageaddress="0x06D700" />
             <table type="Y Axis" storageaddress="0x06D718" />
         </table>
-        <table name="Ignition Leading Minimum" storageaddress="0x06E018">
+        <table name="Ignition Leading - Minimum Advance" storageaddress="0x06E018">
             <table type="X Axis" storageaddress="0x06DFFC" />
             <table type="Y Axis" storageaddress="0x06E00C" />
         </table>
@@ -6809,7 +6883,7 @@
             <table type="X Axis" storageaddress="0x06E048" />
             <table type="Y Axis" storageaddress="0x06E058" />
         </table>
-        <table name="Table 3D - 106 " storageaddress="0x06E134">
+        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E134">
             <table type="X Axis" storageaddress="0x06E118" />
             <table type="Y Axis" storageaddress="0x06E124" />
         </table>
@@ -7462,16 +7536,16 @@
         <table name="Table 2D - 105 " storageaddress="0x072408">
             <table type="Y Axis" storageaddress="0x0723E4" />
         </table>
-        <table name="Table 2D - 106 " storageaddress="0x07246C">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x07246C">
             <table type="Y Axis" storageaddress="0x072448" />
         </table>
-        <table name="Table 2D - 107 " storageaddress="0x07249C">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x07249C">
             <table type="Y Axis" storageaddress="0x072478" />
         </table>
-        <table name="Table 2D - 108 " storageaddress="0x0724CC">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x0724CC">
             <table type="Y Axis" storageaddress="0x0724A8" />
         </table>
-        <table name="Table 2D - 109 " storageaddress="0x0724FC">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x0724FC">
             <table type="Y Axis" storageaddress="0x0724D8" />
         </table>
         <table name="Table 2D - 110 " storageaddress="0x072590">
@@ -7480,7 +7554,7 @@
         <table name="Table 2D - 111 " storageaddress="0x072600">
             <table type="Y Axis" storageaddress="0x0725A8" />
         </table>
-        <table name="Table 2D - 112 " storageaddress="0x072644">
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" storageaddress="0x072644">
             <table type="Y Axis" storageaddress="0x072620" />
         </table>
         <table name="Table 2D - 113 " storageaddress="0x072674">
@@ -7594,10 +7668,10 @@
         <table name="Desired Charge Voltage" storageaddress="0x074ACC">
             <table type="Y Axis" storageaddress="0x074AA8" />
         </table>
-        <table name="Table 2D - 150 " storageaddress="0x074B0C">
+        <table name="Alternator Duty Cycle Max" storageaddress="0x074B0C">
             <table type="Y Axis" storageaddress="0x074AE0" />
         </table>
-        <table name="Table 2D - 151 " storageaddress="0x074B58">
+        <table name="Alternator Diagnostic Voltage Delta to DC" storageaddress="0x074B58">
             <table type="Y Axis" storageaddress="0x074B24" />
         </table>
         <table name="Table 2D - 152 " storageaddress="0x074B98">
@@ -8306,7 +8380,7 @@
             <table type="X Axis" storageaddress="0x06C67C" />
             <table type="Y Axis" storageaddress="0x06C6BC" />
         </table>
-        <table name="Ignition Timing Leading Base" storageaddress="0x06CA28">
+        <table name="Ignition Leading - Base Timing" storageaddress="0x06CA28">
             <table type="X Axis" storageaddress="0x06C990" />
             <table type="Y Axis" storageaddress="0x06C9E0" />
         </table>
@@ -8494,7 +8568,7 @@
             <table type="X Axis" storageaddress="0x074424" />
             <table type="Y Axis" storageaddress="0x074478" />
         </table>
-        <table name="Table 3D - 53 " storageaddress="0x074CB0">
+        <table name="Alternator Voltage Delta" storageaddress="0x074CB0">
             <table type="X Axis" storageaddress="0x074C54" />
             <table type="Y Axis" storageaddress="0x074C80" />
         </table>
@@ -9068,16 +9142,16 @@
         <table name="Table 2D - 5" storageaddress="0x06D1E0">
             <table type="Y Axis" storageaddress="0x06D1A0" />
         </table>
-        <table name="Ignition Timing Leading Idle Base" storageaddress="0x06D59C">
+        <table name="Ignition Leading - Idle Base Timing" storageaddress="0x06D59C">
             <table type="Y Axis" storageaddress="0x06D584" />
         </table>
-        <table name="Ignition Timing Leading Idle Temperature Correction Multiplier" storageaddress="0x06D5C8">
+        <table name="Ignition Leading - Idle Timing Load Compensation Multiplier" storageaddress="0x06D5C8">
             <table type="Y Axis" storageaddress="0x06D5A4" />
         </table>
-        <table name="Ignition Timing Trailing Idle Base" storageaddress="0x06D5EC">
+        <table name="Ignition Trailing- Idle Base Timing" storageaddress="0x06D5EC">
             <table type="Y Axis" storageaddress="0x06D5D4" />
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06D618">
+        <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" storageaddress="0x06D618">
             <table type="Y Axis" storageaddress="0x06D5F4" />
         </table>
         <table name="Table 2D - 10 " storageaddress="0x06E4BC">
@@ -9368,16 +9442,16 @@
         <table name="Table 2D - 105 " storageaddress="0x072C50">
             <table type="Y Axis" storageaddress="0x072C2C" />
         </table>
-        <table name="Table 2D - 106 " storageaddress="0x072CAC">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072CAC">
             <table type="Y Axis" storageaddress="0x072C88" />
         </table>
-        <table name="Table 2D - 107 " storageaddress="0x072CDC">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072CDC">
             <table type="Y Axis" storageaddress="0x072CB8" />
         </table>
-        <table name="Table 2D - 108 " storageaddress="0x072D0C">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072D0C">
             <table type="Y Axis" storageaddress="0x072CE8" />
         </table>
-        <table name="Table 2D - 109 " storageaddress="0x072D3C">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072D3C">
             <table type="Y Axis" storageaddress="0x072D18" />
         </table>
         <table name="Table 2D - 110 " storageaddress="0x072DD0">
@@ -9386,7 +9460,7 @@
         <table name="Table 2D - 111 " storageaddress="0x072E40">
             <table type="Y Axis" storageaddress="0x072DE8" />
         </table>
-        <table name="Table 2D - 112 " storageaddress="0x072E84">
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" storageaddress="0x072E84">
             <table type="Y Axis" storageaddress="0x072E60" />
         </table>
         <table name="Table 2D - 113 " storageaddress="0x072EB4">
@@ -9500,10 +9574,10 @@
         <table name="Desired Charge Voltage" storageaddress="0x07530C">
             <table type="Y Axis" storageaddress="0x0752E8" />
         </table>
-        <table name="Table 2D - 150 " storageaddress="0x07534C">
+        <table name="Alternator Duty Cycle Max" storageaddress="0x07534C">
             <table type="Y Axis" storageaddress="0x075320" />
         </table>
-        <table name="Table 2D - 151 " storageaddress="0x075398">
+        <table name="Alternator Diagnostic Voltage Delta to DC" storageaddress="0x075398">
             <table type="Y Axis" storageaddress="0x075364" />
         </table>
         <table name="Table 2D - 152 " storageaddress="0x0753D8">
@@ -10282,7 +10356,7 @@
             <table type="X Axis" storageaddress="0x06D624" />
             <table type="Y Axis" storageaddress="0x06D64C" />
         </table>
-        <table name="Ignition Timing Leading Base" storageaddress="0x06D748">
+        <table name="Ignition Leading - Base Timing" storageaddress="0x06D748">
             <table type="X Axis" storageaddress="0x06D6B0" />
             <table type="Y Axis" storageaddress="0x06D700" />
         </table>
@@ -10474,7 +10548,7 @@
             <table type="X Axis" storageaddress="0x074C64" />
             <table type="Y Axis" storageaddress="0x074CB8" />
         </table>
-        <table name="Table 3D - 53 " storageaddress="0x0754F0">
+        <table name="Alternator Voltage Delta" storageaddress="0x0754F0">
             <table type="X Axis" storageaddress="0x075494" />
             <table type="Y Axis" storageaddress="0x0754C0" />
         </table>
@@ -10678,7 +10752,7 @@
             <table type="X Axis" storageaddress="0x06D200" />
             <table type="Y Axis" storageaddress="0x06D218" />
         </table>
-        <table name="Ignition Leading Minimum" storageaddress="0x06E358">
+        <table name="Ignition Leading - Minimum Advance" storageaddress="0x06E358">
             <table type="X Axis" storageaddress="0x06E33C" />
             <table type="Y Axis" storageaddress="0x06E34C" />
         </table>
@@ -10686,7 +10760,7 @@
             <table type="X Axis" storageaddress="0x06E388" />
             <table type="Y Axis" storageaddress="0x06E398" />
         </table>
-        <table name="Table 3D - 106 " storageaddress="0x06E474">
+        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E474">
             <table type="X Axis" storageaddress="0x06E458" />
             <table type="Y Axis" storageaddress="0x06E464" />
         </table>
@@ -11091,16 +11165,16 @@
         <table name="Table 2D - 5" storageaddress="0x06C9E0">
             <table type="Y Axis" storageaddress="0x06C9A0" />
         </table>
-        <table name="Ignition Timing Leading Idle Base" storageaddress="0x06CD8C">
+        <table name="Ignition Leading - Idle Base Timing" storageaddress="0x06CD8C">
             <table type="Y Axis" storageaddress="0x06CD74" />
         </table>
-        <table name="Ignition Timing Leading Idle Temperature Correction Multiplier" storageaddress="0x06CDB8">
+        <table name="Ignition Leading - Idle Timing Load Compensation Multiplier" storageaddress="0x06CDB8">
             <table type="Y Axis" storageaddress="0x06CD94" />
         </table>
-        <table name="Ignition Timing Trailing Idle Base" storageaddress="0x06CDDC">
+        <table name="Ignition Trailing- Idle Base Timing" storageaddress="0x06CDDC">
             <table type="Y Axis" storageaddress="0x06CDC4" />
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06CE08">
+        <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" storageaddress="0x06CE08">
             <table type="Y Axis" storageaddress="0x06CDE4" />
         </table>
         <table name="Table 2D - 10 " storageaddress="0x06D52C">
@@ -11373,16 +11447,16 @@
         <table name="Table 2D - 105 " storageaddress="0x071CC0">
             <table type="Y Axis" storageaddress="0x071C9C" />
         </table>
-        <table name="Table 2D - 106 " storageaddress="0x071D1C">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x071D1C">
             <table type="Y Axis" storageaddress="0x071CF8" />
         </table>
-        <table name="Table 2D - 107 " storageaddress="0x071D4C">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x071D4C">
             <table type="Y Axis" storageaddress="0x071D28" />
         </table>
-        <table name="Table 2D - 108 " storageaddress="0x071D7C">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x071D7C">
             <table type="Y Axis" storageaddress="0x071D58" />
         </table>
-        <table name="Table 2D - 109 " storageaddress="0x071DAC">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x071DAC">
             <table type="Y Axis" storageaddress="0x071D88" />
         </table>
         <table name="Table 2D - 110 " storageaddress="0x071E40">
@@ -11391,7 +11465,7 @@
         <table name="Table 2D - 111 " storageaddress="0x071EB0">
             <table type="Y Axis" storageaddress="0x071E58" />
         </table>
-        <table name="Table 2D - 112 " storageaddress="0x071EF4">
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" storageaddress="0x071EF4">
             <table type="Y Axis" storageaddress="0x071ED0" />
         </table>
         <table name="Table 2D - 113 " storageaddress="0x071F24">
@@ -11505,10 +11579,10 @@
         <table name="Desired Charge Voltage" storageaddress="0x07437C">
             <table type="Y Axis" storageaddress="0x074358" />
         </table>
-        <table name="Table 2D - 150 " storageaddress="0x0743BC">
+        <table name="Alternator Duty Cycle Max" storageaddress="0x0743BC">
             <table type="Y Axis" storageaddress="0x074390" />
         </table>
-        <table name="Table 2D - 151 " storageaddress="0x074408">
+        <table name="Alternator Diagnostic Voltage Delta to DC" storageaddress="0x074408">
             <table type="Y Axis" storageaddress="0x0743D4" />
         </table>
         <table name="Table 2D - 152 " storageaddress="0x074448">
@@ -12197,7 +12271,7 @@
             <table type="X Axis" storageaddress="0x06CE14" />
             <table type="Y Axis" storageaddress="0x06CE34" />
         </table>
-        <table name="Ignition Timing Leading Base" storageaddress="0x06CF20">
+        <table name="Ignition Leading - Base Timing" storageaddress="0x06CF20">
             <table type="X Axis" storageaddress="0x06CE88" />
             <table type="Y Axis" storageaddress="0x06CED8" />
         </table>
@@ -12353,7 +12427,7 @@
             <table type="X Axis" storageaddress="0x073CD4" />
             <table type="Y Axis" storageaddress="0x073D28" />
         </table>
-        <table name="Table 3D - 53 " storageaddress="0x074560">
+        <table name="Alternator Voltage Delta" storageaddress="0x074560">
             <table type="X Axis" storageaddress="0x074504" />
             <table type="Y Axis" storageaddress="0x074530" />
         </table>
@@ -12919,7 +12993,7 @@
         <table name="Table 2D - 5" storageaddress="0x06C9E0">
             <table type="Y Axis" storageaddress="0x06C9A0" />
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06CDD0">
+        <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" storageaddress="0x06CDD0">
             <table type="Y Axis" storageaddress="0x06CDAC" />
         </table>
         <table name="Table 2D - 10 " storageaddress="0x06DF4C">
@@ -13192,16 +13266,16 @@
         <table name="Table 2D - 105 " storageaddress="0x072A08">
             <table type="Y Axis" storageaddress="0x0729E4" />
         </table>
-        <table name="Table 2D - 106 " storageaddress="0x072A6C">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072A6C">
             <table type="Y Axis" storageaddress="0x072A48" />
         </table>
-        <table name="Table 2D - 107 " storageaddress="0x072A9C">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072A9C">
             <table type="Y Axis" storageaddress="0x072A78" />
         </table>
-        <table name="Table 2D - 108 " storageaddress="0x072ACC">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072ACC">
             <table type="Y Axis" storageaddress="0x072AA8" />
         </table>
-        <table name="Table 2D - 109 " storageaddress="0x072AFC">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072AFC">
             <table type="Y Axis" storageaddress="0x072AD8" />
         </table>
         <table name="Table 2D - 110 " storageaddress="0x072B90">
@@ -13210,7 +13284,7 @@
         <table name="Table 2D - 111 " storageaddress="0x072C00">
             <table type="Y Axis" storageaddress="0x072BA8" />
         </table>
-        <table name="Table 2D - 112 " storageaddress="0x072C44">
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" storageaddress="0x072C44">
             <table type="Y Axis" storageaddress="0x072C20" />
         </table>
         <table name="Table 2D - 113 " storageaddress="0x072C74">
@@ -13324,10 +13398,10 @@
         <table name="Desired Charge Voltage" storageaddress="0x0750CC">
             <table type="Y Axis" storageaddress="0x0750A8" />
         </table>
-        <table name="Table 2D - 150 " storageaddress="0x07510C">
+        <table name="Alternator Duty Cycle Max" storageaddress="0x07510C">
             <table type="Y Axis" storageaddress="0x0750E0" />
         </table>
-        <table name="Table 2D - 151 " storageaddress="0x075158">
+        <table name="Alternator Diagnostic Voltage Delta to DC" storageaddress="0x075158">
             <table type="Y Axis" storageaddress="0x075124" />
         </table>
         <table name="Table 2D - 152 " storageaddress="0x075198">
@@ -14048,7 +14122,7 @@
             <table type="X Axis" storageaddress="0x074A24" />
             <table type="Y Axis" storageaddress="0x074A78" />
         </table>
-        <table name="Table 3D - 53 " storageaddress="0x0752B0">
+        <table name="Alternator Voltage Delta" storageaddress="0x0752B0">
             <table type="X Axis" storageaddress="0x075254" />
             <table type="Y Axis" storageaddress="0x075280" />
         </table>
@@ -14566,16 +14640,16 @@
         <table name="Table 2D - 5" storageaddress="0x06D6E0">
             <table type="Y Axis" storageaddress="0x06D6A0" />
         </table>
-        <table name="Ignition Timing Leading Idle Base" storageaddress="0x06DA8C">
+        <table name="Ignition Leading - Idle Base Timing" storageaddress="0x06DA8C">
             <table type="Y Axis" storageaddress="0x06DA74" />
         </table>
-        <table name="Ignition Timing Leading Idle Temperature Correction Multiplier" storageaddress="0x06DAB8">
+        <table name="Ignition Leading - Idle Timing Load Compensation Multiplier" storageaddress="0x06DAB8">
             <table type="Y Axis" storageaddress="0x06DA94" />
         </table>
-        <table name="Ignition Timing Trailing Idle Base" storageaddress="0x06DADC">
+        <table name="Ignition Trailing- Idle Base Timing" storageaddress="0x06DADC">
             <table type="Y Axis" storageaddress="0x06DAC4" />
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06DB08">
+        <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" storageaddress="0x06DB08">
             <table type="Y Axis" storageaddress="0x06DAE4" />
         </table>
         <table name="Table 2D - 10 " storageaddress="0x06E17C">
@@ -14794,16 +14868,16 @@
         <table name="Table 2D - 105 " storageaddress="0x0726C4">
             <table type="Y Axis" storageaddress="0x0726A0" />
         </table>
-        <table name="Table 2D - 106 " storageaddress="0x072720">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072720">
             <table type="Y Axis" storageaddress="0x0726FC" />
         </table>
-        <table name="Table 2D - 107 " storageaddress="0x072750">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072750">
             <table type="Y Axis" storageaddress="0x07272C" />
         </table>
-        <table name="Table 2D - 108 " storageaddress="0x072780">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072780">
             <table type="Y Axis" storageaddress="0x07275C" />
         </table>
-        <table name="Table 2D - 109 " storageaddress="0x0727B0">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x0727B0">
             <table type="Y Axis" storageaddress="0x07278C" />
         </table>
         <table name="Table 2D - 110 " storageaddress="0x072844">
@@ -14812,7 +14886,7 @@
         <table name="Table 2D - 111 " storageaddress="0x0728B4">
             <table type="Y Axis" storageaddress="0x07285C" />
         </table>
-        <table name="Table 2D - 112 " storageaddress="0x0728F8">
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" storageaddress="0x0728F8">
             <table type="Y Axis" storageaddress="0x0728D8" />
         </table>
         <table name="Table 2D - 114 " storageaddress="0x072928">
@@ -14890,7 +14964,7 @@
         <table name="Desired Charge Voltage" storageaddress="0x074B60">
             <table type="Y Axis" storageaddress="0x074B3C" />
         </table>
-        <table name="Table 2D - 150 " storageaddress="0x074BA0">
+        <table name="Alternator Duty Cycle Max" storageaddress="0x074BA0">
             <table type="Y Axis" storageaddress="0x074B74" />
         </table>
         <table name="Table 2D - 151 " storageaddress="0x074BEC">
@@ -15543,7 +15617,7 @@
             <table type="X Axis" storageaddress="0x06DB14" />
             <table type="Y Axis" storageaddress="0x06DB34" />
         </table>
-        <table name="Ignition Timing Leading Base" storageaddress="0x06DC20">
+        <table name="Ignition Leading - Base Timing" storageaddress="0x06DC20">
             <table type="X Axis" storageaddress="0x06DB88" />
             <table type="Y Axis" storageaddress="0x06DBD8" />
         </table>
@@ -15695,7 +15769,7 @@
             <table type="X Axis" storageaddress="0x0744B0" />
             <table type="Y Axis" storageaddress="0x074504" />
         </table>
-        <table name="Table 3D - 53 " storageaddress="0x074D44">
+        <table name="Alternator Voltage Delta" storageaddress="0x074D44">
             <table type="X Axis" storageaddress="0x074CE8" />
             <table type="Y Axis" storageaddress="0x074D14" />
         </table>
@@ -15875,7 +15949,7 @@
             <table type="X Axis" storageaddress="0x06D700" />
             <table type="Y Axis" storageaddress="0x06D718" />
         </table>
-        <table name="Ignition Leading Minimum" storageaddress="0x06E018">
+        <table name="Ignition Leading - Minimum Advance" storageaddress="0x06E018">
             <table type="X Axis" storageaddress="0x06DFFC" />
             <table type="Y Axis" storageaddress="0x06E00C" />
         </table>
@@ -15883,7 +15957,7 @@
             <table type="X Axis" storageaddress="0x06E048" />
             <table type="Y Axis" storageaddress="0x06E058" />
         </table>
-        <table name="Table 3D - 106 " storageaddress="0x06E134">
+        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E134">
             <table type="X Axis" storageaddress="0x06E118" />
             <table type="Y Axis" storageaddress="0x06E124" />
         </table>
@@ -16288,16 +16362,16 @@
         <table name="Table 2D - 5" storageaddress="0x06D6E0">
             <table type="Y Axis" storageaddress="0x06D6A0" />
         </table>
-        <table name="Ignition Timing Leading Idle Base" storageaddress="0x06DA8C">
+        <table name="Ignition Leading - Idle Base Timing" storageaddress="0x06DA8C">
             <table type="Y Axis" storageaddress="0x06DA74" />
         </table>
-        <table name="Ignition Timing Leading Idle Temperature Correction Multiplier" storageaddress="0x06DAB8">
+        <table name="Ignition Leading - Idle Timing Load Compensation Multiplier" storageaddress="0x06DAB8">
             <table type="Y Axis" storageaddress="0x06DA94" />
         </table>
-        <table name="Ignition Timing Trailing Idle Base" storageaddress="0x06DADC">
+        <table name="Ignition Trailing- Idle Base Timing" storageaddress="0x06DADC">
             <table type="Y Axis" storageaddress="0x06DAC4" />
         </table>
-        <table name="Ignition Timing Trailing Idle Temperature Correction Multiplier" storageaddress="0x06DB08">
+        <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" storageaddress="0x06DB08">
             <table type="Y Axis" storageaddress="0x06DAE4" />
         </table>
         <table name="Table 2D - 10 " storageaddress="0x06E17C">
@@ -16480,7 +16554,7 @@
 		<table name="Table 2D - 85 " storageaddress="0x071610">
             <table type="Y Axis" storageaddress="0x0715E8" />
         </table>
-		<table name="Ignition Timing Leading Intake Air Temperature Compensation - Off Throttle" storageaddress="0x072908">
+		<table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - Off Throttle" storageaddress="0x072908">
             <table type="Y Axis" storageaddress="0x072904" />
         </table>
 		<table name="Table 2D - 85 " storageaddress="0x071610">
@@ -16525,16 +16599,16 @@
         <table name="Table 2D - 105 " storageaddress="0x0726C4">
             <table type="Y Axis" storageaddress="0x0726A0" />
         </table>
-        <table name="Table 2D - 106 " storageaddress="0x072720">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072720">
             <table type="Y Axis" storageaddress="0x0726FC" />
         </table>
-        <table name="Table 2D - 107 " storageaddress="0x072750">
+        <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x072750">
             <table type="Y Axis" storageaddress="0x07272C" />
         </table>
-        <table name="Table 2D - 108 " storageaddress="0x072780">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" storageaddress="0x072780">
             <table type="Y Axis" storageaddress="0x07275C" />
         </table>
-        <table name="Table 2D - 109 " storageaddress="0x0727B0">
+        <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" storageaddress="0x0727B0">
             <table type="Y Axis" storageaddress="0x07278C" />
         </table>
         <table name="Table 2D - 110 " storageaddress="0x072844">
@@ -16543,7 +16617,7 @@
         <table name="Table 2D - 111 " storageaddress="0x0728B4">
             <table type="Y Axis" storageaddress="0x07285C" />
         </table>
-        <table name="Table 2D - 112 " storageaddress="0x0728F8">
+        <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" storageaddress="0x0728F8">
             <table type="Y Axis" storageaddress="0x0728D4" />
         </table>
         <table name="Table 2D - 114 " storageaddress="0x072928">
@@ -16621,10 +16695,10 @@
         <table name="Desired Charge Voltage" storageaddress="0x074B60">
             <table type="Y Axis" storageaddress="0x074B3C" />
         </table>
-        <table name="Table 2D - 150 " storageaddress="0x074BA0">
+        <table name="Alternator Duty Cycle Max" storageaddress="0x074BA0">
             <table type="Y Axis" storageaddress="0x074B74" />
         </table>
-        <table name="Table 2D - 151 " storageaddress="0x074BEC">
+        <table name="Alternator Diagnostic Voltage Delta to DC" storageaddress="0x074BEC">
             <table type="Y Axis" storageaddress="0x074BB8" />
         </table>
         <table name="Table 2D - 152 " storageaddress="0x074C2C">
@@ -17279,7 +17353,7 @@
             <table type="X Axis" storageaddress="0x06DB14" />
             <table type="Y Axis" storageaddress="0x06DB34" />
         </table>
-        <table name="Ignition Timing Leading Base" storageaddress="0x06DC20">
+        <table name="Ignition Leading - Base Timing" storageaddress="0x06DC20">
             <table type="X Axis" storageaddress="0x06DB88" />
             <table type="Y Axis" storageaddress="0x06DBD8" />
         </table>
@@ -17446,7 +17520,7 @@
             <table type="X Axis" storageaddress="0x0744B0" />
             <table type="Y Axis" storageaddress="0x074504" />
         </table>
-        <table name="Table 3D - 53 " storageaddress="0x074D44">
+        <table name="Alternator Voltage Delta" storageaddress="0x074D44">
             <table type="X Axis" storageaddress="0x074CE8" />
             <table type="Y Axis" storageaddress="0x074D14" />
         </table>
@@ -17626,7 +17700,7 @@
             <table type="X Axis" storageaddress="0x06D700" />
             <table type="Y Axis" storageaddress="0x06D718" />
         </table>
-        <table name="Ignition Leading Minimum" storageaddress="0x06E018">
+        <table name="Ignition Leading - Minimum Advance" storageaddress="0x06E018">
             <table type="X Axis" storageaddress="0x06DFFC" />
             <table type="Y Axis" storageaddress="0x06E00C" />
         </table>
@@ -17634,7 +17708,7 @@
             <table type="X Axis" storageaddress="0x06E048" />
             <table type="Y Axis" storageaddress="0x06E058" />
         </table>
-        <table name="Table 3D - 106 " storageaddress="0x06E134">
+        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E134">
             <table type="X Axis" storageaddress="0x06E118" />
             <table type="Y Axis" storageaddress="0x06E124" />
         </table>
