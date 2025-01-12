@@ -194,7 +194,7 @@
 		<table name="Ignition Trailing - Ignition Base Max Safe Mode" category="Ignition Trailing" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
 			<scaling units="deg"/>
 		</table>
-		<table name="Ignition Leading/Trailing - Off Throttle Load Compensation" category="Ignition Timing" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+		<table name="Ignition Leading/Trailing - Off Throttle Coolant Temp Compensation" category="Ignition Timing" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
 			<scaling units="deg"/>
 		</table>
 	<table name="Alternator Pulley Ratio" category="Alternator Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
@@ -2002,7 +2002,7 @@
         <table name="Ignition Leading - Idle Load Compensation" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="8" sizey="7">
             <scaling units="deg" expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
             <table name="Engine Load" type="X Axis" storagetype="float" endian="big">
-                <scaling units="g/rev" expression="x" to_byte="x" />
+                <scaling units="g/rev" format="0.00" expression="x" to_byte="x" />
             </table>
             <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big">
                 <scaling  units="RPM" expression="x" to_byte="x" />
@@ -2945,7 +2945,7 @@
                 <scaling expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" category="Ignition Timing" type="3D" storagetype="float" endian="big" expression="x" to_byte="x" sizex="3" sizey="4">
+        <table name="Ignition Leading/Trailing - On Throttle Coolant Temp Compensation" category="Ignition Timing" type="3D" storagetype="float" endian="big" expression="x" to_byte="x" sizex="3" sizey="4">
             <scaling units="deg" expression="x" to_byte="x" format="0.00" />
             <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
                 <scaling units="RPM" expression="x" to_byte="x" />
@@ -5092,7 +5092,7 @@
             <table type="X Axis" storageaddress="0x06E388" />
             <table type="Y Axis" storageaddress="0x06E398" />
         </table>
-        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E474">
+        <table name="Ignition Leading/Trailing - On Throttle Coolant Temp Compensation" storageaddress="0x06E474">
             <table type="X Axis" storageaddress="0x06E458" />
             <table type="Y Axis" storageaddress="0x06E464" />
         </table>
@@ -5483,7 +5483,7 @@
 	<table name="Ignition Leading - Idle Error Correction Max" storageaddress="0x726e4" />
 	<table name="Ignition Trailing - Idle Erorr Correction Min" storageaddress="0x726f4" />
 	<table name="Ignition Trailing - Idle Error Correction Max" storageaddress="0x726f8" />
-	<table name="Ignition Leading/Trailing - Off Throttle Load Compensation" storageaddress="0x6e110" />
+	<table name="Ignition Leading/Trailing - Off Throttle Coolant Temp Compensation" storageaddress="0x6e110" />
 	<table name="Alternator Pulley Ratio" storageaddress="0x74a1c" />
 	<table name="Alternator Voltage Controller - Proportional Gain" storageaddress="0x74a90" />
 	<table name="Alternator Voltage Controller - Integral Gain" storageaddress="0x74a94" />
@@ -6883,7 +6883,7 @@
             <table type="X Axis" storageaddress="0x06E048" />
             <table type="Y Axis" storageaddress="0x06E058" />
         </table>
-        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E134">
+        <table name="Ignition Leading/Trailing - On Throttle Coolant Temp Compensation" storageaddress="0x06E134">
             <table type="X Axis" storageaddress="0x06E118" />
             <table type="Y Axis" storageaddress="0x06E124" />
         </table>
@@ -10760,7 +10760,7 @@
             <table type="X Axis" storageaddress="0x06E388" />
             <table type="Y Axis" storageaddress="0x06E398" />
         </table>
-        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E474">
+        <table name="Ignition Leading/Trailing - On Throttle Coolant Temp Compensation" storageaddress="0x06E474">
             <table type="X Axis" storageaddress="0x06E458" />
             <table type="Y Axis" storageaddress="0x06E464" />
         </table>
@@ -15957,7 +15957,7 @@
             <table type="X Axis" storageaddress="0x06E048" />
             <table type="Y Axis" storageaddress="0x06E058" />
         </table>
-        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E134">
+        <table name="Ignition Leading/Trailing - On Throttle Coolant Temp Compensation" storageaddress="0x06E134">
             <table type="X Axis" storageaddress="0x06E118" />
             <table type="Y Axis" storageaddress="0x06E124" />
         </table>
@@ -17708,7 +17708,7 @@
             <table type="X Axis" storageaddress="0x06E048" />
             <table type="Y Axis" storageaddress="0x06E058" />
         </table>
-        <table name="Ignition Leading/Trailing - On Throttle Load Compensation" storageaddress="0x06E134">
+        <table name="Ignition Leading/Trailing - On Throttle Coolant Temp Compensation" storageaddress="0x06E134">
             <table type="X Axis" storageaddress="0x06E118" />
             <table type="Y Axis" storageaddress="0x06E124" />
         </table>
