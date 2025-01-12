@@ -2010,11 +2010,11 @@
         </table>
         <table name="Ignition Leading - Base Timing" category="Ignition Leading" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
             <scaling units="deg" expression="x*0.5-50" to_byte="(x+50)/.5" format="0.000" />
-            <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
-                <scaling units="RPM" expression="x" to_byte="x" />
+            <table name="Engine Load" type="X Axis" storagetype="float" endian="big">
+                <scaling units="g/rev" format="0.00" expression="x" to_byte="x" />
             </table>
-            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big">
-                <scaling units="g/rev" expression="x" to_byte="x" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
         </table>
 		<table name="Ignition Timing Leading - Low Engine Load Adder" category="Ignition Leading" type="3D" storagetype="float" endian="big" expression="x" to_byte="x" sizex="3" sizey="4">
