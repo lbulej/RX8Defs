@@ -1364,7 +1364,7 @@
             <scaling units="degrees" expression="(x * 0.5 ) + -50" to_byte="(x - -50) / 0.5" format="0.00" />
             <table name="Coolant Temp" units="degC" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
+        <table name="Ignition Leading - Cranking Timing Advance" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
             <scaling units="deg" expression="(x * 0.5 ) + -50" to_byte="(x - -50) / 0.5" format="0.00" />
             <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="degC"/>
@@ -4234,7 +4234,7 @@
         <table name="Off Throttle Leading Timing Realted" storageaddress="0x07A9F8">
             <table type="Y Axis" storageaddress="0x07A9D4" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance storageaddress="0x07AA28">
+        <table name="Ignition Leading - Cranking Timing Advance" storageaddress="0x07AA28">
             <table type="Y Axis" storageaddress="0x07AA04" />
         </table>
         <table name="Table 2D - 259 " storageaddress="0x07AE7C">
@@ -6163,7 +6163,7 @@
         <table name="Off Throttle Leading Timing Realted" storageaddress="0x0797C8">
             <table type="Y Axis" storageaddress="0x0797A4" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance storageaddress="0x0797F8">
+        <table name="Ignition Leading - Cranking Timing Advance" storageaddress="0x0797F8">
             <table type="Y Axis" storageaddress="0x0797D4" />
         </table>
         <table name="Table 2D - 259 " storageaddress="0x079C20">
@@ -7969,7 +7969,7 @@
         <table name="Off Throttle Leading Timing Realted" storageaddress="0x07AC30">
             <table type="Y Axis" storageaddress="0x07AC0C" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance storageaddress="0x07AC60">
+        <table name="Ignition Leading - Cranking Timing Advance" storageaddress="0x07AC60">
             <table type="Y Axis" storageaddress="0x07AC3C" />
         </table>
         <table name="Table 2D - 259 " storageaddress="0x07B0B4">
@@ -9902,7 +9902,7 @@
         <table name="Off Throttle Leading Timing Realted" storageaddress="0x07A9F8">
             <table type="Y Axis" storageaddress="0x07A9D4" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance storageaddress="0x07AA28">
+        <table name="Ignition Leading - Cranking Timing Advance" storageaddress="0x07AA28">
             <table type="Y Axis" storageaddress="0x07AA04" />
         </table>
         <table name="Table 2D - 259 " storageaddress="0x07AE7C">
@@ -11892,7 +11892,7 @@
         <table name="Off Throttle Leading Timing Realted" storageaddress="0x079320">
             <table type="Y Axis" storageaddress="0x0792FC" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance storageaddress="0x079350">
+        <table name="Ignition Leading - Cranking Timing Advance" storageaddress="0x079350">
             <table type="Y Axis" storageaddress="0x07932C" />
         </table>
         <table name="Table 2D - 259 " storageaddress="0x0797A4">
@@ -13669,7 +13669,7 @@
         <table name="Off Throttle Leading Timing Realted" storageaddress="0x07B244">
             <table type="Y Axis" storageaddress="0x07B220" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance storageaddress="0x07B274">
+        <table name="Ignition Leading - Cranking Timing Advance" storageaddress="0x07B274">
             <table type="Y Axis" storageaddress="0x07B250" />
         </table>
         <table name="Table 2D - 259 " storageaddress="0x07B6C8">
@@ -15262,7 +15262,7 @@
         <table name="Off Throttle Leading Timing Realted" storageaddress="0x0797C8">
             <table type="Y Axis" storageaddress="0x0797A4" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance storageaddress="0x0797F8">
+        <table name="Ignition Leading - Cranking Timing Advance" storageaddress="0x0797F8">
             <table type="Y Axis" storageaddress="0x0797D4" />
         </table>
         <table name="Table 2D - 259 " storageaddress="0x079C20">
@@ -16993,7 +16993,7 @@
         <table name="Off Throttle Leading Timing Realted" storageaddress="0x0797C8">
             <table type="Y Axis" storageaddress="0x0797A4" />
         </table>
-        <table name="Ignition Trailing- Cranking Timing Advance storageaddress="0x0797F8">
+        <table name="Ignition Leading - Cranking Timing Advance" storageaddress="0x0797F8">
             <table type="Y Axis" storageaddress="0x0797D4" />
         </table>
         <table name="Table 2D - 259 " storageaddress="0x079C20">
