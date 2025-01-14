@@ -1155,7 +1155,7 @@
 				<scaling units="degC"/>
 			</table>
         </table>
-        <table name="Fuel Injection - Cat Warmup Fueling - Load Based" category="Fuel Injection" type="2D" storagetype="uint8" endian="big" sizey="10">
+        <table name="Fuel Injection - Cat Warmup Fueling - Load Based" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="10">
             <scaling units="lambda" expression="(x * 0.015625 ) + 0" to_byte="(x - 0) / 0.015625" format="0.00" />
             <table name="Engine Load" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="g/rev"/>
@@ -2659,7 +2659,7 @@
                 <scaling units="g/rev"  expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Fuel Injection - Cat Warmup Fueling - Load Based Compensation" category="Fuel Injection" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="16" sizey="3">
+        <table name="Fuel Injection - Cat Warmup Fueling - Load Based Compensation" category="Fuel Injection - Open Loop" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="16" sizey="3">
             <scaling units="mult" expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
             <table name="Coolant Temperature" type="X Axis" storagetype="float" endian="big">
                 <scaling units="degC" expression="x" to_byte="x" />
@@ -2668,7 +2668,7 @@
                 <scaling units="degC" expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Fuel Injection - Cat Warmup Fueling - Engine Speed Based (Engine Warm)" category="Fuel Injection" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="5" sizey="5">
+        <table name="Fuel Injection - Cat Warmup Fueling - Engine Speed Based (Engine Warm)" category="Fuel Injection - Open Loop" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="5" sizey="5">
             <scaling units="lambda" expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
             <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
                 <scaling units="RPM" expression="x" to_byte="x" />
@@ -2677,7 +2677,7 @@
                 <scaling units="degC" expression="x" to_byte="x" />
             </table>
         </table>
-        <table name="Fuel Injection - Cat Warmup Fueling - Engine Speed Based (Engine Cold)" category="Fuel Injection" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="7" sizey="6">
+        <table name="Fuel Injection - Cat Warmup Fueling - Engine Speed Based (Engine Cold)" category="Fuel Injection - Open Loop" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="7" sizey="6">
             <scaling units="lambda" expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
             <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
                 <scaling units="RPM" expression="x" to_byte="x" />
