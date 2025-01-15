@@ -236,13 +236,13 @@
         </table>
 		
 		<table name="Open Loop Target - Throttle Tip In - Barometric Pressure Correction" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="1-(x * 0.0078125 )" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
+            <scaling units="mult" expression="(x * 0.0078125 )" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa" />
 			</table>
         </table>
 		<table name="Open Loop Target - Throttle Tip In - Barometric Pressure Correction (Safe Mode)" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="1-(x * 0.0078125 )" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
+            <scaling units="mult" expression="(x * 0.0078125 )" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa" />
 			</table>
@@ -302,13 +302,13 @@
 			</table>
         </table>
 		<table name="Open Loop Target - Coolant Temperature  Implausible A - Tip In Barometric Pressure Compensation" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="1-(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
+            <scaling units="mult" expression="(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa"/>
 			</table>
         </table>
 		<table name="Open Loop Target - Coolant Temperature  Implausible B - Tip In Barometric Pressure Compensation" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="1-(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
+            <scaling units="mult" expression="(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa"/>
 			</table>
@@ -1503,13 +1503,17 @@
             <scaling expression="(x * 0.5 ) + 0" to_byte="(x - 0) / 0.5" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 282 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="7">
+        <table name="Table 2D - 282 " category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="7">
             <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0) / 0.003906" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="g/rev"/>
+			</table>
         </table>
-        <table name="Table 2D - 283 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="10">
+        <table name="Table 2D - 283 " category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="10">
             <scaling expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="RPM"/>
+			</table>
         </table>
         <table name="Table 2D - 284 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="6">
             <scaling expression="(x * 1.5E-05 ) + 0" to_byte="(x - 0) / 1.5E-05" format="0.00" />
