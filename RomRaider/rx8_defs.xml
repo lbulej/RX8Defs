@@ -236,13 +236,13 @@
         </table>
 		
 		<table name="Open Loop Target - Throttle Tip In - Barometric Pressure Correction" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="(x * 0.0078125 )+ 1" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
+            <scaling units="mult" expression="1-(x * 0.0078125 )" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa" />
 			</table>
         </table>
 		<table name="Open Loop Target - Throttle Tip In - Barometric Pressure Correction (Safe Mode)" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="(x * 0.0078125 )+1" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
+            <scaling units="mult" expression="1-(x * 0.0078125 )" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa" />
 			</table>
@@ -288,8 +288,8 @@
 			<scaling expression="(x*0.5)-64" to_byte="x" format="0.00" />
 			<table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
 		</table>
-		<table name="Table 2D - Unknown_6916c" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="1">
-			<scaling expression="(x*0.0099999998)" to_byte="(x - 0.0) / 0.0099999998" format="0.00" />
+		<table name="Secondary Air Enrichment" category="Fuel Injection - Open Loop" type="2D" storagetype="uint16" endian="big" sizey="1">
+			<scaling units="Lambda" expression="(x*0.0099999998)" to_byte="(x - 0.0) / 0.0099999998" format="0.00" />
 			<table name="Coolant Temp" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" >
 				<scaling units ="degC"/>
 			</table>
@@ -302,13 +302,13 @@
 			</table>
         </table>
 		<table name="Open Loop Target - Coolant Temperature  Implausible A - Tip In Barometric Pressure Compensation" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
+            <scaling units="mult" expression="1-(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa"/>
 			</table>
         </table>
 		<table name="Open Loop Target - Coolant Temperature  Implausible B - Tip In Barometric Pressure Compensation" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
+            <scaling units="mult" expression="1-(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa"/>
 			</table>
@@ -2324,7 +2324,7 @@
             </table>
         </table>
         <table name="Open Loop Target - Throttle Tip In" category="Fuel Injection - Open Loop" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="12" sizey="8">
-            <scaling units="Lambda" expression="(x * 0.003906)+1" to_byte="x" format="0.000" />
+            <scaling units="Lambda" expression="1-(x * 0.003906)" to_byte="x" format="0.000" />
             <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
                 <scaling units="RPM" expression="x" to_byte="x" />
             </table>
@@ -2333,7 +2333,7 @@
             </table>
         </table>
         <table name="Open Loop Target" category="Fuel Injection - Open Loop" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="21" sizey="19">
-            <scaling units="Lambda" expression="(x * 0.003906)+1" to_byte="x" format="0.000" />
+            <scaling units="Lambda" expression="1-(x * 0.003906)" to_byte="x" format="0.000" />
             <table name="Engine Load" type="X Axis" storagetype="float" endian="big">
                 <scaling units="g/rev" expression="x" to_byte="x" />
             </table>
@@ -2342,7 +2342,7 @@
             </table>
         </table>
         <table name="Open Loop Target - Throttle Tip In (Safe Mode)" category="Fuel Injection - Open Loop" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="1" sizey="1">
-            <scaling units="Lambda" expression="(x * 0.003906)+1" to_byte="x" format="0.000" />
+            <scaling units="Lambda" expression="1-(x * 0.003906)" to_byte="x" format="0.000" />
             <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
                 <scaling units="RPM" expression="x" to_byte="x" />
             </table>
@@ -2351,7 +2351,7 @@
             </table>
         </table>
         <table name="Open Loop Target (Safe Mode)" category="Fuel Injection - Open Loop" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="1" sizey="1">
-            <scaling units="Lambda" expression="(x * 0.003906)+1" to_byte="x" format="0.000" />
+            <scaling units="Lambda" expression="1-(x * 0.003906)" to_byte="x" format="0.000" />
             <table name="Engine Load" type="X Axis" storagetype="float" endian="big">
                 <scaling units="g/rev" expression="x" to_byte="x" />
             </table>
@@ -2360,7 +2360,7 @@
             </table>
         </table>
         <table name="Open Loop Target - Throttle Tip in - Coolant Temp Implausible B" category="Fuel Injection - Open Loop" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="12" sizey="8">
-            <scaling units="Lambda" expression="(x * 0.003906)+1" to_byte="x" format="0.000" />
+            <scaling units="Lambda" expression="1-(x * 0.003906)" to_byte="x" format="0.000" />
             <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
                 <scaling units="RPM" expression="x" to_byte="x" />
             </table>
@@ -5995,7 +5995,7 @@
         <table name="Table 2D - 176 " storageaddress="0x077128">
             <table type="Y Axis" storageaddress="0x0770F4" />
         </table>
-		<table name="Table 2D - Unknown_6916c" storageaddress="0x77908">
+		<table name="Secondary Air Enrichment" storageaddress="0x77908">
             <table type="Y Axis" storageaddress="0x77904" />
         </table>
         <table name="Table 2D - 177 Might be Primary/Secondary Ratio" storageaddress="0x077220">
