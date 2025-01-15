@@ -7,25 +7,25 @@
             <make>Mazda</make>
         </romid>
 		<table name="Table 3D - UNKNOWN_687b0" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="26" sizey="19">
-            <scaling expression="(x * 0.0030517578) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <scaling expression="(x * 0.0030517578) + 0" to_byte="(x - 0.0) / 0.0030517578" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+                <scaling expression="x" to_byte="x" format="0.00" />
             </table>
             <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+                <scaling expression="x" to_byte="x" format="0.00" />
             </table>
         </table>
 		<table name="Table 3D - UNKNOWN_68d30" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="8" sizey="19">
-            <scaling expression="(x * 0.0078125) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <scaling expression="(x * 0.0078125) + 0" to_byte="(x - 0.0) / 0.0078125" format="0.00" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+                <scaling expression="x" to_byte="x" format="0.00" />
             </table>
             <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+                <scaling expression="x" to_byte="x" format="0.00" />
             </table>
         </table>
 		<table name="Table 3D - UNKNOWN_68c4c" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="13" sizey="3">
-            <scaling expression="(x * 0.000030517578) + 0" to_byte="(x - 0) / 1" format="0.0000" />
+            <scaling expression="(x * 0.000030517578) + 0" to_byte="(x - 0.0) / 3.0517578e-05" format="0.0000" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x"  format="0.00"/>
             </table>
@@ -34,7 +34,7 @@
             </table>
         </table>
 		<table name="Table 3D - UNKNOWN_68c68" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="13" sizey="3">
-            <scaling expression="(x * 0.000030517578) + 0" to_byte="(x - 0) / 1" format="0.0000" />
+            <scaling expression="(x * 0.000030517578) + 0" to_byte="(x - 0.0) / 3.0517578e-05" format="0.0000" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" format="0.00"/>
             </table>
@@ -43,7 +43,7 @@
             </table>
         </table>
 		<table name="Table 3D - UNKNOWN_69d18" category="Unknown 3D" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="10" sizey="17">
-            <scaling expression="x * 0.001953125" to_byte="x" format="0.000" />
+            <scaling expression="x * 0.001953125" to_byte="x/0.001953125" format="0.000" />
             <table name="Value" type="X Axis" storagetype="float" endian="big">
                 <scaling expression="x" to_byte="x" format="0.000" />
             </table>
@@ -52,7 +52,7 @@
             </table>
         </table>
 		<table name="Table FLOAT 3D - UNKNOWN_68c38" category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="3" sizey="12">
-            <scaling expression="(x * 1) + 0" to_byte="(x - 0) / 1" format="0" />
+            <scaling expression="(x * 1) + 0" to_byte="(x - 0.0) / 1.0" format="0" />
             <table name="Value" type="X Axis" storagetype="float" endian="big"  >
                 <scaling expression="x" to_byte="x" format="0.00" />
             </table>
@@ -106,7 +106,7 @@
             </table>
         </table>
 		<table name="Table 3D - UNKNOWN_6882c" category="Unknown 3D" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="9" sizey="9">
-            <scaling expression="(x*0.0049999999)" to_byte="x" format="0.0000" />
+            <scaling expression="(x*0.0049999999)" to_byte="(x - 0.0) / 0.0049999999" format="0.0000" />
             <table name="Abs Manifold Pressure"  type="X Axis" storagetype="float" endian="big"  >
                 <scaling units="kPa" expression="x" to_byte="x" format="0.00" />
             </table>
@@ -165,6 +165,12 @@
         <table name="Knock Control - Retard Decrement #1" category="Knock Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Knock Control - Retard Decrement #2" category="Knock Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Knock Control - Retard Decrement #3" category="Knock Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
+		<table name="Cold Start Fuel Enrichment" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="lambda"/>
+		</table>
+		<table name="Cold Start Fuel Enrichment Decrement" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="lambda/loop"/>
+		</table>
 		<table name="Ignition Leading - Ignition Base Max" category="Ignition Leading" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
 			<scaling units="deg"/>
 		</table>
@@ -200,17 +206,17 @@
 		<table name="Alternator Voltage Controller - Integral Gain" category="Alternator Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
 		<table name="Alternator Voltage Controller - Derivative Gain" category="Alternator Control" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" />
         <table name="Fuel Injector - Unknown - Max Injection Angle1???" category="Fuel Injection" type="2D" storagetype="uint8" endian="big" sizey="16">
-            <scaling units="deg (MAYBE?)" expression="(x * 2 ) + 0" to_byte="(x - 0) / 2" format="0.00" />
+            <scaling units="deg (MAYBE?)" expression="(x * 2 ) + 0" to_byte="(x - 0.0) / 2.0" format="0.00" />
             <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="RPM"/>
 			</table>
         </table>
 		<table name="Table 2D - Unknown_68cb4 -Desired Torque Calculation 3a" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="9">
-            <scaling expression="(x * 0.0078125 ) + 0" to_byte="(x - 0) / 2" format="0.0000" />
+            <scaling expression="(x * 0.0078125 ) + 0" to_byte="(x - 0.0) / 0.0078125" format="0.0000" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
 		<table name="Table 2D - Unknown_68ca0 -Desired Torque Calculation 3b" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="9">
-            <scaling expression="(x * 0.0078125) + 0" to_byte="(x - 0) / 2" format="0.0000" />
+            <scaling expression="(x * 0.0078125) + 0" to_byte="(x - 0.0) / 0.0078125" format="0.0000" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
 		<table name="Table 2D - Unknown_69158" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="11">
@@ -223,26 +229,26 @@
         </table>
 		
         <table name="Fuel Injector - Unknown - Max Injection Angle2???" category="Fuel Injection" type="2D" storagetype="uint8" endian="big" sizey="16">
-            <scaling units="deg(MAYBE??)" expression="(x * 2 ) + 0" to_byte="(x - 0) / 2" format="0.00" />
+            <scaling units="deg(MAYBE??)" expression="(x * 2 ) + 0" to_byte="(x - 0.0) / 2.0" format="0.00" />
             <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="RPM" />
 			</table>
         </table>
 		
 		<table name="Open Loop Target - Throttle Tip In - Barometric Pressure Correction" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="(x * 0.0078125 )+ 1" to_byte="x" format="0.00" />
+            <scaling units="mult" expression="(x * 0.0078125 )+ 1" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa" />
 			</table>
         </table>
 		<table name="Open Loop Target - Throttle Tip In - Barometric Pressure Correction (Safe Mode)" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="(x * 0.0078125 )+1" to_byte="x" format="0.00" />
+            <scaling units="mult" expression="(x * 0.0078125 )+1" to_byte="(x - 1.0) / 0.0078125" format="0.00" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa" />
 			</table>
         </table>
 		<table name="Table 2D - Unknown_67824" category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="5">
-			<scaling expression="(x*0.0049999)" to_byte="x" format="0.00" />
+			<scaling expression="(x*0.0049999)" to_byte="(x - 0.0) / 0.0049999" format="0.00" />
         <table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
 		</table>
 		
@@ -283,58 +289,58 @@
 			<table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
 		</table>
 		<table name="Table 2D - Unknown_6916c" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="1">
-			<scaling expression="(x*0.0099999998)" to_byte="x" format="0.00" />
+			<scaling expression="(x*0.0099999998)" to_byte="(x - 0.0) / 0.0099999998" format="0.00" />
 			<table name="Coolant Temp" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" >
 				<scaling units ="degC"/>
 			</table>
 		</table>
     
         <table name="Fuel Injector - Unknown - Max Injection Angle3???" category="Fuel Injection" type="2D" storagetype="uint8" endian="big" sizey="16">
-            <scaling units="deg(MAYBE??)" expression="(x * 2 ) + 0" to_byte="(x - 0) / 2" format="0.00" />
+            <scaling units="deg(MAYBE??)" expression="(x * 2 ) + 0" to_byte="(x - 0.0) / 2.0" format="0.00" />
             <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="RPM"/>
 			</table>
         </table>
 		<table name="Open Loop Target - Coolant Temperature  Implausible A - Tip In Barometric Pressure Compensation" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="(x * 0.0078125)" to_byte="(x - 0) " format="0.000" />
+            <scaling units="mult" expression="(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa"/>
 			</table>
         </table>
 		<table name="Open Loop Target - Coolant Temperature  Implausible B - Tip In Barometric Pressure Compensation" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling units="mult" expression="(x * 0.0078125)" to_byte="(x - 0) " format="0.000" />
+            <scaling units="mult" expression="(x * 0.0078125)" to_byte="(x - 0.0) / 0.0078125" format="0.000" />
             <table name="Barometric Pressure" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="kPa"/>
 			</table>
         </table>
 		<table name="Table 2D - Fuel Equation Something " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="8">
-            <scaling expression="(x * 0.00390625)" to_byte="(x - 0) " format="0.000" />
+            <scaling expression="(x * 0.00390625)" to_byte="(x - 0.0) / 0.00390625" format="0.000" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units=""/>
 			</table>
         </table>
 		<table name="Table 2D - Fuel Equation Something - Driver Off Throttle" category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="8">
-            <scaling expression="(x * 0.00390625)" to_byte="(x - 0) " format="0.000" />
+            <scaling expression="(x * 0.00390625)" to_byte="(x - 0.0) / 0.00390625" format="0.000" />
             <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="degC"/>
 			</table>
         </table>
 		<table name="Table 2D - Fuel Equation Something 2 - Driver Off Throttle" category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="8">
-            <scaling expression="(x * 0.00390625)" to_byte="(x - 0) " format="0.000" />
+            <scaling expression="(x * 0.00390625)" to_byte="(x - 0.0) / 0.00390625" format="0.000" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="??"/>
 			</table>
         </table>
         <table name="Table 2D - 3 " category="E910" type="2D" storagetype="uint8" endian="big" sizey="10">
-            <scaling expression="(x * 0.005 ) + 0" to_byte="(x - 0) / 0.005" format="0.00" />
+            <scaling expression="(x * 0.005 ) + 0" to_byte="(x - 0.0) / 0.005" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 4 " category="E560" type="2D" storagetype="uint8" endian="big" sizey="6">
-            <scaling expression="(x * 25 ) + 0" to_byte="(x - 0) / 25" format="0.00" />
+            <scaling expression="(x * 25 ) + 0" to_byte="(x - 0.0) / 25.0" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 5" category="E650" type="2D" storagetype="uint16" endian="big" sizey="16">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0.0) / 1.0" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Ignition Leading - Idle Base Timing" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="6">
@@ -354,7 +360,7 @@
 			</table>
         </table>
         <table name="Ignition Leading - Idle Timing Load Compensation Multiplier" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling units="mult" expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
+            <scaling units="mult" expression="(x * 0.01 ) + 0" to_byte="(x - 0.0) / 0.01" format="0.00" />
             <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="degC"/>
 			</table>
@@ -366,37 +372,37 @@
 			</table>
         </table>
         <table name="Ignition Trailing- Idle Timing Load Compensation Multiplier" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling units="mult" expression="(x * 0.01 ) + 0" to_byte="(x - 0) / 0.01" format="0.00" />
+            <scaling units="mult" expression="(x * 0.01 ) + 0" to_byte="(x - 0.0) / 0.01" format="0.00" />
             <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="degC"/>
 			</table>
         </table>
         <table name="Table 2D - 10 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="6">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
+            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0.0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 11 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="6">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
+            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0.0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 12 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="6">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
+            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0.0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 13 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="6">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
+            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0.0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 14 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="6">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
+            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0.0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 15 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="6">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
+            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0.0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 16 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="16">
-            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0) / 0.001" format="0.00" />
+            <scaling expression="(x * 0.001 ) + 0" to_byte="(x - 0.0) / 0.001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 17 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="7">
@@ -404,7 +410,7 @@
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 18 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="7">
-            <scaling expression="(x * 0.002 ) + 0" to_byte="(x - 0) / 0.002" format="0.00" />
+            <scaling expression="(x * 0.002 ) + 0" to_byte="(x - 0.0) / 0.002" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 19 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="7">
@@ -412,7 +418,7 @@
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 20 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="7">
-            <scaling expression="(x * 0.002 ) + 0" to_byte="(x - 0) / 0.002" format="0.00" />
+            <scaling expression="(x * 0.002 ) + 0" to_byte="(x - 0.0) / 0.002" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 21 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="7">
@@ -420,19 +426,19 @@
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 22 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="7">
-            <scaling expression="(x * 0.002 ) + 0" to_byte="(x - 0) / 0.002" format="0.00" />
+            <scaling expression="(x * 0.002 ) + 0" to_byte="(x - 0.0) / 0.002" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 23 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="19">
-            <scaling expression="(x * 0 ) + -0.01" to_byte="(x - -0.01) / 0" format="0.00" />
+            <scaling expression="(x * 0 ) + -0.01" to_byte="(x - -0.01) / 0.0" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 24 " category="Idle control" type="2D" storagetype="uint16" endian="big" sizey="11">
-            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0) / 0.003906" format="0.00" />
+            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0.0) / 0.003906" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Idle Target A" category="Idle Control" type="2D" storagetype="uint16" endian="big" sizey="7">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0.0) / 1.0" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Idle Target B" category="Idle Control" type="2D" storagetype="uint16" endian="big" sizey="12">
@@ -662,69 +668,69 @@
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 82 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="12">
-            <scaling expression="(x * 0.0001 ) + 0" to_byte="(x - 0) / 0.0001" format="0.00" />
+            <scaling expression="(x * 0.0001 ) + 0" to_byte="(x - 0.0) / 0.0001" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 83 " category="Fuel Trim?" type="2D" storagetype="uint8" endian="big" sizey="10">
-            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0) / 0.007812" format="0.00" />
+            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0.0) / 0.007812" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 84 " category="Fuel Trim?" type="2D" storagetype="uint16" endian="big" sizey="10">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0.0) / 1.0" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 85 " category="Fuel Trim?" type="2D" storagetype="uint16" endian="big" sizey="10">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0.0) / 1.0" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Open Loop Fuelling Base Correction (Throttle) - Safe Mode" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0) / 0.007812" format="0.00" />
+            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0.0) / 0.007812" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Open Loop Fuelling Base Correction (Throttle)" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="1">
-            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0) / 0.007812" format="0.00" />
+            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0.0) / 0.007812" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Open Loop Target - Coolant Temperature Correction" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="7">
-            <scaling units="mult" expression="(x * 0.007812 ) + 0" to_byte="(x - 0) / 0.007812" format="0.00" />
+            <scaling units="mult" expression="(x * 0.007812 ) + 0" to_byte="(x - 0.0) / 0.007812" format="0.00" />
             <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="degC"/>
 			</table>
         </table>
         <table name="Open Loop Fuelling Rich Limit - Safe Mode" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(1 / ( (x * 0.007812) + 1 )) * 14.7" to_byte="(14.7-x) / (0.007812*x)" format="0.000" />
+            <scaling expression="(1 / ( (x * 0.007812) + 1 )) * 14.7" to_byte="(x - 1.0) / 0.007812" format="0.000" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Open Loop Fuelling Rich Limit" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(1 / ( (x * 0.007812) + 1 )) * 14.7" to_byte="(14.7-x) / (0.007812*x)" format="0.000" />
+            <scaling expression="(1 / ( (x * 0.007812) + 1 )) * 14.7" to_byte="(x - 1.0) / 0.007812" format="0.000" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Open Loop Temperature Correction #B" category="Fuel Injection - Open Loop" type="2D" storagetype="uint8" endian="big" sizey="7">
-            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0) / 0.007812" format="0.00" />
+            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0.0) / 0.007812" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Closed Loop Fuelling Threshold (Engine Load A)" category="Fuel Target (Closed Loop)" type="2D" storagetype="uint8" endian="big" sizey="18">
-            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0) / 0.003906" format="0.00" />
+            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0.0) / 0.003906" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Closed Loop Fuelling Threshold (Engine Load B)" category="Fuel Target (Closed Loop)" type="2D" storagetype="uint8" endian="big" sizey="18">
-            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0) / 0.003906" format="0.00" />
+            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0.0) / 0.003906" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Closed Loop Fuelling Threshold (Engine Load C)" category="Fuel Target (Closed Loop)" type="2D" storagetype="uint8" endian="big" sizey="18">
-            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0) / 0.003906" format="0.00" />
+            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0.0) / 0.003906" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Closed Loop Fuelling Threshold (Unknown A)" category="Fuel Target (Closed Loop)" type="2D" storagetype="uint8" endian="big" sizey="12">
-            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0) / 0.007812" format="0.00" />
+            <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0.0) / 0.007812" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Closed Loop Fuelling Threshold (Throttle Position) " category="Fuel Target (Closed Loop)" type="2D" storagetype="uint8" endian="big" sizey="19">
-            <scaling expression="(x * 0.5 ) + 0" to_byte="(x - 0) / 0.5" format="0.00" />
+            <scaling expression="(x * 0.5 ) + 0" to_byte="(x - 0.0) / 0.5" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 97 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="18">
-            <scaling expression="(x * 0.005 ) + 0" to_byte="(x - 0) / 0.005" format="0.00" />
+            <scaling expression="(x * 0.005 ) + 0" to_byte="(x - 0.0) / 0.005" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 98 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="1">
@@ -766,25 +772,25 @@
 			</table>
         </table>
         <table name="Ignition Leading - Idle Error Timing Correction - Unknown Bool True" category="Ignition Leading" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling units="deg" expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
+            <scaling units="deg" expression="(x * 0.25 ) + -32" to_byte="(x - -32.0) / 0.25" format="0.00" />
             <table name="Idle Speed Error" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="RPM"/>
 			</table>
         </table>
         <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool False" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
+            <scaling expression="(x * 0.25 ) + -32" to_byte="(x - -32.0) / 0.25" format="0.00" />
             <table name="Idle Speed Error" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="RPM"/>
 			</table>
         </table>
         <table name="Ignition Trailing - Idle Error Timing Correction - Unknown Bool True" category="Ignition Trailing" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling expression="(x * 0.25 ) + -32" to_byte="(x - -32) / 0.25" format="0.00" />
+            <scaling expression="(x * 0.25 ) + -32" to_byte="(x - -32.0) / 0.25" format="0.00" />
             <table name="Idle Speed Error" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaliung units="RPM"/>
 			</table>
         </table>
         <table name="Table 2D - 110 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="22">
-            <scaling expression="(x * 0.5 ) + -50" to_byte="(x - -50) / 0.5" format="0.00" />
+            <scaling expression="(x * 0.5 ) + -50" to_byte="(x - -50.0) / 0.5" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 111 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="22">
@@ -792,7 +798,7 @@
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Ignition Leading/Trailing - Intake Air Temperature Compensation - On Throttle" category="Ignition Timing" type="2D" storagetype="uint8" endian="big" sizey="9">
-            <scaling units="deg" expression="(x * 0.5 ) + -40" to_byte="(x - -40) / 0.5" format="0.00" />
+            <scaling units="deg" expression="(x * 0.5 ) + -40" to_byte="(x - -40.0) / 0.5" format="0.00" />
             <table name="Intake Air Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
 				<scaling units="degC"/>
 			</table>
@@ -5494,6 +5500,8 @@
         <table name="Barometric Pressure Sensor Max Voltage" storageaddress="0x079700" />
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x079790" />
         <table name="Barometric Pressure Sensor Offset" storageaddress="0x07978C" />
+		<table name="Cold Start Fuel Enrichment" storageaddress="0x714b0" />
+		<table name="Cold Start Fuel Enrichment Decrement" storageaddress="0x714b4" />
         <table name="Cold Rev Limit" storageaddress="0x06DA44" />
 		<table name="Cold Rev Limit Hysteresis" storageaddress="0x6da48" />
         <table name="Cold Rev Temperature Limit" storageaddress="0x06DA3C" />
