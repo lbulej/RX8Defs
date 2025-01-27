@@ -987,13 +987,17 @@
             <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0) / 0.007812" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 158 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="13">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Rotor 1 Ignition Dwell" category="Ignition" type="2D" storagetype="uint16" endian="big" sizey="13">
+            <scaling units="ms" expression="(x * 4 )/1000" to_byte="(x - 0) / 4" format="0.000" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="RPM"/>
+			</table>
         </table>
-        <table name="Table 2D - 159 " category="Unknown 2D" type="2D" storagetype="uint16" endian="big" sizey="13">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Rotor 2 Ignition Dwell" category="Ignition" type="2D" storagetype="uint16" endian="big" sizey="13">
+            <scaling units="ms" expression="(x * 4 ) / 1000" to_byte="(x - 0) / 4" format="0.000" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x">
+				<scaling units="RPM"/>
+			</table>
         </table>
         <table name="Table 2D - 160 " category="Ignition Leading" type="2D" storagetype="uint16" endian="big" sizey="18">
             <scaling expression="(x * 0.007812 ) + 0" to_byte="(x - 0) / 0.007812" format="0.00" />
@@ -3192,12 +3196,12 @@
             </table>
         </table>	
         <table name="Ignition Dwell Time " category="Ignition" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="9" sizey="9">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <scaling units="ms" expression="(x * 1 )/1000" to_byte="(x - 0) / 1" format="0.000" />
+            <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Battery Voltage" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="V" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="DTC 0300 Enable/Disable#1" category="DTCs" type="1D" storagetype="uint8" endian="big" expression="x" to_byte="x" size="1" />
@@ -3978,10 +3982,10 @@
         <table name="Table 2D - 157 " storageaddress="0x0759CC">
             <table type="Y Axis" storageaddress="0x075984" />
         </table>
-        <table name="Table 2D - 158 " storageaddress="0x075BF8">
+        <table name="Rotor 1 Ignition Dwell" storageaddress="0x075BF8">
             <table type="Y Axis" storageaddress="0x075BC4" />
         </table>
-        <table name="Table 2D - 159 " storageaddress="0x075C48">
+        <table name="Rotor 2 Ignition Dwell" storageaddress="0x075C48">
             <table type="Y Axis" storageaddress="0x075C14" />
         </table>
         <table name="Table 2D - 160 " storageaddress="0x076034">
@@ -5942,10 +5946,10 @@
         <table name="Table 2D - 157 " storageaddress="0x075220">
             <table type="Y Axis" storageaddress="0x0751DC" />
         </table>
-        <table name="Table 2D - 158 " storageaddress="0x07544C">
+        <table name="Rotor 1 Ignition Dwell" storageaddress="0x07544C">
             <table type="Y Axis" storageaddress="0x075418" />
         </table>
-        <table name="Table 2D - 159 " storageaddress="0x07549C">
+        <table name="Rotor 2 Ignition Dwell" storageaddress="0x07549C">
             <table type="Y Axis" storageaddress="0x075468" />
         </table>
         <table name="Table 2D - 160 " storageaddress="0x07576C">
@@ -7755,10 +7759,10 @@
         <table name="Table 2D - 157 " storageaddress="0x075578">
             <table type="Y Axis" storageaddress="0x075530" />
         </table>
-        <table name="Table 2D - 158 " storageaddress="0x07581C">
+        <table name="Rotor 1 Ignition Dwell" storageaddress="0x07581C">
             <table type="Y Axis" storageaddress="0x0757E8" />
         </table>
-        <table name="Table 2D - 159 " storageaddress="0x07586C">
+        <table name="Rotor 2 Ignition Dwell" storageaddress="0x07586C">
             <table type="Y Axis" storageaddress="0x075838" />
         </table>
         <table name="Table 2D - 160 " storageaddress="0x075C58">
@@ -9661,10 +9665,10 @@
         <table name="Table 2D - 157 " storageaddress="0x0759CC">
             <table type="Y Axis" storageaddress="0x075984" />
         </table>
-        <table name="Table 2D - 158 " storageaddress="0x075BF8">
+        <table name="Rotor 1 Ignition Dwell" storageaddress="0x075BF8">
             <table type="Y Axis" storageaddress="0x075BC4" />
         </table>
-        <table name="Table 2D - 159 " storageaddress="0x075C48">
+        <table name="Rotor 2 Ignition Dwell" storageaddress="0x075C48">
             <table type="Y Axis" storageaddress="0x075C14" />
         </table>
         <table name="Table 2D - 160 " storageaddress="0x076034">
@@ -11663,10 +11667,10 @@
         <table name="Table 2D - 157 " storageaddress="0x074A3C">
             <table type="Y Axis" storageaddress="0x0749F8" />
         </table>
-        <table name="Table 2D - 158 " storageaddress="0x074C68">
+        <table name="Rotor 1 Ignition Dwell" storageaddress="0x074C68">
             <table type="Y Axis" storageaddress="0x074C34" />
         </table>
-        <table name="Table 2D - 159 " storageaddress="0x074CB8">
+        <table name="Rotor 2 Ignition Dwell" storageaddress="0x074CB8">
             <table type="Y Axis" storageaddress="0x074C84" />
         </table>
         <table name="Table 2D - 160 " storageaddress="0x0750AA">
@@ -13479,10 +13483,10 @@
         <table name="Table 2D - 155 " storageaddress="0x075240">
             <table type="Y Axis" storageaddress="0x07521C" />
         </table>
-        <table name="Table 2D - 158 " storageaddress="0x075E1C">
+        <table name="Rotor 1 Ignition Dwell" storageaddress="0x075E1C">
             <table type="Y Axis" storageaddress="0x075DE8" />
         </table>
-        <table name="Table 2D - 159 " storageaddress="0x075E6C">
+        <table name="Rotor 2 Ignition Dwell" storageaddress="0x075E6C">
             <table type="Y Axis" storageaddress="0x075E38" />
         </table>
         <table name="Table 2D - 161 " storageaddress="0x0762A8">
@@ -15051,10 +15055,10 @@
         <table name="Table 2D - 157 " storageaddress="0x075220">
             <table type="Y Axis" storageaddress="0x0751DC" />
         </table>
-        <table name="Table 2D - 158 " storageaddress="0x07544C">
+        <table name="Rotor 1 Ignition Dwell" storageaddress="0x07544C">
             <table type="Y Axis" storageaddress="0x075418" />
         </table>
-        <table name="Table 2D - 159 " storageaddress="0x07549C">
+        <table name="Rotor 2 Ignition Dwell" storageaddress="0x07549C">
             <table type="Y Axis" storageaddress="0x075468" />
         </table>
         <table name="Table 2D - 160 " storageaddress="0x07576C">
@@ -16782,10 +16786,10 @@
         <table name="Table 2D - 157 " storageaddress="0x075220">
             <table type="Y Axis" storageaddress="0x0751DC" />
         </table>
-        <table name="Table 2D - 158 " storageaddress="0x07544C">
+        <table name="Rotor 1 Ignition Dwell" storageaddress="0x07544C">
             <table type="Y Axis" storageaddress="0x075418" />
         </table>
-        <table name="Table 2D - 159 " storageaddress="0x07549C">
+        <table name="Rotor 2 Ignition Dwell" storageaddress="0x07549C">
             <table type="Y Axis" storageaddress="0x075468" />
         </table>
         <table name="Table 2D - 160 " storageaddress="0x07576C">
