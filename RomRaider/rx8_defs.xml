@@ -3448,6 +3448,7 @@
         <table name="DTC c121 Enable/Disable#2" category="DTCs" type="1D" storagetype="uint8" endian="big" expression="x" to_byte="x" size="1" />
         <table name="DTC c155 Enable/Disable#2" category="DTCs" type="1D" storagetype="uint8" endian="big" expression="x" to_byte="x" size="1" />
         <table name="DTC c167 Enable/Disable#2" category="DTCs" type="1D" storagetype="uint8" endian="big" expression="x" to_byte="x" size="1" />
+		<table name="DTC c167 Enable/Disable#3" category="DTCs" type="1D" storagetype="uint8" endian="big" expression="x" to_byte="x" size="1" />
     </rom>
     <rom base="Rx8Base">
         <romid>
@@ -7143,7 +7144,7 @@
         <table name="DTC c101 Enable/Disable#1" storageaddress="0x07CA71" />
         <table name="DTC c121 Enable/Disable#1" storageaddress="0x07CA72" />
         <table name="DTC c155 Enable/Disable#1" storageaddress="0x07CA73" />
-        <table name="DTC c167 Enable/Disable#1" storageaddress="0x07CA74" />
+        <table name="DTC c167 Enable/Disable#1" storageaddress="0x07CA77" />
         <table name="DTC 0300 Enable/Disable#2" storageaddress="0x07CA88" />
         <table name="DTC 0300 Enable/Disable#2" storageaddress="0x07CA89" />
         <table name="DTC 0030 Enable/Disable#2" storageaddress="0x07CA8A" />
@@ -7264,7 +7265,8 @@
         <table name="DTC c101 Enable/Disable#2" storageaddress="0x07CAFD" />
         <table name="DTC c121 Enable/Disable#2" storageaddress="0x07CAFE" />
         <table name="DTC c155 Enable/Disable#2" storageaddress="0x07CAFF" />
-        <table name="DTC c167 Enable/Disable#2" storageaddress="0x07CB00" />
+        <table name="DTC c167 Enable/Disable#2" storageaddress="0x07CB03" />
+		<table name="DTC c167 Enable/Disable#3" storageaddress="0x07cb8f" />
     </rom>
     <rom base="Rx8Base">
         <romid>
