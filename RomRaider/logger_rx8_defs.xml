@@ -202,6 +202,18 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 							<conversion units="F" expr="32+9*(x-40)/5" format="0" gauge_min="0" gauge_max="240" gauge_step="30" />
 						</conversions>
 				</parameter>
+				<parameter id="PIDTEST69" name="Ethanol Content" desc="Ethanol Content" >
+						<address>0x220555</address>
+						<conversions>
+							<conversion storagetype="uint16" units="%" expr="x" format="0" gauge_min="0" gauge_max="100" gauge_step="5" />
+						</conversions>
+				</parameter>
+				<parameter id="PIDTEST69" name="Flex Fuel Timing Multiplier" desc="Flex Fuel Timing Multiplier" >
+						<address>0x22022b</address>
+						<conversions>
+							<conversion storagetype="uint16" units="mult" expr="x*0.0005" format="0.000" gauge_min="0" gauge_max="11" gauge_step=".125" />
+						</conversions>
+				</parameter>
 				<parameter id="PIDTEST10" name="Mass Air Flow" desc="MAF" >
 						<address>0x220010</address>
 						<conversions>
