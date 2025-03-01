@@ -179,7 +179,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 				<parameter id="PIDTEST6" name="Engine Speed" desc="The speed of the engine" >
 						<address>0x22000C</address>
 						<conversions>
-							<conversion units="RPM" expr="x*.25" format="0.0" gauge_min="120" gauge_max="-20" gauge_step="1" />
+							<conversion storagetype="uint16"  units="RPM" expr="x*.25" format="0" gauge_min="0" gauge_max="10000" gauge_step="1" />
 						</conversions>
 				</parameter>
 				<parameter id="PIDTEST7" name="Vehicle Speed" desc="The speed of the vehicle" >
@@ -220,10 +220,22 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 							<conversion storagetype="uint16" units="mult" expr="x*0.0005" format="0.000" gauge_min="0" gauge_max="11" gauge_step=".125" />
 						</conversions>
 				</parameter>
+				<parameter id="PIDTEST8" name="Flex Leading Ignition Timing Adder" desc="Timing Adder" >
+						<address>0x220557</address>
+						<conversions>
+							<conversion storagetype="uint16" units="deg" expr="(x*0.5)-50" format="0.00" gauge_max="500"/>
+						</conversions>
+				</parameter>
+				<parameter id="PIDTEST8" name="Flex Trailing Ignition Timing Adder" desc="Timing Adder" >
+						<address>0x220558</address>
+						<conversions>
+							<conversion storagetype="uint16" units="deg" expr="(x*0.5)-50" format="0.00" gauge_max="500"/>
+						</conversions>
+				</parameter>
 				<parameter id="PIDTEST69" name="Engine Load" desc="Engine load" >
 						<address>0x220043</address>
 						<conversions>
-							<conversion storagetype="uint16" units="mult" expr="x*0.0005" format="0.00" gauge_min="0" gauge_max="11" gauge_step=".125" />
+							<conversion storagetype="uint16" units="mult" expr="x*0.003921568" format="0.00" gauge_min="0" gauge_max="11" gauge_step=".125" />
 						</conversions>
 				</parameter>
 				<parameter id="PIDTEST69" name="Lambda Target" desc="Lambda Target" >
