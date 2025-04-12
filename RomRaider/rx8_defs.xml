@@ -8871,13 +8871,13 @@
 			<table type="X Axis" storageaddress="0x07569c" />
             <table type="Y Axis" storageaddress="0x0756cc" />
 		</table>
-		<table name="Table 3D - Timing Ethanol Adder - Leading" storageaddress="0x6C594">
-			<table type="X Axis" storageaddress="0x6C4FC"/>
-            <table type="Y Axis" storageaddress="0x6C54C" />
+		<table name="Table 3D - Timing Ethanol Adder - Leading" storageaddress="0x6c594">
+			<table type="X Axis" storageaddress="0x6c4fc"/>
+            <table type="Y Axis" storageaddress="0x6c54c" />
 		</table>
-		<table name="Table 3D - Timing Ethanol Adder - Trailing" storageaddress="0x6C7B0">
-			<table type="X Axis" storageaddress="0x6C710"/>
-            <table type="Y Axis" storageaddress="0x6C768" />
+		<table name="Table 3D - Timing Ethanol Adder - Trailing" storageaddress="0x6c7b0">
+			<table type="X Axis" storageaddress="0x6c718"/>
+            <table type="Y Axis" storageaddress="0x6c768" />
 		</table>
 		<table name="Table 2D - Stoich Fuel Ratio" storageaddress="0x6C444">
             <table type="Y Axis" storageaddress="0x6C414" />
