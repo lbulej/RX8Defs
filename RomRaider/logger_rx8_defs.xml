@@ -167,7 +167,8 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 				<parameter id="PIDTEST4" name="Injector Pulse Time" desc="Injector Pulse Time" >
 						<address>0x221410</address>
 						<conversions>
-							<conversion storagetype="uint8" units="ms" expr="x*8" format="0.000" gauge_max="500"/>
+							<conversion storagetype="uint8" units="us" expr="x*8" format="0.000" gauge_max="500"/>
+							<conversion storagetype="uint16" units="ms" expr="(x*8)*0.001" format="0.000" gauge_min="120" gauge_max="-20" gauge_step="20" />
 						</conversions>
 				</parameter>
 				<parameter id="PIDTEST5" name="Throttle Pedal Position" desc="Throttle Pedal Position" >
