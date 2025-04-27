@@ -244,6 +244,12 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 							<conversion storagetype="uint16" units="mult" expr="x*0.00003051758" format="0.000" gauge_min="0" gauge_max="2" gauge_step=".001" />
 						</conversions>
 				</parameter>
+				<parameter id="PIDTEST69" name="OL Fueling Final" desc="Lambda Target" >
+						<address>0x22055A</address>
+						<conversions>
+							<conversion storagetype="uint16" units="mult" expr="x*0.00003051758" format="0.000" gauge_min="0" gauge_max="2" gauge_step=".001" />
+						</conversions>
+				</parameter>
 				<parameter id="PIDTEST10" name="Mass Air Flow" desc="MAF" >
 						<address>0x220010</address>
 						<conversions>
