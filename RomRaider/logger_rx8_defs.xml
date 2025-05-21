@@ -254,7 +254,7 @@ any damage or injury incurred as a result of these definitions. USE AT YOUR OWN 
 				<parameter id="PIDTEST69" name="Flex Sensor Fault Status" desc="0=No fault, 1=fault" >
 						<address>0x22055B</address>
 						<conversions>
-							<conversion storagetype="uint8" units="mult" expr="x" format="0.000" gauge_min="0" gauge_max="2" gauge_step=".001" />
+							<conversion storagetype="uint8" units="bool" expr="x" format="0.000" gauge_min="0" gauge_max="2" gauge_step=".001" />
 						</conversions>
 				</parameter>
 				<parameter id="PIDTEST10" name="Mass Air Flow" desc="MAF" >
