@@ -181,7 +181,32 @@
                 <scaling units="RPM" expression="x" to_byte="x" format="0.0" />
             </table>
         </table>
-        <table name="Barometric Pressure Sensor Max ADC Count" category="Sensors" type="1D" storagetype="uint16" endian="big" expression="x" to_byte="x" size="2" />
+        <table name="Fan 1 Enable Coolant Temperature Threshold" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="degC" />
+		</table>
+		<table name="Fan 1 Enable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" >
+			<scaling units="degC"/>
+		</table>
+		<table name="Fan 2 Enable Coolant Temperature Threshold" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="degC" />
+		</table>
+		<table name="Fan 2 Enable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="degC"/>
+		</table>
+		<table name="Fan 2 Disable Vehicle Speed Threshold" units="kph" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="kph"/>
+		</table>
+		<table name="Fan 2 Disable Vehicle Speed Hysteresis" units="kph" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="kph"/>
+		</table>
+		<table name="Fan High Speed Enable Coolant Temperature Threshold" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="degC"/>
+		</table>
+		<table name="Fan High Speed Enable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+			<scaling units="degC"/>
+		</table>
+		
+		<table name="Barometric Pressure Sensor Max ADC Count" category="Sensors" type="1D" storagetype="uint16" endian="big" expression="x" to_byte="x" size="2" />
 		<table name="Fuel Air Ratio" category="Fuel Injection" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" >
 			<scaling units="1/AFR" format="0.00000" />
 		</table>
@@ -2707,12 +2732,12 @@
             </table>
         </table>
         <table name="Estimated Manifold Pressure" category="Engine Load" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="17" sizey="20">
-            <scaling expression="(x * 0.003906 ) + 0" to_byte="(x - 0) / 0.003906" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <scaling expression="(x * 0.00390625 ) + 0" to_byte="(x - 0) / 0.00390625" format="0.00" />
+            <table name="Engine Speed" type="X Axis" storagetype="float" endian="big">
+                <scaling units="RPM" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Engine Load" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="g/rev" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Injector Latency Secondary" category="Fuel Injection" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="17" sizey="9">
@@ -5576,6 +5601,14 @@
 	<table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06D46C" />
 	<table name="Fuel Air Ratio" storageaddress="0x77150"/>
         <table name="Barometric Pressure Sensor Min ADC Count" storageaddress="0x06D46E" />
+		<table name="Fan 1 Enable Coolant Temperature Threshold" storageaddress="0x76700" />
+		<table name="Fan 1 Enable Coolant Temperature Hysteresis" storageaddress="0x76704" />
+		<table name="Fan 2 Enable Coolant Temperature Threshold" storageaddress="0x76708" />
+		<table name="Fan 2 Enable Coolant Temperature Hysteresis" storageaddress="0x7670C" />
+		<table name="Fan High Speed Enable Coolant Temperature Threshold" 	storageaddress="0x76710" />
+		<table name="Fan High Speed Enable Coolant Temperature Hysteresis" 	storageaddress="0x76714" />
+		<table name="Fan 2 Disable Vehicle Speed Threshold" 				storageaddress="0x7674c"/>
+		<table name="Fan 2 Disable Vehicle Speed Hysteresis" 				storageaddress="0x76750" />
         <table name="Barometric Pressure Sensor Min Voltage" storageaddress="0x0796FC" />
         <table name="Barometric Pressure Sensor Max Voltage" storageaddress="0x079700" />
         <table name="Barometric Pressure Sensor Slope" storageaddress="0x079790" />
