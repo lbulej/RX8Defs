@@ -54,7 +54,7 @@
                 <scaling units="RPM" expression="x" to_byte="x" format="0" />
             </table>
         </table>	
-		<table name="Table 3D - Timing Ethanol Adder - Trailing" category="Flex Fuel" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
+		<table name="Table 3D - Timing Ethanol Adder - Trailing" units="deg" category="Flex Fuel" type="3D" storagetype="uint8" endian="big" expression="x" to_byte="x" sizex="20" sizey="18">
             <scaling expression="(x * 0.5) - 50" to_byte="(x + 50.0) * 2" format="0.00" />
             <table name="Engine Load" type="X Axis" storagetype="float" endian="big">
                 <scaling units="g/rev" expression="x" to_byte="x" format="0.00" />
@@ -1276,9 +1276,9 @@
             <scaling expression="(x * 0.5 ) + -64" to_byte="(x - -64) / 0.5" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 209 " category="Knock Control" type="2D" storagetype="uint8" endian="big" sizey="5">
-            <scaling expression="(x * 0.5 ) + -64" to_byte="(x - -64) / 0.5" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Knock Retard Max - Knock Sensor Faulted" category="Knock Control" type="2D" storagetype="uint8" endian="big" sizey="5">
+            <scaling units="degrees" expression="(x * 0.5 ) + -64" to_byte="(x - -64) / 0.5" format="0.00" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 210 " category="Knock Control" type="2D" storagetype="uint8" endian="big" sizey="12">
             <scaling expression="(x * 0.5 ) + -64" to_byte="(x - -64) / 0.5" format="0.00" />
@@ -1353,7 +1353,7 @@
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Knock Voltage To Magnitude" category="Knock Control" type="2D" storagetype="uint8" endian="big" sizey="58">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
+            <scaling expression="(x * 1 ) -64" to_byte="(x +64) / 1" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 228 " category="35638" type="2D" storagetype="uint8" endian="big" sizey="7">
@@ -1544,7 +1544,7 @@
         </table>
         <table name="Table 2D - 274 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="11">
             <scaling expression="(x * 0.5 ) + 0" to_byte="(x - 0) / 0.5" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+            <table name="Engine Speed" units="RPM" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Table 2D - 275 " category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="6">
             <scaling expression="(x * 0.1 ) + 0" to_byte="(x - 0) / 0.1" format="0.00" />
@@ -1856,9 +1856,9 @@
             <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Table 2D - 351" category="Unknown 2D" type="2D" storagetype="uint8" endian="big" sizey="7">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Secondary Air Pump On Time" category="Outputs" type="2D" storagetype="uint16" endian="big" sizey="7">
+            <scaling units="count" expression="x" to_byte="x" format="0.00" />
+            <table name="Coolant Temperature" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Minimum Oil Injection Amount" category="Oil Metering" type="2D" storagetype="uint8" endian="big" sizey="9">
             <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
@@ -1900,12 +1900,12 @@
             <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Knock Related 1" category="Knock Control" type="2D" storagetype="float" endian="big" sizey="14">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" category="Knock Control" type="2D" storagetype="uint16" endian="big" sizey="14">
+            <scaling expression="(x * 0.15625 ) + 0" to_byte="(x - 0) / 0.15625" format="0.00" />
+            <table name="Engine Speed" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
-        <table name="Knock Related 2" category="Knock Control" type="2D" storagetype="uint16" endian="big" sizey="14">
-            <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" category="Knock Control" type="2D" storagetype="uint16" endian="big" sizey="14">
+            <scaling expression="(x * 0.15625)" to_byte="(x - 0) / 0.15625" format="0.00" />
             <table name="Unknown" type="Y Axis" storagetype="float" endian="big" expression="x" to_byte="x" />
         </table>
         <table name="Knock Related" category="Knock Control" type="2D" storagetype="float" endian="big" sizey="1">
@@ -2717,20 +2717,20 @@
         </table>
         <table name="Injector Latency Secondary" category="Fuel Injection" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="17" sizey="9">
             <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Manifold Relative Pressure" type="X Axis" storagetype="float" endian="big">
+                <scaling units="kPa" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Battery Voltage" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="V" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Injector Latency Primary" category="Fuel Injection" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="17" sizey="9">
             <scaling expression="(x * 1 ) + 0" to_byte="(x - 0) / 1" format="0.00" />
-            <table name="Value" type="X Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Manifold Relative Pressure" type="X Axis" storagetype="float" endian="big">
+                <scaling units="kPa" expression="x" to_byte="x" />
             </table>
-            <table name="Value" type="Y Axis" storagetype="float" endian="big">
-                <scaling expression="x" to_byte="x" />
+            <table name="Battery Voltage" type="Y Axis" storagetype="float" endian="big">
+                <scaling units="V" expression="x" to_byte="x" />
             </table>
         </table>
         <table name="Fuel Injection - Engine Load Compensation" category="Fuel Injection" type="3D" storagetype="uint16" endian="big" expression="x" to_byte="x" sizex="18" sizey="20">
@@ -4205,7 +4205,7 @@
         <table name="Table 2D - 208 " storageaddress="0x0798D0">
             <table type="Y Axis" storageaddress="0x0798C0" />
         </table>
-        <table name="Table 2D - 209 " storageaddress="0x0798E8">
+        <table name="Knock Retard Max - Knock Sensor Faulted" storageaddress="0x0798E8">
             <table type="Y Axis" storageaddress="0x0798D4" />
         </table>
         <table name="Table 2D - 210 " storageaddress="0x079920">
@@ -4631,7 +4631,7 @@
         <table name="Table 2D - 350 Check DataType" storageaddress="0x07850C">
             <table type="Y Axis" storageaddress="0x0784E8" />
         </table>
-        <table name="Table 2D - 351" storageaddress="0x078C94">
+        <table name="Secondary Air Pump On Time" storageaddress="0x078C94">
             <table type="Y Axis" storageaddress="0x078C78" />
         </table>
         <table name="Minimum Oil Injection Amount" storageaddress="0x078F00">
@@ -4658,10 +4658,10 @@
         <table name="Table 2D - 359 Check DataType" storageaddress="0x079028">
             <table type="Y Axis" storageaddress="0x07901C" />
         </table>
-        <table name="Knock Related 1" storageaddress="0x07A38C">
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" storageaddress="0x07A38C">
             <table type="Y Axis" storageaddress="0x07A354" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x07A3E0">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x07A3E0">
             <table type="Y Axis" storageaddress="0x07A3A8" />
         </table>
         <table name="Knock Related" storageaddress="0x07A400">
@@ -6160,7 +6160,7 @@
         <table name="Table 2D - 208 " storageaddress="0x0785DC">
             <table type="Y Axis" storageaddress="0x0785CC" />
         </table>
-        <table name="Table 2D - 209 " storageaddress="0x0785F4">
+        <table name="Knock Retard Max - Knock Sensor Faulted" storageaddress="0x0785F4">
             <table type="Y Axis" storageaddress="0x0785E0" />
         </table>
         <table name="Table 2D - 210 " storageaddress="0x07862C">
@@ -6535,7 +6535,7 @@
         <table name="Table 2D - 350 Check DataType" storageaddress="0x0772D0">
             <table type="Y Axis" storageaddress="0x0772AC" />
         </table>
-        <table name="Table 2D - 351" storageaddress="0x0779A0">
+        <table name="Secondary Air Pump On Time" storageaddress="0x0779A0">
             <table type="Y Axis" storageaddress="0x077984" />
         </table>
         <table name="Minimum Oil Injection Amount" storageaddress="0x077C0C">
@@ -6562,10 +6562,10 @@
         <table name="Table 2D - 359 Check DataType" storageaddress="0x077D34">
             <table type="Y Axis" storageaddress="0x077D28" />
         </table>
-        <table name="Knock Related 1" storageaddress="0x079098">
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" storageaddress="0x079098">
             <table type="Y Axis" storageaddress="0x079060" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x0790EC">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x0790EC">
             <table type="Y Axis" storageaddress="0x0790B4" />
         </table>
         <table name="Knock Related" storageaddress="0x07910C">
@@ -7941,7 +7941,7 @@
         <table name="Table 2D - 208 " storageaddress="0x0785DC">
             <table type="Y Axis" storageaddress="0x0785CC" />
         </table>
-        <table name="Table 2D - 209 " storageaddress="0x0785F4">
+        <table name="Knock Retard Max - Knock Sensor Faulted" storageaddress="0x0785F4">
             <table type="Y Axis" storageaddress="0x0785E0" />
         </table>
         <table name="Table 2D - 210 " storageaddress="0x07862C">
@@ -8316,7 +8316,7 @@
         <table name="Table 2D - 350 Check DataType" storageaddress="0x0772D0">
             <table type="Y Axis" storageaddress="0x0772AC" />
         </table>
-        <table name="Table 2D - 351" storageaddress="0x0779A0">
+        <table name="Secondary Air Pump On Time" storageaddress="0x0779A0">
             <table type="Y Axis" storageaddress="0x077984" />
         </table>
         <table name="Minimum Oil Injection Amount" storageaddress="0x077C0C">
@@ -8343,10 +8343,10 @@
         <table name="Table 2D - 359 Check DataType" storageaddress="0x077D34">
             <table type="Y Axis" storageaddress="0x077D28" />
         </table>
-        <table name="Knock Related 1" storageaddress="0x079098">
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" storageaddress="0x079098">
             <table type="Y Axis" storageaddress="0x079060" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x0790EC">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x0790EC">
             <table type="Y Axis" storageaddress="0x0790B4" />
         </table>
         <table name="Knock Related" storageaddress="0x07910C">
@@ -10162,16 +10162,16 @@
         <table name="Table 2D - 350 Check DataType" storageaddress="0x078350">
             <table type="Y Axis" storageaddress="0x07832C" />
         </table>
-        <table name="Table 2D - 351" storageaddress="0x078BA0">
+        <table name="Secondary Air Pump On Time" storageaddress="0x078BA0">
             <table type="Y Axis" storageaddress="0x078B84" />
         </table>
         <table name="First Start Oil Injection Timer" storageaddress="0x078DD8">
             <table type="Y Axis" storageaddress="0x078DC0" />
         </table>
-        <table name="Knock Related 1" storageaddress="0x07A3C8">
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" storageaddress="0x07A3C8">
             <table type="Y Axis" storageaddress="0x07A390" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x07A424">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x07A424">
             <table type="Y Axis" storageaddress="0x07A3EC" />
         </table>
         <table name="Knock Related" storageaddress="0x07A44C">
@@ -11687,7 +11687,7 @@
         <table name="Table 2D - 208 " storageaddress="0x0798D0">
             <table type="Y Axis" storageaddress="0x0798C0" />
         </table>
-        <table name="Table 2D - 209 " storageaddress="0x0798E8">
+        <table name="Knock Retard Max - Knock Sensor Faulted" storageaddress="0x0798E8">
             <table type="Y Axis" storageaddress="0x0798D4" />
         </table>
         <table name="Table 2D - 210 " storageaddress="0x079920">
@@ -12113,7 +12113,7 @@
         <table name="Table 2D - 350 Check DataType" storageaddress="0x07850C">
             <table type="Y Axis" storageaddress="0x0784E8" />
         </table>
-        <table name="Table 2D - 351" storageaddress="0x078C94">
+        <table name="Secondary Air Pump On Time" storageaddress="0x078C94">
             <table type="Y Axis" storageaddress="0x078C78" />
         </table>
         <table name="Minimum Oil Injection Amount" storageaddress="0x078F00">
@@ -12140,10 +12140,10 @@
         <table name="Table 2D - 359 Check DataType" storageaddress="0x079028">
             <table type="Y Axis" storageaddress="0x07901C" />
         </table>
-        <table name="Knock Related 1" storageaddress="0x07A38C">
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" storageaddress="0x07A38C">
             <table type="Y Axis" storageaddress="0x07A354" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x07A3E0">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x07A3E0">
             <table type="Y Axis" storageaddress="0x07A3A8" />
         </table>
         <table name="Knock Related" storageaddress="0x07A400">
@@ -13677,7 +13677,7 @@
         <table name="Table 2D - 208 " storageaddress="0x0781F8">
             <table type="Y Axis" storageaddress="0x0781E8" />
         </table>
-        <table name="Table 2D - 209 " storageaddress="0x078210">
+        <table name="Knock Retard Max - Knock Sensor Faulted" storageaddress="0x078210">
             <table type="Y Axis" storageaddress="0x0781FC" />
         </table>
         <table name="Table 2D - 210 " storageaddress="0x078248">
@@ -14097,10 +14097,10 @@
         <table name="Table 2D - 359 Check DataType" storageaddress="0x077950">
             <table type="Y Axis" storageaddress="0x077944" />
         </table>
-        <table name="Knock Related 1" storageaddress="0x078CB4">
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" storageaddress="0x078CB4">
             <table type="Y Axis" storageaddress="0x078C7C" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x078D08">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x078D08">
             <table type="Y Axis" storageaddress="0x078CD0" />
         </table>
         <table name="Knock Related" storageaddress="0x078D28">
@@ -15829,7 +15829,7 @@
         <table name="Table 2D - 358 Check DataType" storageaddress="0x07A43F">
             <table type="Y Axis" storageaddress="0x07A436" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x07A1FC">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x07A1FC">
             <table type="Y Axis" storageaddress="0x07A1C4" />
         </table>
         <table name="Table 2D - 364 Check DataType" storageaddress="0x07AFB0">
@@ -17056,7 +17056,7 @@
         <table name="Table 2D - 208 " storageaddress="0x0785DC">
             <table type="Y Axis" storageaddress="0x0785CC" />
         </table>
-        <table name="Table 2D - 209 " storageaddress="0x0785F4">
+        <table name="Knock Retard Max - Knock Sensor Faulted" storageaddress="0x0785F4">
             <table type="Y Axis" storageaddress="0x0785E0" />
         </table>
         <table name="Table 2D - 210 " storageaddress="0x07862C">
@@ -17431,7 +17431,7 @@
         <table name="Table 2D - 350 Check DataType" storageaddress="0x0772D0">
             <table type="Y Axis" storageaddress="0x0772AC" />
         </table>
-        <table name="Table 2D - 351" storageaddress="0x0779A0">
+        <table name="Secondary Air Pump On Time" storageaddress="0x0779A0">
             <table type="Y Axis" storageaddress="0x077984" />
         </table>
         <table name="Minimum Oil Injection Amount" storageaddress="0x077C0C">
@@ -17458,10 +17458,10 @@
         <table name="Table 2D - 359 Check DataType" storageaddress="0x077D34">
             <table type="Y Axis" storageaddress="0x077D28" />
         </table>
-        <table name="Knock Related 1" storageaddress="0x079098">
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" storageaddress="0x079098">
             <table type="Y Axis" storageaddress="0x079060" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x0790EC">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x0790EC">
             <table type="Y Axis" storageaddress="0x0790B4" />
         </table>
         <table name="Knock Related" storageaddress="0x07910C">
@@ -18787,7 +18787,7 @@
         <table name="Table 2D - 208 " storageaddress="0x0785DC">
             <table type="Y Axis" storageaddress="0x0785CC" />
         </table>
-        <table name="Table 2D - 209 " storageaddress="0x0785F4">
+        <table name="Knock Retard Max - Knock Sensor Faulted" storageaddress="0x0785F4">
             <table type="Y Axis" storageaddress="0x0785E0" />
         </table>
         <table name="Table 2D - 210 " storageaddress="0x07862C">
@@ -19162,7 +19162,7 @@
         <table name="Table 2D - 350 Check DataType" storageaddress="0x0772D0">
             <table type="Y Axis" storageaddress="0x0772AC" />
         </table>
-        <table name="Table 2D - 351" storageaddress="0x0779A0">
+        <table name="Secondary Air Pump On Time" storageaddress="0x0779A0">
             <table type="Y Axis" storageaddress="0x077984" />
         </table>
         <table name="Minimum Oil Injection Amount" storageaddress="0x077C0C">
@@ -19189,10 +19189,10 @@
         <table name="Table 2D - 359 Check DataType" storageaddress="0x077D34">
             <table type="Y Axis" storageaddress="0x077D28" />
         </table>
-        <table name="Knock Related 1" storageaddress="0x079098">
+        <table name="Ignition Timing Threshold A - Knock Retard Reset Off" storageaddress="0x079098">
             <table type="Y Axis" storageaddress="0x079060" />
         </table>
-        <table name="Knock Related 2" storageaddress="0x0790EC">
+        <table name="Ignition Timing Threshold B - Knock Retard Reset Off" storageaddress="0x0790EC">
             <table type="Y Axis" storageaddress="0x0790B4" />
         </table>
         <table name="Knock Related" storageaddress="0x07910C">
