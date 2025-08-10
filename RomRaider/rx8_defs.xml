@@ -184,13 +184,13 @@
         <table name="Fan 1 Enable Coolant Temperature Threshold" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
 			<scaling units="degC" />
 		</table>
-		<table name="Fan 1 Enable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" >
+		<table name="Fan 1 Disable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1" >
 			<scaling units="degC"/>
 		</table>
 		<table name="Fan 2 Enable Coolant Temperature Threshold" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
 			<scaling units="degC" />
 		</table>
-		<table name="Fan 2 Enable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+		<table name="Fan 2 Disable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
 			<scaling units="degC"/>
 		</table>
 		<table name="Fan 2 Disable Vehicle Speed Threshold" units="kph" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
@@ -202,7 +202,7 @@
 		<table name="Fan High Speed Enable Coolant Temperature Threshold" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
 			<scaling units="degC"/>
 		</table>
-		<table name="Fan High Speed Enable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
+		<table name="Fan High Speed Disable Coolant Temperature Hysteresis" units="degC" category="Outputs" type="1D" storagetype="float" endian="big" expression="x" to_byte="x" size="1">
 			<scaling units="degC"/>
 		</table>
 		
@@ -3574,6 +3574,7 @@
             <year>2004</year>
             <transmission>MT</transmission>
         </romid>
+
         <table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06CF6C" />
         <table name="Barometric Pressure Sensor Min ADC Count" storageaddress="0x06CF6E" />
         <table name="Barometric Pressure Sensor Min Voltage" storageaddress="0x07A930" />
@@ -3603,6 +3604,14 @@
         <table name="Knock Control - Retard Decrement #1" storageaddress="0x07988C" />
         <table name="Knock Control - Retard Decrement #2" storageaddress="0x079894" />
         <table name="Knock Control - Retard Decrement #3" storageaddress="0x079884" />
+		<table name="Fan 1 Enable Coolant Temperature Threshold" storageaddress="0x07793c" />
+		<table name="Fan 1 Disable Coolant Temperature Hysteresis" storageaddress="0x077940" />
+		<table name="Fan 2 Enable Coolant Temperature Threshold" storageaddress="0x077944" />
+		<table name="Fan 2 Disable Coolant Temperature Hysteresis" storageaddress="0x077948" />
+		<table name="Fan High Speed Enable Coolant Temperature Threshold" 	storageaddress="0x07794c" />
+		<table name="Fan High Speed Disable Coolant Temperature Hysteresis" 	storageaddress="0x077950" />
+		<table name="Fan 2 Disable Vehicle Speed Threshold" 				storageaddress="0x077988"/>
+		<table name="Fan 2 Disable Vehicle Speed Hysteresis" 				storageaddress="0x07798c" />	
         <table name="Fuel Injector - Unknown - Max Injection Angle1???" storageaddress="0x06CFE4">
             <table type="Y Axis" storageaddress="0x06CFA4" />
         </table>
@@ -5598,15 +5607,15 @@
 
 		<table name="Immobilizer Disable - Without RKE Installed" storageaddress="0x35230"/>
 		<table name="Immobilizer Disable - With RKE Installed" storageaddress="0x3567C"/>
-	<table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06D46C" />
-	<table name="Fuel Air Ratio" storageaddress="0x77150"/>
+		<table name="Barometric Pressure Sensor Max ADC Count" storageaddress="0x06D46C" />
+		<table name="Fuel Air Ratio" storageaddress="0x77150"/>
         <table name="Barometric Pressure Sensor Min ADC Count" storageaddress="0x06D46E" />
 		<table name="Fan 1 Enable Coolant Temperature Threshold" storageaddress="0x76700" />
-		<table name="Fan 1 Enable Coolant Temperature Hysteresis" storageaddress="0x76704" />
+		<table name="Fan 1 Disable Coolant Temperature Hysteresis" storageaddress="0x76704" />
 		<table name="Fan 2 Enable Coolant Temperature Threshold" storageaddress="0x76708" />
-		<table name="Fan 2 Enable Coolant Temperature Hysteresis" storageaddress="0x7670C" />
+		<table name="Fan 2 Disable Coolant Temperature Hysteresis" storageaddress="0x7670C" />
 		<table name="Fan High Speed Enable Coolant Temperature Threshold" 	storageaddress="0x76710" />
-		<table name="Fan High Speed Enable Coolant Temperature Hysteresis" 	storageaddress="0x76714" />
+		<table name="Fan High Speed Disable Coolant Temperature Hysteresis" 	storageaddress="0x76714" />
 		<table name="Fan 2 Disable Vehicle Speed Threshold" 				storageaddress="0x7674c"/>
 		<table name="Fan 2 Disable Vehicle Speed Hysteresis" 				storageaddress="0x76750" />
         <table name="Barometric Pressure Sensor Min Voltage" storageaddress="0x0796FC" />
@@ -5632,22 +5641,22 @@
         <table name="Closed Loop Fuelling Threshold (Temperature B)" storageaddress="0x0716E8" />
         <table name="Closed Loop Fuelling Threshold (Unknown B)" storageaddress="0x071764" />
         <table name="Closed Loop Fuelling Threshold (Temperature C)" storageaddress="0x0717A4" />
-	<table name="Ignition Leading - Ignition Base Max" storageaddress="0x6da58" />
-	<table name="Ignition Leading - Ignition Base Max Safe Mode" storageaddress="0x6da5c" />
-	<table name="Ignition Leading - Ignition Base Max" storageaddress="0x6da58" />
-	<table name="Ignition Leading - Ignition Base Max Safe Mode" storageaddress="0x6da5c" />
-	<table name="Ignition Trailing - Ignition Base Max" storageaddress="0x6da68" />
-	<table name="Ignition Trailing - Ignition Base Max Safe Mode" storageaddress="0x6da6c" />
-	<table name="Ignition Leading - Idle Erorr Correction Min" storageaddress="0x726e0" />
-	<table name="Ignition Leading - Idle Error Correction Max" storageaddress="0x726e4" />
-	<table name="Ignition Trailing - Idle Erorr Correction Min" storageaddress="0x726f4" />
-	<table name="Ignition Trailing - Idle Error Correction Max" storageaddress="0x726f8" />
-	<table name="Ignition Leading/Trailing - Off Throttle Coolant Temp Compensation" storageaddress="0x6e110" />
-	<table name="Alternator Pulley Ratio" storageaddress="0x74a1c" />
-	<table name="Alternator Voltage Controller - Proportional Gain" storageaddress="0x74a90" />
-	<table name="Alternator Voltage Controller - Integral Gain" storageaddress="0x74a94" />
-	<table name="Alternator Voltage Controller - Derivative Gain" storageaddress="0x74a8c" />	
-	<table name="Max Load - Intake Temperature Compensation" storageaddress="0x078DC0">
+		<table name="Ignition Leading - Ignition Base Max" storageaddress="0x6da58" />
+		<table name="Ignition Leading - Ignition Base Max Safe Mode" storageaddress="0x6da5c" />
+		<table name="Ignition Leading - Ignition Base Max" storageaddress="0x6da58" />
+		<table name="Ignition Leading - Ignition Base Max Safe Mode" storageaddress="0x6da5c" />
+		<table name="Ignition Trailing - Ignition Base Max" storageaddress="0x6da68" />
+		<table name="Ignition Trailing - Ignition Base Max Safe Mode" storageaddress="0x6da6c" />
+		<table name="Ignition Leading - Idle Erorr Correction Min" storageaddress="0x726e0" />
+		<table name="Ignition Leading - Idle Error Correction Max" storageaddress="0x726e4" />
+		<table name="Ignition Trailing - Idle Erorr Correction Min" storageaddress="0x726f4" />
+		<table name="Ignition Trailing - Idle Error Correction Max" storageaddress="0x726f8" />
+		<table name="Ignition Leading/Trailing - Off Throttle Coolant Temp Compensation" storageaddress="0x6e110" />
+		<table name="Alternator Pulley Ratio" storageaddress="0x74a1c" />
+		<table name="Alternator Voltage Controller - Proportional Gain" storageaddress="0x74a90" />
+		<table name="Alternator Voltage Controller - Integral Gain" storageaddress="0x74a94" />
+		<table name="Alternator Voltage Controller - Derivative Gain" storageaddress="0x74a8c" />	
+		<table name="Max Load - Intake Temperature Compensation" storageaddress="0x078DC0">
             <table type="Y Axis" storageaddress="0x078D9C" />
         </table>
         <table name="Fuel Injector - Unknown - Max Injection Angle1???" storageaddress="0x06D4E4">
